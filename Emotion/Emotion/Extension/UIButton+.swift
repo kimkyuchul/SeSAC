@@ -30,20 +30,15 @@ extension UIButton {
             
             switch selectedEmotion {
             case .exciting:
-                let result = emotionIndex(EmotionManager.excitingIndex, countIndex)
-                EmotionManager.excitingIndex = result
+                EmotionManager.excitingIndex = emotionIndex(EmotionManager.excitingIndex, countIndex)
             case .happy:
-                let result = emotionIndex(EmotionManager.happyIndex, countIndex)
-                EmotionManager.happyIndex = result
+                EmotionManager.happyIndex = emotionIndex(EmotionManager.happyIndex, countIndex)
             case .soso:
-                let result = emotionIndex(EmotionManager.sosoIndex, countIndex)
-                EmotionManager.sosoIndex = result
+                EmotionManager.sosoIndex = emotionIndex(EmotionManager.happyIndex, countIndex)
             case .upset:
-                let result = emotionIndex(EmotionManager.upsetIndex, countIndex)
-                EmotionManager.upsetIndex = result
+                EmotionManager.upsetIndex = emotionIndex(EmotionManager.happyIndex, countIndex)
             case .sad:
-                let result = emotionIndex(EmotionManager.sadIndex, countIndex)
-                EmotionManager.sadIndex = result
+                EmotionManager.sadIndex = emotionIndex(EmotionManager.happyIndex, countIndex)
             }
         }
         return actionHandler

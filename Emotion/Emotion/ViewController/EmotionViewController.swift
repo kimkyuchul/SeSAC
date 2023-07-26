@@ -39,20 +39,15 @@ final class EmotionViewController: UIViewController {
         
         switch selectedEmotion {
         case .exciting:
-            let result = emotionIndex(EmotionManager.excitingIndex, 1)
-            EmotionManager.excitingIndex = result
+            EmotionManager.excitingIndex = emotionIndex(EmotionManager.excitingIndex, 1)
         case .happy:
-            let result = emotionIndex(EmotionManager.happyIndex, 1)
-            EmotionManager.happyIndex = result
+            EmotionManager.happyIndex = emotionIndex(EmotionManager.happyIndex, 1)
         case .soso:
-            let result = emotionIndex(EmotionManager.sosoIndex, 1)
-            EmotionManager.sosoIndex = result
+            EmotionManager.sosoIndex = emotionIndex(EmotionManager.sosoIndex, 1)
         case .upset:
-            let result = emotionIndex(EmotionManager.upsetIndex, 1)
-            EmotionManager.upsetIndex = result
+            EmotionManager.upsetIndex = emotionIndex(EmotionManager.upsetIndex, 1)
         case .sad:
-            let result = emotionIndex(EmotionManager.sadIndex, 1)
-            EmotionManager.sadIndex = result
+            EmotionManager.sadIndex = emotionIndex(EmotionManager.sadIndex, 1)
         }
     }
 }
