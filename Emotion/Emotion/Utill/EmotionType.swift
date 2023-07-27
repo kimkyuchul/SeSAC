@@ -15,6 +15,8 @@ enum EmotionType: CaseIterable, CustomStringConvertible {
     case upset
     case sad
     
+    // 튜플로 한번에 묶기
+    // 튜플에 이름 선언해서
     var image: UIImage {
         switch self {
         case .exciting:
