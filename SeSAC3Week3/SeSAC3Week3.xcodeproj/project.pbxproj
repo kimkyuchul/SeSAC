@@ -15,7 +15,14 @@
 		5A1C48042A72002500CC345A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C48022A72002500CC345A /* LaunchScreen.storyboard */; };
 		5A1C480C2A720FED00CC345A /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C480B2A720FED00CC345A /* TodoTableViewController.swift */; };
 		5A1C482E2A7232D000CC345A /* DoitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C482D2A7232D000CC345A /* DoitTableViewController.swift */; };
-		5A1C48322A72496400CC345A /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48312A72496400CC345A /* extension.swift */; };
+		5A1C48322A72496400CC345A /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48312A72496400CC345A /* UIViewController+.swift */; };
+		5A1C48342A726B1300CC345A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C48332A726B1300CC345A /* Setting.storyboard */; };
+		5A1C48362A72731600CC345A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48352A72731600CC345A /* SettingTableViewController.swift */; };
+		5A1C48382A7274AA00CC345A /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48372A7274AA00CC345A /* SettingType.swift */; };
+		5A1C483C2A7279E100CC345A /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C483B2A7279E100CC345A /* ShoppingViewController.swift */; };
+		5A1C483E2A727DF100CC345A /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C483D2A727DF100CC345A /* UITextField+.swift */; };
+		5A1C48402A72853300CC345A /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C483F2A72853200CC345A /* ShoppingTableViewCell.swift */; };
+		5A1C48422A728A1500CC345A /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48412A728A1500CC345A /* UserDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +36,14 @@
 		5A1C48052A72002500CC345A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A1C480B2A720FED00CC345A /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		5A1C482D2A7232D000CC345A /* DoitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoitTableViewController.swift; sourceTree = "<group>"; };
-		5A1C48312A72496400CC345A /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		5A1C48312A72496400CC345A /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		5A1C48332A726B1300CC345A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		5A1C48352A72731600CC345A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		5A1C48372A7274AA00CC345A /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
+		5A1C483B2A7279E100CC345A /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		5A1C483D2A727DF100CC345A /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		5A1C483F2A72853200CC345A /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		5A1C48412A728A1500CC345A /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +76,153 @@
 		5A1C47F62A72002300CC345A /* SeSAC3Week3 */ = {
 			isa = PBXGroup;
 			children = (
-				5A1C47F72A72002300CC345A /* AppDelegate.swift */,
-				5A1C47F92A72002300CC345A /* SceneDelegate.swift */,
-				5A1C47FB2A72002300CC345A /* ViewController.swift */,
-				5A1C480B2A720FED00CC345A /* TodoTableViewController.swift */,
-				5A1C482D2A7232D000CC345A /* DoitTableViewController.swift */,
-				5A1C48312A72496400CC345A /* extension.swift */,
-				5A1C48002A72002500CC345A /* Assets.xcassets */,
-				5A1C47FD2A72002300CC345A /* Main.storyboard */,
-				5A1C48022A72002500CC345A /* LaunchScreen.storyboard */,
+				5A1C484A2A728B5D00CC345A /* Study */,
+				5A1C484B2A728B7600CC345A /* HomeWorks */,
+				5A1C48522A728C1100CC345A /* Support */,
+				5A1C48432A728AC700CC345A /* App */,
 				5A1C48052A72002500CC345A /* Info.plist */,
 			);
 			path = SeSAC3Week3;
+			sourceTree = "<group>";
+		};
+		5A1C48432A728AC700CC345A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C47F72A72002300CC345A /* AppDelegate.swift */,
+				5A1C47F92A72002300CC345A /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5A1C48442A728ADC00CC345A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C48332A726B1300CC345A /* Setting.storyboard */,
+				5A1C48492A728B4C00CC345A /* Setting */,
+				5A1C48482A728B1B00CC345A /* Shopping */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		5A1C48452A728AFA00CC345A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C48472A728B0600CC345A /* ViewController */,
+				5A1C48462A728B0300CC345A /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5A1C48462A728B0300CC345A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C47FD2A72002300CC345A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A1C48472A728B0600CC345A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C47FB2A72002300CC345A /* ViewController.swift */,
+				5A1C480B2A720FED00CC345A /* TodoTableViewController.swift */,
+				5A1C482D2A7232D000CC345A /* DoitTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5A1C48482A728B1B00CC345A /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C484E2A728BC900CC345A /* Cell */,
+				5A1C484D2A728BB800CC345A /* ViewController */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		5A1C48492A728B4C00CC345A /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C484C2A728B9700CC345A /* ViewController */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		5A1C484A2A728B5D00CC345A /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C48452A728AFA00CC345A /* Main */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
+		5A1C484B2A728B7600CC345A /* HomeWorks */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C484F2A728BE800CC345A /* Global */,
+				5A1C48442A728ADC00CC345A /* Screen */,
+			);
+			path = HomeWorks;
+			sourceTree = "<group>";
+		};
+		5A1C484C2A728B9700CC345A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C48352A72731600CC345A /* SettingTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5A1C484D2A728BB800CC345A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C483B2A7279E100CC345A /* ShoppingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5A1C484E2A728BC900CC345A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C483F2A72853200CC345A /* ShoppingTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5A1C484F2A728BE800CC345A /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C48512A728C0300CC345A /* Extension */,
+				5A1C48502A728BEE00CC345A /* Utill */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		5A1C48502A728BEE00CC345A /* Utill */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C48372A7274AA00CC345A /* SettingType.swift */,
+				5A1C48412A728A1500CC345A /* UserDefault.swift */,
+			);
+			path = Utill;
+			sourceTree = "<group>";
+		};
+		5A1C48512A728C0300CC345A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C483D2A727DF100CC345A /* UITextField+.swift */,
+				5A1C48312A72496400CC345A /* UIViewController+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5A1C48522A728C1100CC345A /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C48002A72002500CC345A /* Assets.xcassets */,
+				5A1C48022A72002500CC345A /* LaunchScreen.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +286,7 @@
 				5A1C48042A72002500CC345A /* LaunchScreen.storyboard in Resources */,
 				5A1C48012A72002500CC345A /* Assets.xcassets in Resources */,
 				5A1C47FF2A72002300CC345A /* Main.storyboard in Resources */,
+				5A1C48342A726B1300CC345A /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,10 +297,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1C48362A72731600CC345A /* SettingTableViewController.swift in Sources */,
+				5A1C483E2A727DF100CC345A /* UITextField+.swift in Sources */,
+				5A1C483C2A7279E100CC345A /* ShoppingViewController.swift in Sources */,
 				5A1C47FC2A72002300CC345A /* ViewController.swift in Sources */,
 				5A1C480C2A720FED00CC345A /* TodoTableViewController.swift in Sources */,
+				5A1C48402A72853300CC345A /* ShoppingTableViewCell.swift in Sources */,
 				5A1C482E2A7232D000CC345A /* DoitTableViewController.swift in Sources */,
-				5A1C48322A72496400CC345A /* extension.swift in Sources */,
+				5A1C48382A7274AA00CC345A /* SettingType.swift in Sources */,
+				5A1C48422A728A1500CC345A /* UserDefault.swift in Sources */,
+				5A1C48322A72496400CC345A /* UIViewController+.swift in Sources */,
 				5A1C47F82A72002300CC345A /* AppDelegate.swift in Sources */,
 				5A1C47FA2A72002300CC345A /* SceneDelegate.swift in Sources */,
 			);
