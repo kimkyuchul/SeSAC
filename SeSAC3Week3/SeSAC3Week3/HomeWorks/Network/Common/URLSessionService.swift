@@ -15,9 +15,11 @@ final class URLSessionService {
     
     func getMovieList(page: Int, completion: @escaping (MovieListResponse) -> Void) {
         
+        let apiKey = Bundle.main.MOVIE_API_KEY
+        
         guard var urlComponents = URLComponents(string: BaseURLConstant.base) else { return }
         urlComponents.queryItems = [
-            URLQueryItem(name: "apikey", value: BaseURLConstant.apiKey),
+            URLQueryItem(name: "apikey", value: apiKey),
             URLQueryItem(name: "s", value: BaseURLConstant.search),
             URLQueryItem(name: "type", value: BaseURLConstant.type),
             URLQueryItem(name: "page", value: String(page))
