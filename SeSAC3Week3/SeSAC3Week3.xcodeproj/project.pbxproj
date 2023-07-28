@@ -23,6 +23,10 @@
 		5A1C483E2A727DF100CC345A /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C483D2A727DF100CC345A /* UITextField+.swift */; };
 		5A1C48402A72853300CC345A /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C483F2A72853200CC345A /* ShoppingTableViewCell.swift */; };
 		5A1C48422A728A1500CC345A /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48412A728A1500CC345A /* UserDefault.swift */; };
+		5A1C48542A7350AB00CC345A /* CutsomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48532A7350AB00CC345A /* CutsomTableViewController.swift */; };
+		5A1C48572A73527800CC345A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48562A73527800CC345A /* CustomTableViewCell.swift */; };
+		5A1C485B2A7389D200CC345A /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C485A2A7389D200CC345A /* ToDo.swift */; };
+		5A1C485E2A738A1200CC345A /* ToDoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C485D2A738A1200CC345A /* ToDoInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		5A1C483D2A727DF100CC345A /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		5A1C483F2A72853200CC345A /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		5A1C48412A728A1500CC345A /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		5A1C48532A7350AB00CC345A /* CutsomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutsomTableViewController.swift; sourceTree = "<group>"; };
+		5A1C48562A73527800CC345A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		5A1C485A2A7389D200CC345A /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		5A1C485D2A738A1200CC345A /* ToDoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,8 @@
 		5A1C48452A728AFA00CC345A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5A1C485C2A7389E100CC345A /* Model */,
+				5A1C48552A73524B00CC345A /* Cell */,
 				5A1C48472A728B0600CC345A /* ViewController */,
 				5A1C48462A728B0300CC345A /* View */,
 			);
@@ -127,6 +137,7 @@
 				5A1C47FB2A72002300CC345A /* ViewController.swift */,
 				5A1C480B2A720FED00CC345A /* TodoTableViewController.swift */,
 				5A1C482D2A7232D000CC345A /* DoitTableViewController.swift */,
+				5A1C48532A7350AB00CC345A /* CutsomTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -225,6 +236,23 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		5A1C48552A73524B00CC345A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C48562A73527800CC345A /* CustomTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5A1C485C2A7389E100CC345A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C485A2A7389D200CC345A /* ToDo.swift */,
+				5A1C485D2A738A1200CC345A /* ToDoInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,14 +326,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1C48362A72731600CC345A /* SettingTableViewController.swift in Sources */,
+				5A1C48542A7350AB00CC345A /* CutsomTableViewController.swift in Sources */,
 				5A1C483E2A727DF100CC345A /* UITextField+.swift in Sources */,
 				5A1C483C2A7279E100CC345A /* ShoppingViewController.swift in Sources */,
 				5A1C47FC2A72002300CC345A /* ViewController.swift in Sources */,
 				5A1C480C2A720FED00CC345A /* TodoTableViewController.swift in Sources */,
+				5A1C485B2A7389D200CC345A /* ToDo.swift in Sources */,
 				5A1C48402A72853300CC345A /* ShoppingTableViewCell.swift in Sources */,
 				5A1C482E2A7232D000CC345A /* DoitTableViewController.swift in Sources */,
 				5A1C48382A7274AA00CC345A /* SettingType.swift in Sources */,
 				5A1C48422A728A1500CC345A /* UserDefault.swift in Sources */,
+				5A1C485E2A738A1200CC345A /* ToDoInfo.swift in Sources */,
+				5A1C48572A73527800CC345A /* CustomTableViewCell.swift in Sources */,
 				5A1C48322A72496400CC345A /* UIViewController+.swift in Sources */,
 				5A1C47F82A72002300CC345A /* AppDelegate.swift in Sources */,
 				5A1C47FA2A72002300CC345A /* SceneDelegate.swift in Sources */,
