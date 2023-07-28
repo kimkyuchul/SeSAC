@@ -27,6 +27,10 @@
 		5A1C48572A73527800CC345A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48562A73527800CC345A /* CustomTableViewCell.swift */; };
 		5A1C485B2A7389D200CC345A /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C485A2A7389D200CC345A /* ToDo.swift */; };
 		5A1C485E2A738A1200CC345A /* ToDoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C485D2A738A1200CC345A /* ToDoInfo.swift */; };
+		5A1C48622A73D85600CC345A /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C48612A73D85600CC345A /* Movie.storyboard */; };
+		5A1C48652A73E09E00CC345A /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48642A73E09E00CC345A /* MovieViewController.swift */; };
+		5A1C48672A73E0D500CC345A /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48662A73E0D500CC345A /* MovieView.swift */; };
+		5A1C48692A73E42000CC345A /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48682A73E42000CC345A /* UINavigationController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		5A1C48562A73527800CC345A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		5A1C485A2A7389D200CC345A /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		5A1C485D2A738A1200CC345A /* ToDoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInfo.swift; sourceTree = "<group>"; };
+		5A1C48612A73D85600CC345A /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
+		5A1C48642A73E09E00CC345A /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		5A1C48662A73E0D500CC345A /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		5A1C48682A73E42000CC345A /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +113,11 @@
 		5A1C48442A728ADC00CC345A /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5A1C48632A73E08400CC345A /* Movie */,
 				5A1C48332A726B1300CC345A /* Setting.storyboard */,
 				5A1C48492A728B4C00CC345A /* Setting */,
 				5A1C48482A728B1B00CC345A /* Shopping */,
+				5A1C48612A73D85600CC345A /* Movie.storyboard */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -223,6 +233,7 @@
 			children = (
 				5A1C483D2A727DF100CC345A /* UITextField+.swift */,
 				5A1C48312A72496400CC345A /* UIViewController+.swift */,
+				5A1C48682A73E42000CC345A /* UINavigationController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -251,6 +262,15 @@
 				5A1C485D2A738A1200CC345A /* ToDoInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5A1C48632A73E08400CC345A /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C48642A73E09E00CC345A /* MovieViewController.swift */,
+				5A1C48662A73E0D500CC345A /* MovieView.swift */,
+			);
+			path = Movie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1C48622A73D85600CC345A /* Movie.storyboard in Resources */,
 				5A1C48042A72002500CC345A /* LaunchScreen.storyboard in Resources */,
 				5A1C48012A72002500CC345A /* Assets.xcassets in Resources */,
 				5A1C47FF2A72002300CC345A /* Main.storyboard in Resources */,
@@ -327,16 +348,19 @@
 			files = (
 				5A1C48362A72731600CC345A /* SettingTableViewController.swift in Sources */,
 				5A1C48542A7350AB00CC345A /* CutsomTableViewController.swift in Sources */,
+				5A1C48692A73E42000CC345A /* UINavigationController+.swift in Sources */,
 				5A1C483E2A727DF100CC345A /* UITextField+.swift in Sources */,
 				5A1C483C2A7279E100CC345A /* ShoppingViewController.swift in Sources */,
 				5A1C47FC2A72002300CC345A /* ViewController.swift in Sources */,
 				5A1C480C2A720FED00CC345A /* TodoTableViewController.swift in Sources */,
 				5A1C485B2A7389D200CC345A /* ToDo.swift in Sources */,
 				5A1C48402A72853300CC345A /* ShoppingTableViewCell.swift in Sources */,
+				5A1C48652A73E09E00CC345A /* MovieViewController.swift in Sources */,
 				5A1C482E2A7232D000CC345A /* DoitTableViewController.swift in Sources */,
 				5A1C48382A7274AA00CC345A /* SettingType.swift in Sources */,
 				5A1C48422A728A1500CC345A /* UserDefault.swift in Sources */,
 				5A1C485E2A738A1200CC345A /* ToDoInfo.swift in Sources */,
+				5A1C48672A73E0D500CC345A /* MovieView.swift in Sources */,
 				5A1C48572A73527800CC345A /* CustomTableViewCell.swift in Sources */,
 				5A1C48322A72496400CC345A /* UIViewController+.swift in Sources */,
 				5A1C47F82A72002300CC345A /* AppDelegate.swift in Sources */,
