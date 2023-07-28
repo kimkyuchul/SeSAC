@@ -23,7 +23,7 @@ final class ShoppingViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .brown
+        tableView.backgroundColor = .tertiarySystemFill
         tableView.rowHeight = 60
         tableView.dataSource = self
         tableView.delegate = self
