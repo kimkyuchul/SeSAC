@@ -4,4 +4,3 @@
 
 - 경로: `SeSAC3Week3/SeSAC3Week3/HomeWorks/Screen/Movie`
 - APIKey를 숨겨두었기 때문에 **Movie.plist**에서 **APIKey**를 설정해야 정상 작동합니다.
-- **APIKey 문의는 앉아있는 저를 직접 건드려 주시거나 디엠 부탁드립니다.**
