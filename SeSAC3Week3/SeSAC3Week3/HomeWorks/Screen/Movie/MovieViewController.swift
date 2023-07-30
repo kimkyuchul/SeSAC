@@ -11,21 +11,36 @@ final class MovieViewController: BaseViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
     
-    var movieList: [Movie] = []
+    private var viewModel: MovieViewModel!
+    
+    private var movieList: [Movie] = []
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        viewModel = MovieViewModel()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "영화 Again"
         setTableView()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getList()
+        viewModel.viewWillAppear()
     }
     
-     func setTableView() {
-         movieTableView.backgroundColor = .tertiarySystemGroupedBackground
+    private func bind() {
+        viewModel.setUpContents = { [weak self] in
+            guard let self = self else { return }
+            self.movieList = self.viewModel.movieData ?? self.movieList
+        }
+    }
+    
+     private func setTableView() {
+        movieTableView.backgroundColor = .tertiarySystemGroupedBackground
         movieTableView.rowHeight = 100
         movieTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.CellIdentifier)
         movieTableView.dataSource = self
@@ -46,14 +61,5 @@ extension MovieViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configureCell(row: row)
         
         return cell
-    }
-}
-
-extension MovieViewController {
-    func getList() {
-        URLSessionService.shard.getMovieList(page: 5) { result in
-            self.movieList = result.Search
-            print(self.movieList)
-        }
     }
 }

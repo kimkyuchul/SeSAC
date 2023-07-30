@@ -38,6 +38,8 @@
 		5A1C487B2A7409DF00CC345A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1C487A2A7409DF00CC345A /* Kingfisher */; };
 		5A1C487F2A740DF500CC345A /* Movie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C487E2A740DF500CC345A /* Movie.plist */; };
 		5A1C48812A740E4F00CC345A /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48802A740E4F00CC345A /* Bundle+.swift */; };
+		5A1C48832A7661D700CC345A /* URLComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48822A7661D700CC345A /* URLComponent.swift */; };
+		5A1C48852A7663F600CC345A /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48842A7663F600CC345A /* MovieViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		5A1C48772A7400B400CC345A /* URLSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionService.swift; sourceTree = "<group>"; };
 		5A1C487E2A740DF500CC345A /* Movie.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Movie.plist; sourceTree = "<group>"; };
 		5A1C48802A740E4F00CC345A /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
+		5A1C48822A7661D700CC345A /* URLComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponent.swift; sourceTree = "<group>"; };
+		5A1C48842A7663F600CC345A /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +291,7 @@
 			children = (
 				5A1C486D2A73ED3700CC345A /* Cell */,
 				5A1C48642A73E09E00CC345A /* MovieViewController.swift */,
+				5A1C48842A7663F600CC345A /* MovieViewModel.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1C48752A74006400CC345A /* BaseURLConstant.swift */,
+				5A1C48822A7661D700CC345A /* URLComponent.swift */,
 				5A1C48772A7400B400CC345A /* URLSessionService.swift */,
 			);
 			path = Common;
@@ -430,11 +436,13 @@
 				5A1C48382A7274AA00CC345A /* SettingType.swift in Sources */,
 				5A1C48732A73FF3A00CC345A /* Movie.swift in Sources */,
 				5A1C48422A728A1500CC345A /* UserDefault.swift in Sources */,
+				5A1C48832A7661D700CC345A /* URLComponent.swift in Sources */,
 				5A1C485E2A738A1200CC345A /* ToDoInfo.swift in Sources */,
 				5A1C48572A73527800CC345A /* CustomTableViewCell.swift in Sources */,
 				5A1C48762A74006400CC345A /* BaseURLConstant.swift in Sources */,
 				5A1C48322A72496400CC345A /* UIViewController+.swift in Sources */,
 				5A1C48812A740E4F00CC345A /* Bundle+.swift in Sources */,
+				5A1C48852A7663F600CC345A /* MovieViewModel.swift in Sources */,
 				5A1C47F82A72002300CC345A /* AppDelegate.swift in Sources */,
 				5A1C47FA2A72002300CC345A /* SceneDelegate.swift in Sources */,
 			);
