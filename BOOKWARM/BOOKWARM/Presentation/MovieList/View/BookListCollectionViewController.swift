@@ -90,6 +90,7 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
         vc.title = viewModel.movie[indexPath.row].title
+        vc.viewModel.movie = self.viewModel.movie[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 

@@ -23,6 +23,7 @@
 		5A1C49052A78122E00CC345A /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C49042A78122E00CC345A /* MovieListViewModel.swift */; };
 		5A1C49072A781A5900CC345A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C49062A781A5900CC345A /* SearchViewController.swift */; };
 		5A1C49092A781A6800CC345A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C49082A781A6800CC345A /* DetailViewController.swift */; };
+		5A1C490D2A790AC400CC345A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C490C2A790AC300CC345A /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		5A1C49042A78122E00CC345A /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		5A1C49062A781A5900CC345A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5A1C49082A781A6800CC345A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5A1C490C2A790AC300CC345A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1C49082A781A6800CC345A /* DetailViewController.swift */,
+				5A1C490C2A790AC300CC345A /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				5A1C48F22A77F73800CC345A /* BaseCollectionViewController.swift in Sources */,
 				5A1C48FA2A77F9DF00CC345A /* UIImage+.swift in Sources */,
 				5A1C48FD2A77FA8E00CC345A /* BookCollectionViewCell.swift in Sources */,
+				5A1C490D2A790AC400CC345A /* DetailViewModel.swift in Sources */,
 				5A1C48D12A77F1EA00CC345A /* SceneDelegate.swift in Sources */,
 				5A1C48E32A77F4C900CC345A /* BookListCollectionViewController.swift in Sources */,
 				5A1C49052A78122E00CC345A /* MovieListViewModel.swift in Sources */,
