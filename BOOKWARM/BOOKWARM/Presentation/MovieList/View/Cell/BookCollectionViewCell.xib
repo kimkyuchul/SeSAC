@@ -32,6 +32,11 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JrC-UL-h3z" userLabel="poster Image View">
                         <rect key="frame" x="60.333333333333336" y="39" width="72.666666666666657" height="91"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EP-A4-dve">
+                        <rect key="frame" x="3.6666666666666679" y="47.666666666666657" width="51" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="scribble.variable" catalog="system"/>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -42,12 +47,15 @@
                 <constraint firstItem="wSb-d6-faG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="Twy-OD-96H"/>
                 <constraint firstItem="JrC-UL-h3z" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.5" id="clQ-Ae-SU7"/>
                 <constraint firstItem="JrC-UL-h3z" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.7" id="dGo-TY-0Fa"/>
+                <constraint firstItem="2EP-A4-dve" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="0.4:1" id="hzL-mM-mLy"/>
+                <constraint firstItem="2EP-A4-dve" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lUd-V0-ibi"/>
                 <constraint firstAttribute="trailing" secondItem="z8n-vH-oRS" secondAttribute="trailing" constant="8" id="mLQ-jU-u9R"/>
                 <constraint firstItem="JrC-UL-h3z" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="1:0.75" id="tGZ-Aq-SoX"/>
                 <constraint firstItem="z8n-vH-oRS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="tHj-SG-tTn"/>
             </constraints>
             <size key="customSize" width="145" height="130"/>
             <connections>
+                <outlet property="likeButton" destination="2EP-A4-dve" id="wnI-3g-LaC"/>
                 <outlet property="posterImageView" destination="JrC-UL-h3z" id="jui-8P-gG1"/>
                 <outlet property="ratingTitle" destination="wSb-d6-faG" id="u2T-np-MQp"/>
                 <outlet property="titleLabel" destination="z8n-vH-oRS" id="exY-ZQ-Gie"/>
@@ -55,4 +63,7 @@
             <point key="canvasLocation" x="196.18320610687022" y="57.74647887323944"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="scribble.variable" catalog="system" width="128" height="119"/>
+    </resources>
 </document>

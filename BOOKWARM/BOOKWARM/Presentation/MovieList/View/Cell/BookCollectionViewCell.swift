@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias ButtonAction = () -> Void
+
 final class BookCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "BookCollectionViewCell"
@@ -14,6 +16,9 @@ final class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingTitle: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
+    
+    var likeButtonAction: ButtonAction?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +34,7 @@ final class BookCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setLayout()
+        setButtonAction()
     }
     
     private func setLayout() {
@@ -36,6 +42,18 @@ final class BookCollectionViewCell: UICollectionViewCell {
         ratingTitle.font = .systemFont(ofSize: 14)
 
         posterImageView.contentMode = .scaleAspectFit
+        
+        likeButton.setImage(UIImage.likeButtonImage, for: .normal)
+        likeButton.tintColor = UIColor.yellow
+    }
+    
+    private func setButtonAction() {
+        
+        let likeAction = UIAction { [weak self] _ in
+            self?.likeButtonAction?()
+        }
+        
+        likeButton.addAction(likeAction, for: .touchUpInside)
     }
 
 }
@@ -45,5 +63,11 @@ extension BookCollectionViewCell {
         titleLabel.text = row.title
         ratingTitle.text = String(row.rate)
         posterImageView.image = UIImage(named: "\(row.title)")
+        
+        if row.like {
+            likeButton.setImage(UIImage.likeButtonTappedImage, for: .normal)
+        } else {
+            likeButton.setImage(UIImage.likeButtonImage, for: .normal)
+        }
     }
 }

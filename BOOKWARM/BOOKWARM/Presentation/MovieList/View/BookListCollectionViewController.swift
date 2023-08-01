@@ -76,6 +76,13 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     
         let row = self.viewModel.movie[indexPath.row]
         
+        cell.likeButtonAction = { [weak self] in
+            self?.viewModel.likeButtonTapped(indexPath: indexPath)
+            DispatchQueue.main.async {
+                collectionView.reloadItems(at: [indexPath])
+            }
+        }
+        
         cell.configureCell(row: row)
         return cell
     }

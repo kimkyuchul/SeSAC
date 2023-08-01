@@ -12,6 +12,7 @@ protocol Input: AnyObject {
 }
 protocol Output: AnyObject {
     func getMovieList()
+    func likeButtonTapped(indexPath: IndexPath)
 }
 
 class MovieListViewModel: Input, Output {
@@ -21,6 +22,10 @@ class MovieListViewModel: Input, Output {
     
     func viewDidLoad() {
         getMovieList()
+    }
+    
+    func likeButtonTapped(indexPath: IndexPath) {
+        self.movie[indexPath.row].like.toggle()
     }
 }
 
