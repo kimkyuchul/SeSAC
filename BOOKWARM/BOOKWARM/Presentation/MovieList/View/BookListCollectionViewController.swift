@@ -24,7 +24,11 @@ final class BookListCollectionViewController: BaseCollectionViewController {
         super.viewDidLoad()
         self.title = "김규철의 책장"
         bind()
-        viewModel.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
     }
     
     override func setCollectionView() {

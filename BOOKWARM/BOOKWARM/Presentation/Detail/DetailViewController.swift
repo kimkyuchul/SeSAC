@@ -23,9 +23,7 @@ final class DetailViewController: UIViewController {
             super.init(coder: coder)
             viewModel = DetailViewModel()
         }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBlue

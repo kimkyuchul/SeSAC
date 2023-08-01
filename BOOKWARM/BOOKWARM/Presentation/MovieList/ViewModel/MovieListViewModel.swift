@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Input: AnyObject {
-    func viewDidLoad()
+    func viewWillAppear()
 }
 protocol Output: AnyObject {
     func getMovieList()
@@ -20,7 +20,7 @@ class MovieListViewModel: Input, Output {
     var movie = [Movie]()
     var getMovieObservar: (() -> Void)?
     
-    func viewDidLoad() {
+    func viewWillAppear() {
         getMovieList()
     }
     
