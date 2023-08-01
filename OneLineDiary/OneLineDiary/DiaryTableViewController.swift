@@ -41,7 +41,7 @@ class DiaryTableViewController: UITableViewController {
         //1. 스토리보드 파일 찾기
         let sb = UIStoryboard(name: "Main", bundle: nil)
         //2. 스토리보드 파일 내 뷰컨트롤러 찾기
-        let VC = sb.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
+        let VC = storyboard?.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
         VC.title = "aaaas"
         //2-1 옵션 : 네비게이션 컨트롤러가 있는 형태로 present
         // nav를 사용한다먄, presnt와 모달 방식도 nav로 설정
