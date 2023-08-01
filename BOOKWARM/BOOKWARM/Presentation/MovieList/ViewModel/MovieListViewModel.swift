@@ -16,7 +16,7 @@ protocol Output: AnyObject {
 
 class MovieListViewModel: Input, Output {
     
-    var movie: [Movie]?
+    var movie = [Movie]()
     var getMovieObservar: (() -> Void)?
     
     func viewDidLoad() {

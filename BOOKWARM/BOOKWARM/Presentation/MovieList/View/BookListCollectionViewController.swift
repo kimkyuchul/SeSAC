@@ -15,8 +15,6 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     
     private var viewModel: MovieListViewModel!
         
-    private var movieList: [Movie] = []
-        
         required init?(coder: NSCoder) {
             super.init(coder: coder)
             viewModel = MovieListViewModel()
@@ -62,19 +60,21 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     private func bind() {
            viewModel.getMovieObservar = { [weak self] in
                guard let self = self else { return }
-               self.movieList = self.viewModel.movie ?? self.movieList
+               DispatchQueue.main.async {
+                   self.collectionView.reloadData()
+               }
            }
        }
 
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.movieList.count
+        return self.viewModel.movie.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
     
-        let row = self.movieList[indexPath.row]
+        let row = self.viewModel.movie[indexPath.row]
         
         cell.configureCell(row: row)
         return cell
@@ -82,7 +82,7 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
-        vc.title = movieList[indexPath.row].title
+        vc.title = viewModel.movie[indexPath.row].title
         navigationController?.pushViewController(vc, animated: true)
     }
 
