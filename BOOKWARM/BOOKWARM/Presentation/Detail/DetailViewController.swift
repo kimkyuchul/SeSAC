@@ -35,6 +35,29 @@ final class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
+        backbuttonHidden()
+    }
+    
+    @objc
+    func dismissAction() {
+        dismiss(animated: true)
+    }
+    
+    private func setDismissButton() {
+        let xButton = UIBarButtonItem(
+            image: UIImage.xImage,
+            style: .plain,
+            target: self,
+            action: #selector(dismissAction)
+        )
+        
+        navigationItem.leftBarButtonItem = xButton
+    }
+    
+    private func backbuttonHidden() {
+        if viewModel.backButtonHidden {
+            self.setDismissButton()
+        }
     }
     
     private func bind() {

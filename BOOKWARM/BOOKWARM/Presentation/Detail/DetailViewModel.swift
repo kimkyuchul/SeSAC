@@ -19,6 +19,8 @@ class DetailViewModel: DetailInput, DetailOutput {
     var movie: Movie?
     var binding: (() -> Void)?
     
+    var backButtonHidden = false
+    
     func viewWillAppear() {
         binding?()
     }
