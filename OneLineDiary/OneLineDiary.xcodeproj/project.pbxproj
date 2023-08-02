@@ -22,6 +22,7 @@
 		5A1C48C02A777AD700CC345A /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48BE2A777AD700CC345A /* SearchCollectionViewCell.swift */; };
 		5A1C48C12A777AD700CC345A /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C48BF2A777AD700CC345A /* SearchCollectionViewCell.xib */; };
 		5A1C490B2A789B5200CC345A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C490A2A789B5200CC345A /* SettingTableViewController.swift */; };
+		5A1C49132A79F22E00CC345A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C49122A79F22E00CC345A /* TimelineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5A1C48BE2A777AD700CC345A /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		5A1C48BF2A777AD700CC345A /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		5A1C490A2A789B5200CC345A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		5A1C49122A79F22E00CC345A /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				5A1C48A02A773A7A00CC345A /* AddViewController.swift */,
 				5A1C48B02A773AD600CC345A /* DiaryTableViewController.swift */,
 				5A1C48A22A773A7A00CC345A /* Main.storyboard */,
+				5A1C49122A79F22E00CC345A /* TimelineViewController.swift */,
 				5A1C490A2A789B5200CC345A /* SettingTableViewController.swift */,
 				5A1C48BE2A777AD700CC345A /* SearchCollectionViewCell.swift */,
 				5A1C48BF2A777AD700CC345A /* SearchCollectionViewCell.xib */,
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1C48BD2A77795D00CC345A /* SearchCollectionViewController.swift in Sources */,
+				5A1C49132A79F22E00CC345A /* TimelineViewController.swift in Sources */,
 				5A1C48B62A773BB600CC345A /* DiaryTableViewCell.swift in Sources */,
 				5A1C48A12A773A7A00CC345A /* AddViewController.swift in Sources */,
 				5A1C48B12A773AD600CC345A /* DiaryTableViewController.swift in Sources */,
