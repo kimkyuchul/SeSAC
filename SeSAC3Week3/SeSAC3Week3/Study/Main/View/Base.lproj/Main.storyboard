@@ -179,14 +179,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" editingAccessoryType="detailDisclosureButton" id="oMp-lj-izL">
-                                        <rect key="frame" x="20" y="349.33333396911621" width="353" height="43.333332061767578"/>
+                                        <rect key="frame" x="20" y="349.33333396911621" width="353" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oMp-lj-izL" id="aNu-eq-kn5">
-                                            <rect key="frame" x="0.0" y="0.0" width="309" height="43.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="309" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8m-W7-d1F">
-                                                    <rect key="frame" x="70" y="5" width="75" height="34.666666666666664"/>
+                                                    <rect key="frame" x="70" y="5" width="75" height="35.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                                 </button>
@@ -200,7 +200,7 @@
                                         <color key="backgroundColor" red="0.86078917980000003" green="0.12116840869999999" blue="0.1098397007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" editingAccessoryType="detailDisclosureButton" textLabel="cKS-ez-Lhb" detailTextLabel="7nY-VD-wkA" imageView="PwV-0a-bEs" style="IBUITableViewCellStyleValue1" id="hBI-Jq-0EC">
-                                        <rect key="frame" x="20" y="392.66666603088379" width="353" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="393.33333396911621" width="353" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hBI-Jq-0EC" id="2Yq-j3-CuQ">
                                             <rect key="frame" x="0.0" y="0.0" width="309" height="43.666667938232422"/>
@@ -459,6 +459,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cp-iC-0cR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4470.9923664122134" y="3.5211267605633805"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="2Im-OQ-brB">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="jZa-hz-UX2" customClass="DetailViewController" customModule="SeSAC3Week3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wE6-8J-Vub">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xkp-17-exP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h22-4N-Pdz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5237" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l2Z-Ul-qO2">

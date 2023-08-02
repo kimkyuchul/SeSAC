@@ -40,6 +40,7 @@
 		5A1C48812A740E4F00CC345A /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48802A740E4F00CC345A /* Bundle+.swift */; };
 		5A1C48832A7661D700CC345A /* URLComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48822A7661D700CC345A /* URLComponent.swift */; };
 		5A1C48852A7663F600CC345A /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C48842A7663F600CC345A /* MovieViewModel.swift */; };
+		5A1C49112A79E7B900CC345A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C49102A79E7B900CC345A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		5A1C48802A740E4F00CC345A /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		5A1C48822A7661D700CC345A /* URLComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponent.swift; sourceTree = "<group>"; };
 		5A1C48842A7663F600CC345A /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		5A1C49102A79E7B900CC345A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				5A1C480B2A720FED00CC345A /* TodoTableViewController.swift */,
 				5A1C482D2A7232D000CC345A /* DoitTableViewController.swift */,
 				5A1C48532A7350AB00CC345A /* CutsomTableViewController.swift */,
+				5A1C49102A79E7B900CC345A /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				5A1C483C2A7279E100CC345A /* ShoppingViewController.swift in Sources */,
 				5A1C486C2A73E9B300CC345A /* BaseViewController.swift in Sources */,
 				5A1C47FC2A72002300CC345A /* ViewController.swift in Sources */,
+				5A1C49112A79E7B900CC345A /* DetailViewController.swift in Sources */,
 				5A1C480C2A720FED00CC345A /* TodoTableViewController.swift in Sources */,
 				5A1C485B2A7389D200CC345A /* ToDo.swift in Sources */,
 				5A1C48402A72853300CC345A /* ShoppingTableViewCell.swift in Sources */,

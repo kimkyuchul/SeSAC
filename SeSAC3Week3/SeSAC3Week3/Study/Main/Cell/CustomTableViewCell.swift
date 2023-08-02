@@ -18,6 +18,13 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        mainTitleLabel.font = .boldSystemFont(ofSize: 17)
+        mainTitleLabel.textColor = .brown
+    }
+    
     func configureCell(todo: ToDo) {
         mainTitleLabel.text = todo.main
         subTitleLabel.text = todo.sub

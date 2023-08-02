@@ -72,6 +72,11 @@ final class CutsomTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(indexPath)")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vc.data = todo.list[indexPath.row]
+        present(vc, animated: true)
+        
+        tableView.reloadSectionIndexTitles()
     }
     
     
