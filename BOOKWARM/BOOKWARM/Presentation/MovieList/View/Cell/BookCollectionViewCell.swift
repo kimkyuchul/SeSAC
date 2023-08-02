@@ -26,7 +26,6 @@ final class BookCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.backgroundColor = UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1.0)
         self.layer.cornerRadius = Metric.inset
         self.clipsToBounds = true
     }
@@ -38,6 +37,8 @@ final class BookCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
+        self.backgroundColor = UIColor.random
+        
         titleLabel.font = .systemFont(ofSize: 20)
         ratingTitle.font = .systemFont(ofSize: 14)
 

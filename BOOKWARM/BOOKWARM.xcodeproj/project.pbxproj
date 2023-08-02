@@ -24,6 +24,7 @@
 		5A1C49072A781A5900CC345A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C49062A781A5900CC345A /* SearchViewController.swift */; };
 		5A1C49092A781A6800CC345A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C49082A781A6800CC345A /* DetailViewController.swift */; };
 		5A1C490D2A790AC400CC345A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C490C2A790AC300CC345A /* DetailViewModel.swift */; };
+		5A1C490F2A79E52600CC345A /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C490E2A79E52600CC345A /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5A1C49062A781A5900CC345A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5A1C49082A781A6800CC345A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5A1C490C2A790AC300CC345A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		5A1C490E2A79E52600CC345A /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				5A1C48F62A77F99500CC345A /* Array+.swift */,
 				5A1C48F92A77F9DE00CC345A /* UIImage+.swift */,
 				5A1C48FF2A7804B700CC345A /* UIView+.swift */,
+				5A1C490E2A79E52600CC345A /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				5A1C48D12A77F1EA00CC345A /* SceneDelegate.swift in Sources */,
 				5A1C48E32A77F4C900CC345A /* BookListCollectionViewController.swift in Sources */,
 				5A1C49052A78122E00CC345A /* MovieListViewModel.swift in Sources */,
+				5A1C490F2A79E52600CC345A /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,6 +96,8 @@ final class BookListCollectionViewController: BaseCollectionViewController {
         vc.title = viewModel.movie[indexPath.row].title
         vc.viewModel.movie = self.viewModel.movie[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 
 }
