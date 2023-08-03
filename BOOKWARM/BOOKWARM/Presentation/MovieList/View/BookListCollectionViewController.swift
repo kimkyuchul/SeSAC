@@ -118,7 +118,6 @@ extension BookListCollectionViewController: UISearchBarDelegate {
         viewModel.isFiltering = true
         
         if let text = searchBar.text {
-            print(viewModel.searchData)
             viewModel.searchText(text: text)
         }
         
@@ -129,7 +128,6 @@ extension BookListCollectionViewController: UISearchBarDelegate {
         viewModel.isFiltering = true
         
         if let text = searchBar.text {
-            print(viewModel.searchData)
             viewModel.searchText(text: text)
         }
         

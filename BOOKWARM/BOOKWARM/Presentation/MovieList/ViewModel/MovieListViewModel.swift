@@ -38,18 +38,16 @@ class MovieListViewModel: MovieListInput, MovieListOutput {
     
     /// likeButton 선택 시
     func likeButtonTapped(indexPath: IndexPath) {
-        self.movie[indexPath.row].like.toggle()
+        if self.isFiltering {
+            self.searchList[indexPath.row].like.toggle()
+        } else {
+            self.movie[indexPath.row].like.toggle()
+        }
     }
     
     /// 검색
     func searchText(text: String) {
-        searchList.removeAll()
-        
-        for item in movie {
-            if item.title.contains(text) {
-                searchList.append(item)
-            }
-        }
+        searchList = text.isEmpty ? movie : movie.filter { $0.title.contains(text) }
     }
 }
 
