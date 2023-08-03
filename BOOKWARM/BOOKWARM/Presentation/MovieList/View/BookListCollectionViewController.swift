@@ -13,6 +13,8 @@ enum Metric {
 
 final class BookListCollectionViewController: BaseCollectionViewController {
     
+    private let searchBar = UISearchBar()
+    
     private var viewModel: MovieListViewModel!
         
         required init?(coder: NSCoder) {
@@ -24,6 +26,7 @@ final class BookListCollectionViewController: BaseCollectionViewController {
         super.viewDidLoad()
         self.title = "김규철의 책장"
         bind()
+        searchBar.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +54,10 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     override func setLayout() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.searchButtonImage, style: .done, target: self, action: #selector(searchBarButtonTapped))
         navigationItem.leftBarButtonItem?.tintColor = .black
+        
+        navigationItem.titleView = searchBar
+        searchBar.placeholder = "검색어를 입력"
+        searchBar.showsCancelButton = true
     }
     
     @objc func searchBarButtonTapped(_ sender: UIBarButtonItem) {
@@ -62,23 +69,27 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     }
     
     private func bind() {
-           viewModel.getMovieObservar = { [weak self] in
-               guard let self = self else { return }
-               DispatchQueue.main.async {
-                   self.collectionView.reloadData()
-               }
-           }
-       }
+        viewModel.getMovieObservar = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
 
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.movie.count
+        return self.viewModel.isFiltering ? self.viewModel.searchList.count : self.viewModel.movie.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
     
-        let row = self.viewModel.movie[indexPath.row]
+        var row = self.viewModel.movie[indexPath.row]
+        
+        if viewModel.isFiltering {
+            row = self.viewModel.searchList[indexPath.row]
+        }
         
         cell.likeButtonAction = { [weak self] in
             self?.viewModel.likeButtonTapped(indexPath: indexPath)
@@ -99,5 +110,35 @@ final class BookListCollectionViewController: BaseCollectionViewController {
         
         collectionView.deselectItem(at: indexPath, animated: true)
     }
+}
 
+extension BookListCollectionViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.isFiltering = true
+        
+        if let text = searchBar.text {
+            print(viewModel.searchData)
+            viewModel.searchText(text: text)
+        }
+        
+        self.collectionView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.isFiltering = true
+        
+        if let text = searchBar.text {
+            print(viewModel.searchData)
+            viewModel.searchText(text: text)
+        }
+        
+        self.collectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.isFiltering = false
+        
+        self.collectionView.reloadData()
+    }
 }
