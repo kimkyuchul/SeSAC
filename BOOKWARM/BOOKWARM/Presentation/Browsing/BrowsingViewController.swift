@@ -18,7 +18,7 @@ final class BrowsingViewController: UIViewController {
         let label = UILabel()
         label.text = "최근 본 작품"
         label.textColor = .black
-        label.font = .systemFont(ofSize: 17)
+        label.font = .boldSystemFont(ofSize: 17)
         label.textAlignment = .left
         return label
     }()
@@ -95,7 +95,7 @@ final class BrowsingViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 5),
-            titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 5)
+            titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16)
         ])
         
         NSLayoutConstraint.activate([
@@ -106,13 +106,13 @@ final class BrowsingViewController: UIViewController {
         ])
     }
     
-    private func prsentDetailView(index: Int) {
+    private func prsentDetailView(index: Int, type: TransitionType) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         let nav = UINavigationController(rootViewController: vc)
         vc.title = viewModel.movie[index].title
         vc.viewModel.movie = self.viewModel.movie[index]
-        vc.viewModel.backButtonHidden = true
+        vc.viewModel.navigation = type
         nav.modalPresentationStyle = .fullScreen
         
         present(nav, animated: true)
@@ -120,13 +120,11 @@ final class BrowsingViewController: UIViewController {
 }
 
 extension BrowsingViewController: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.movie.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BrowsingTableViewCell.identifier, for: indexPath) as? BrowsingTableViewCell else { return UITableViewCell() }
         
         let row = self.viewModel.movie[indexPath.row]
@@ -139,8 +137,15 @@ extension BrowsingViewController: UITableViewDataSource, UITableViewDelegate {
         return "인기있는 작품"
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.font = .boldSystemFont(ofSize: 17)
+        header.textLabel?.textColor = .black
+        header.textLabel?.sizeToFit()
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        prsentDetailView(index: indexPath.row)
+        prsentDetailView(index: indexPath.row, type: .edit)
     }
 }
 
@@ -159,6 +164,6 @@ extension BrowsingViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        prsentDetailView(index: indexPath.item)
+        prsentDetailView(index: indexPath.item, type: .edit)
     }
 }

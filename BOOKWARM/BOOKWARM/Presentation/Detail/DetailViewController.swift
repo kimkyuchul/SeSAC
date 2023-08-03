@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 final class DetailViewController: UIViewController {
     
      var viewModel: DetailViewModel!
@@ -35,29 +33,12 @@ final class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
-        backbuttonHidden()
+        setNavigation()
     }
     
     @objc
     func dismissAction() {
         dismiss(animated: true)
-    }
-    
-    private func setDismissButton() {
-        let xButton = UIBarButtonItem(
-            image: UIImage.xImage,
-            style: .plain,
-            target: self,
-            action: #selector(dismissAction)
-        )
-        
-        navigationItem.leftBarButtonItem = xButton
-    }
-    
-    private func backbuttonHidden() {
-        if viewModel.backButtonHidden {
-            self.setDismissButton()
-        }
     }
     
     private func bind() {
@@ -73,7 +54,26 @@ final class DetailViewController: UIViewController {
             self?.setlikeButton(data.like)
         }
     }
+        
+    private func setNavigation() {
+        switch viewModel.navigation {
+        case .add: break
+        case .edit:
+            setDismissButton()
+        }
+    }
     
+    private func setDismissButton() {
+        let xButton = UIBarButtonItem(
+            image: UIImage.xImage,
+            style: .plain,
+            target: self,
+            action: #selector(dismissAction)
+        )
+        
+        navigationItem.leftBarButtonItem = xButton
+    }
+        
     private func setLayout() {
         detailBackView.backgroundColor = .white
         

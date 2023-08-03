@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum TransitionType {
+    case add
+    case edit
+}
+
 protocol DetailInput: AnyObject {
     func viewWillAppear()
 }
@@ -19,7 +24,7 @@ class DetailViewModel: DetailInput, DetailOutput {
     var movie: Movie?
     var binding: (() -> Void)?
     
-    var backButtonHidden = false
+    var navigation: TransitionType = .add
     
     func viewWillAppear() {
         binding?()
