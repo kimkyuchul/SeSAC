@@ -42,7 +42,7 @@ class DiaryTableViewController: UITableViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         //2. 스토리보드 파일 내 뷰컨트롤러 찾기
         let VC = storyboard?.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
-        VC.title = "aaaas"
+        VC.type = .add
         //2-1 옵션 : 네비게이션 컨트롤러가 있는 형태로 present
         // nav를 사용한다먄, presnt와 모달 방식도 nav로 설정
         let nav = UINavigationController(rootViewController: VC)
@@ -80,13 +80,17 @@ class DiaryTableViewController: UITableViewController {
         //1. 스토리보드 파일 찾기
         let sb = UIStoryboard(name: "Main", bundle: nil)
         //2. 스토리보드 파일 내 뷰컨트롤러 찾기
-        let VC = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        let VC = sb.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
         //3. 화면 전환 방식 설정
         VC.modalTransitionStyle = .crossDissolve // 모달 애니메이션
         VC.modalPresentationStyle = .fullScreen // 모달 방식
         
-        VC.contents = list[indexPath.row]
-        VC.title = list[indexPath.row]
+//        VC.contents = list[indexPath.row]
+//        VC.title = list[indexPath.row]
+        VC.type = .edit
+        VC.data = list[indexPath.row]
+//        아웃렛에 바로 값을 전달할 수 없음 -> 코드로 하면 가능
+//        VC.diaryTextview.text = list[indexPath.row]
         VC.backColor(.magenta)
         //4. 화면 띄우기
         self.navigationController?.pushViewController(VC, animated: true)
