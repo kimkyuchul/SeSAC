@@ -24,6 +24,8 @@ class DetailViewModel: DetailInput, DetailOutput {
     var movie: Movie?
     var binding: (() -> Void)?
     
+    var textCount: Int?
+    
     var navigation: TransitionType = .add
     
     func viewWillAppear() {

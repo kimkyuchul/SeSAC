@@ -84,14 +84,44 @@
                                             <constraint firstAttribute="height" constant="2" id="ElQ-GB-egm"/>
                                         </constraints>
                                     </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bco-cb-2Nx">
+                                        <rect key="frame" x="8" y="57" width="377" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Uvf-sU-RhJ"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVn-mi-kbQ">
+                                        <rect key="frame" x="8" y="217" width="377" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q0f-CU-fAW">
+                                        <rect key="frame" x="8" y="283" width="377" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstItem="wru-iq-J8P" firstAttribute="leading" secondItem="sUZ-8Q-e3n" secondAttribute="leading" constant="16" id="5rs-MF-llG"/>
+                                    <constraint firstItem="q0f-CU-fAW" firstAttribute="trailing" secondItem="bco-cb-2Nx" secondAttribute="trailing" id="CQf-CL-1Nw"/>
                                     <constraint firstAttribute="trailing" secondItem="2hA-5k-ivQ" secondAttribute="trailing" id="DgX-A8-iuH"/>
+                                    <constraint firstItem="mVn-mi-kbQ" firstAttribute="centerX" secondItem="sUZ-8Q-e3n" secondAttribute="centerX" id="IoP-wV-tfb"/>
+                                    <constraint firstItem="mVn-mi-kbQ" firstAttribute="leading" secondItem="bco-cb-2Nx" secondAttribute="leading" id="OBi-Vp-FRn"/>
                                     <constraint firstItem="2hA-5k-ivQ" firstAttribute="top" secondItem="wru-iq-J8P" secondAttribute="bottom" constant="10" id="Q3N-9B-gyN"/>
+                                    <constraint firstItem="q0f-CU-fAW" firstAttribute="leading" secondItem="bco-cb-2Nx" secondAttribute="leading" id="TVB-T4-yPY"/>
                                     <constraint firstItem="2hA-5k-ivQ" firstAttribute="leading" secondItem="sUZ-8Q-e3n" secondAttribute="leading" id="YKr-uN-wDS"/>
+                                    <constraint firstAttribute="trailing" secondItem="bco-cb-2Nx" secondAttribute="trailing" constant="8" id="Zsv-SZ-KH4"/>
+                                    <constraint firstItem="bco-cb-2Nx" firstAttribute="top" secondItem="2hA-5k-ivQ" secondAttribute="bottom" constant="16" id="a6w-3R-Gkl"/>
+                                    <constraint firstItem="mVn-mi-kbQ" firstAttribute="top" secondItem="bco-cb-2Nx" secondAttribute="bottom" constant="10" id="aN9-xP-Y5X"/>
+                                    <constraint firstItem="q0f-CU-fAW" firstAttribute="top" secondItem="mVn-mi-kbQ" secondAttribute="bottom" constant="45" id="fHL-TT-cou"/>
                                     <constraint firstAttribute="trailing" secondItem="wru-iq-J8P" secondAttribute="trailing" constant="8" id="pm7-ZA-Jo9"/>
+                                    <constraint firstItem="bco-cb-2Nx" firstAttribute="leading" secondItem="sUZ-8Q-e3n" secondAttribute="leading" constant="8" id="wKd-jh-cs4"/>
                                     <constraint firstItem="wru-iq-J8P" firstAttribute="top" secondItem="sUZ-8Q-e3n" secondAttribute="top" constant="8" id="wid-vh-yUG"/>
                                 </constraints>
                             </view>
@@ -137,8 +167,11 @@
                     <connections>
                         <outlet property="detailBackView" destination="sUZ-8Q-e3n" id="4SF-E6-MWl"/>
                         <outlet property="detailImageView" destination="skj-g8-WTT" id="vf3-Bo-JUp"/>
+                        <outlet property="detailTextField" destination="bco-cb-2Nx" id="A8m-a0-B28"/>
+                        <outlet property="detailTextViewCounterLabel" destination="mVn-mi-kbQ" id="4Z2-d5-2uU"/>
                         <outlet property="detailTitleLabel" destination="6kl-WT-5IY" id="kLm-ks-7bq"/>
                         <outlet property="likeButton" destination="Gqz-If-HyU" id="NoX-LH-LKs"/>
+                        <outlet property="myTextField" destination="q0f-CU-fAW" id="bwa-2H-L8U"/>
                         <outlet property="ratingLabel" destination="wru-iq-J8P" id="eDH-L1-QzD"/>
                     </connections>
                 </viewController>
@@ -235,6 +268,9 @@
     </scenes>
     <resources>
         <image name="trash.slash.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

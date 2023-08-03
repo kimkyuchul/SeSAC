@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: BaseViewController {
     
      var viewModel: DetailViewModel!
         
@@ -16,6 +16,9 @@ final class DetailViewController: UIViewController {
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var detailTextField: UITextView!
+    @IBOutlet weak var detailTextViewCounterLabel: UILabel!
+    @IBOutlet weak var myTextField: UITextField!
     
     required init?(coder: NSCoder) {
             super.init(coder: coder)
@@ -27,7 +30,6 @@ final class DetailViewController: UIViewController {
         self.view.backgroundColor = .systemBlue
         self.navigationController?.navigationBar.tintColor = UIColor.black
         bind()
-        setLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +54,9 @@ final class DetailViewController: UIViewController {
             }
             self?.ratingLabel.text = rateString
             self?.setlikeButton(data.like)
+            self?.detailTextField.text = data.overview
+            
+            self?.detailTextViewCounterLabel.text = "줄거리의 총 양은: \(data.overview.count)"
         }
     }
         
@@ -73,8 +78,14 @@ final class DetailViewController: UIViewController {
         
         navigationItem.leftBarButtonItem = xButton
     }
+    
+    override func setDelegate() {
+        detailTextField.delegate = self
+    }
         
-    private func setLayout() {
+    override func setLayout() {
+        super.setLayout()
+        
         detailBackView.backgroundColor = .white
         
         detailTitleLabel.textColor = .white
@@ -86,6 +97,9 @@ final class DetailViewController: UIViewController {
         ratingLabel.font = .italicSystemFont(ofSize: 14)
         
         likeButton.tintColor = .yellow
+        
+        myTextField.placeholder = Literal.commentplaceholder
+        
     }
     
     private func setlikeButton(_ bool: Bool) {
@@ -93,6 +107,33 @@ final class DetailViewController: UIViewController {
             likeButton.setImage(UIImage.likeButtonTappedImage, for: .normal)
         } else {
             likeButton.setImage(UIImage.likeButtonImage, for: .normal)
+        }
+    }
+}
+
+extension DetailViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        
+        self.detailTextViewCounterLabel.text = "줄거리의 총 양은: \(textView.text.count)"
+        
+        
+        if textView.text.isEmpty {
+            self.detailTextViewCounterLabel.text = "줄거리가 없습니다."
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == Literal.placeholder {
+            textView.text = nil
+            textView.textColor = .black
+        }
+        
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = Literal.placeholder
+            textView.textColor = .lightGray
         }
     }
 }
