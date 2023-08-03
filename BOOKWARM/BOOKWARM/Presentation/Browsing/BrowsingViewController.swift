@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class BrowsingViewController: UIViewController {
+final class BrowsingViewController: BaseViewController {
     
     @IBOutlet weak var PopulerTableView: UITableView!
         
@@ -56,6 +56,7 @@ final class BrowsingViewController: UIViewController {
         configureTableViewLayout()
         setHierarchy()
         setConstraints()
+        self.title = "둘러봐바"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,12 +85,12 @@ final class BrowsingViewController: UIViewController {
         PopulerTableView.backgroundColor = .darkGray
     }
     
-    private func setHierarchy() {
+    override func setHierarchy() {
         headerView.addSubview(titleLabel)
         headerView.addSubview(recentlyCollectionView)
     }
     
-    private func setConstraints() {
+    override func setConstraints() {
         recentlyCollectionView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -149,12 +150,12 @@ extension BrowsingViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension BrowsingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension BrowsingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.movie.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResentlyCollectionViewCell.identifier, for: indexPath) as? ResentlyCollectionViewCell else { return UICollectionViewCell() }
         
         let row = self.viewModel.movie[indexPath.row]
@@ -163,7 +164,7 @@ extension BrowsingViewController: UICollectionViewDelegate, UICollectionViewData
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         prsentDetailView(index: indexPath.item, type: .edit)
     }
 }
