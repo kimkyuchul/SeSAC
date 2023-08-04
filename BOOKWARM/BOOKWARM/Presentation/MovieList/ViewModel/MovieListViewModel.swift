@@ -39,7 +39,13 @@ class MovieListViewModel: MovieListInput, MovieListOutput {
     /// likeButton 선택 시
     func likeButtonTapped(indexPath: IndexPath) {
         if self.isFiltering {
-            self.searchList[indexPath.row].like.toggle()
+            var searchListindex = searchList[indexPath.row]
+            searchListindex.like.toggle()
+            
+            if let movieIndex = movie.firstIndex(where: { $0.title == searchListindex.title }) {
+                movie[movieIndex] = searchListindex
+                searchList[indexPath.row].like.toggle()
+            }
         } else {
             self.movie[indexPath.row].like.toggle()
         }
