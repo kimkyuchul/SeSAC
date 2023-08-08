@@ -52,9 +52,40 @@
                     <view key="view" contentMode="scaleToFill" id="a8I-du-usY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Txt-t4-2Ph">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tb3-g3-1CW">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6kO-QP-lOI">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="80M-4K-Khh">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TrE-gY-WhF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TrE-gY-WhF" firstAttribute="trailing" secondItem="Txt-t4-2Ph" secondAttribute="trailing" id="EQj-1P-r46"/>
+                            <constraint firstItem="TrE-gY-WhF" firstAttribute="bottom" secondItem="Txt-t4-2Ph" secondAttribute="bottom" id="Ijt-Az-dXu"/>
+                            <constraint firstItem="Txt-t4-2Ph" firstAttribute="leading" secondItem="TrE-gY-WhF" secondAttribute="leading" id="TBE-tX-jQh"/>
+                            <constraint firstItem="Txt-t4-2Ph" firstAttribute="top" secondItem="TrE-gY-WhF" secondAttribute="top" id="eJt-FK-hPw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchcollectionView" destination="Txt-t4-2Ph" id="r5y-Et-eJx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xh-eN-lci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,7 +176,7 @@
                                     <constraint firstAttribute="width" constant="70" id="oJl-sm-b7x"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="trash.slash.circle" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VzF-as-CIg"/>
@@ -234,6 +265,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="alh-0w-fRp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XAb-kZ-Fhy">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -267,7 +299,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="trash.slash.circle" catalog="system" width="128" height="123"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

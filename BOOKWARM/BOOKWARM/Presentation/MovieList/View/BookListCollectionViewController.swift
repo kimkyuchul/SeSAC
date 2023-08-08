@@ -16,12 +16,12 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     private let searchBar = UISearchBar()
     
     private var viewModel: MovieListViewModel!
-        
-        required init?(coder: NSCoder) {
-            super.init(coder: coder)
-            viewModel = MovieListViewModel()
-        }
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        viewModel = MovieListViewModel()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "김규철의 책장"
@@ -61,11 +61,19 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     }
     
     @objc func searchBarButtonTapped(_ sender: UIBarButtonItem) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SearchViewController")
+        
+        guard let queryData = searchBar.text, !queryData.isEmpty else {
+            print("에러")
+            return }
+        
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        vc.viewModel.query = queryData
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalTransitionStyle = .coverVertical
         nvc.modalPresentationStyle = .fullScreen
         present(nvc, animated: true)
+        
     }
     
     private func bind() {
@@ -76,15 +84,15 @@ final class BookListCollectionViewController: BaseCollectionViewController {
             }
         }
     }
-
+    
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewModel.isFiltering ? self.viewModel.searchList.count : self.viewModel.movie.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
-    
+        
         var row = self.viewModel.movie[indexPath.row]
         
         if viewModel.isFiltering {
