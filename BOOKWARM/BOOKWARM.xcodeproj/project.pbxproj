@@ -33,6 +33,8 @@
 		5A1C49252A7AC65500CC345A /* BrowsingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C49242A7AC65400CC345A /* BrowsingViewModel.swift */; };
 		5A1C49292A7B8C2E00CC345A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C49282A7B8C2E00CC345A /* BaseViewController.swift */; };
 		5A1C492C2A7BAA3F00CC345A /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C492B2A7BAA3F00CC345A /* Literal.swift */; };
+		5AE8548C2A829CB4004D9104 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5AE8548B2A829CB4004D9104 /* .gitignore */; };
+		5AE8548E2A829CCD004D9104 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8548D2A829CCD004D9104 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		5A1C49242A7AC65400CC345A /* BrowsingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsingViewModel.swift; sourceTree = "<group>"; };
 		5A1C49282A7B8C2E00CC345A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5A1C492B2A7BAA3F00CC345A /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
+		5AE8548B2A829CB4004D9104 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5AE8548D2A829CCD004D9104 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		5A1C48CD2A77F1EA00CC345A /* BOOKWARM */ = {
 			isa = PBXGroup;
 			children = (
+				5AE8548B2A829CB4004D9104 /* .gitignore */,
 				5A1C48DC2A77F1EE00CC345A /* Info.plist */,
 				5A1C48E52A77F51100CC345A /* Data */,
 				5A1C48F32A77F87C00CC345A /* Extension */,
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1C49012A7811A600CC345A /* Model */,
+				5AE8548D2A829CCD004D9104 /* APIKey.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -279,6 +285,9 @@
 			dependencies = (
 			);
 			name = BOOKWARM;
+			packageProductDependencies = (
+				5AE854862A829BC5004D9104 /* Alamofire */,
+				5AE854892A829BE3004D9104 /* SwiftyJSON */,
 			productName = BOOKWARM;
 			productReference = 5A1C48CB2A77F1EA00CC345A /* BOOKWARM.app */;
 			productType = "com.apple.product-type.application";
@@ -321,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE8548C2A829CB4004D9104 /* .gitignore in Resources */,
 				5A1C491B2A7A8B2500CC345A /* BrowsingTableViewCell.xib in Resources */,
 				5A1C48DB2A77F1EE00CC345A /* LaunchScreen.storyboard in Resources */,
 				5A1C48FE2A77FA8E00CC345A /* BookCollectionViewCell.xib in Resources */,
@@ -338,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1C49002A7804B700CC345A /* UIView+.swift in Sources */,
+				5AE8548E2A829CCD004D9104 /* APIKey.swift in Sources */,
 				5A1C49072A781A5900CC345A /* SearchViewController.swift in Sources */,
 				5A1C49162A7A84CA00CC345A /* BrowsingViewController.swift in Sources */,
 				5A1C48F72A77F99500CC345A /* Array+.swift in Sources */,
