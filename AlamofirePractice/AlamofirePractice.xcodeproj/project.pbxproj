@@ -17,6 +17,12 @@
 		5AE8545E2A80F5DF004D9104 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE8545D2A80F5DF004D9104 /* SwiftyJSON */; };
 		5AE854602A80F638004D9104 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8545F2A80F638004D9104 /* APIConstant.swift */; };
 		5AE854632A80F89F004D9104 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE854622A80F89F004D9104 /* Kingfisher */; };
+		5AE8546A2A8228D9004D9104 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854692A8228D9004D9104 /* NetworkService.swift */; };
+		5AE8546E2A822D7B004D9104 /* RandomBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8546D2A822D7B004D9104 /* RandomBeer.swift */; };
+		5AE854702A823BFE004D9104 /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8546F2A823BFE004D9104 /* BeerListViewController.swift */; };
+		5AE854732A823C69004D9104 /* BeerListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854712A823C69004D9104 /* BeerListCollectionViewCell.swift */; };
+		5AE854742A823C69004D9104 /* BeerListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE854722A823C69004D9104 /* BeerListCollectionViewCell.xib */; };
+		5AE854762A82412F004D9104 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854752A82412F004D9104 /* Beer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,12 @@
 		5AE854502A80EC27004D9104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AE854562A80EC70004D9104 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		5AE8545F2A80F638004D9104 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
+		5AE854692A8228D9004D9104 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5AE8546D2A822D7B004D9104 /* RandomBeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomBeer.swift; sourceTree = "<group>"; };
+		5AE8546F2A823BFE004D9104 /* BeerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewController.swift; sourceTree = "<group>"; };
+		5AE854712A823C69004D9104 /* BeerListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListCollectionViewCell.swift; sourceTree = "<group>"; };
+		5AE854722A823C69004D9104 /* BeerListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerListCollectionViewCell.xib; sourceTree = "<group>"; };
+		5AE854752A82412F004D9104 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +76,54 @@
 		5AE854412A80EC25004D9104 /* AlamofirePractice */ = {
 			isa = PBXGroup;
 			children = (
+				5AE8546B2A822D60004D9104 /* Data */,
+				5AE854772A824E5D004D9104 /* Screens */,
 				5AE854422A80EC25004D9104 /* AppDelegate.swift */,
 				5AE854442A80EC25004D9104 /* SceneDelegate.swift */,
-				5AE854562A80EC70004D9104 /* BeerViewController.swift */,
-				5AE8545F2A80F638004D9104 /* APIConstant.swift */,
-				5AE854482A80EC25004D9104 /* Main.storyboard */,
 				5AE8544B2A80EC27004D9104 /* Assets.xcassets */,
 				5AE8544D2A80EC27004D9104 /* LaunchScreen.storyboard */,
 				5AE854502A80EC27004D9104 /* Info.plist */,
 			);
 			path = AlamofirePractice;
+			sourceTree = "<group>";
+		};
+		5AE854682A8225DE004D9104 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5AE854692A8228D9004D9104 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5AE8546B2A822D60004D9104 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5AE8545F2A80F638004D9104 /* APIConstant.swift */,
+				5AE8546C2A822D6C004D9104 /* Model */,
+				5AE854682A8225DE004D9104 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5AE8546C2A822D6C004D9104 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AE8546D2A822D7B004D9104 /* RandomBeer.swift */,
+				5AE854752A82412F004D9104 /* Beer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5AE854772A824E5D004D9104 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5AE854482A80EC25004D9104 /* Main.storyboard */,
+				5AE854712A823C69004D9104 /* BeerListCollectionViewCell.swift */,
+				5AE854722A823C69004D9104 /* BeerListCollectionViewCell.xib */,
+				5AE854562A80EC70004D9104 /* BeerViewController.swift */,
+				5AE8546F2A823BFE004D9104 /* BeerListViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE854742A823C69004D9104 /* BeerListCollectionViewCell.xib in Resources */,
 				5AE8544F2A80EC27004D9104 /* LaunchScreen.storyboard in Resources */,
 				5AE8544C2A80EC27004D9104 /* Assets.xcassets in Resources */,
 				5AE8544A2A80EC25004D9104 /* Main.storyboard in Resources */,
@@ -157,10 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE854732A823C69004D9104 /* BeerListCollectionViewCell.swift in Sources */,
+				5AE854762A82412F004D9104 /* Beer.swift in Sources */,
+				5AE8546A2A8228D9004D9104 /* NetworkService.swift in Sources */,
 				5AE854602A80F638004D9104 /* APIConstant.swift in Sources */,
+				5AE854702A823BFE004D9104 /* BeerListViewController.swift in Sources */,
 				5AE854572A80EC70004D9104 /* BeerViewController.swift in Sources */,
 				5AE854432A80EC25004D9104 /* AppDelegate.swift in Sources */,
 				5AE854452A80EC25004D9104 /* SceneDelegate.swift in Sources */,
+				5AE8546E2A822D7B004D9104 /* RandomBeer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

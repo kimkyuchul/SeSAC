@@ -8,5 +8,6 @@
 import Foundation
 
 enum APIConstant {
-    static let baseURL = "https://api.punkapi.com/v2/beers/random"
+    static let baseURL = "https://api.punkapi.com/v2/beers"
+    static let randomURL = baseURL + "/random"
 }
