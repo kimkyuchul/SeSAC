@@ -18,11 +18,11 @@ class LottoViewController: UIViewController {
     @IBOutlet weak var bonusNumberLabel: UILabel!
     let pickerView = UIPickerView()
     
-    let list = [1079, 1078, 1077, 1076, 1075]
+//    let list = [1079, 1078, 1077, 1076, 1075]
     
     //    var list = Array(1...1100)
     // No exact matches in call to subscript -> list의 타입 어노테이션 설정
-    //    var list: [Int] = Array(1...1100).reversed()
+    var list: [Int] = Array(1...1079).reversed()
     //    var alist = Array(repeating: "A", count: 100)
     
     override func viewDidLoad() {
@@ -39,13 +39,23 @@ class LottoViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 let date = json["drwNoDate"].stringValue
-                let bounsNumber = json["bnusNo"].intValue
+                let bounsNumber = json["bnusNo"].stringValue
                 
+                var list:[String] = []
+                
+                for i in 1...6 {
+                    let number = json["drwtNo\(i)"].stringValue
+                    list.append(number)
+                }
+
+                list.append(bounsNumber)
+            
                 DispatchQueue.main.async {
                     self.datelabel.text = date
-                    self.bonusNumberLabel.text = "\(bounsNumber)"
+                    self.bonusNumberLabel.text = "\(list)"
                 }
                 
+                print(json)
                 print(date, bounsNumber)
                 print("JSON: \(json)")
             case .failure(let error):

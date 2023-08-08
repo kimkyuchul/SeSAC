@@ -291,22 +291,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fGA-lH-Sw7">
-                                <rect key="frame" x="40" y="106" width="305" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fGA-lH-Sw7">
+                                <rect key="frame" x="40" y="79" width="313" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnE-Ae-e6b">
-                                <rect key="frame" x="115" y="263" width="173" height="109"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnE-Ae-e6b">
+                                <rect key="frame" x="20" y="183.33333333333334" width="353" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw0-n0-FvD">
-                                <rect key="frame" x="130" y="173" width="133" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw0-n0-FvD">
+                                <rect key="frame" x="20" y="143" width="353" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -314,6 +311,17 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EGi-GN-H5H"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="Pw0-n0-FvD" firstAttribute="leading" secondItem="EGi-GN-H5H" secondAttribute="leading" constant="20" id="21l-GV-Qjs"/>
+                            <constraint firstItem="EGi-GN-H5H" firstAttribute="trailing" secondItem="fGA-lH-Sw7" secondAttribute="trailing" constant="40" id="EFt-FY-Jw2"/>
+                            <constraint firstItem="fGA-lH-Sw7" firstAttribute="leading" secondItem="EGi-GN-H5H" secondAttribute="leading" constant="40" id="EgF-wr-obG"/>
+                            <constraint firstItem="Pw0-n0-FvD" firstAttribute="top" secondItem="fGA-lH-Sw7" secondAttribute="bottom" constant="30" id="TcS-ni-wcZ"/>
+                            <constraint firstItem="qnE-Ae-e6b" firstAttribute="top" secondItem="Pw0-n0-FvD" secondAttribute="bottom" constant="20" id="VRh-AK-e0Z"/>
+                            <constraint firstItem="fGA-lH-Sw7" firstAttribute="top" secondItem="EGi-GN-H5H" secondAttribute="top" constant="20" id="asJ-27-a4o"/>
+                            <constraint firstItem="EGi-GN-H5H" firstAttribute="trailing" secondItem="qnE-Ae-e6b" secondAttribute="trailing" constant="20" id="da2-zN-9Ig"/>
+                            <constraint firstItem="EGi-GN-H5H" firstAttribute="trailing" secondItem="Pw0-n0-FvD" secondAttribute="trailing" constant="20" id="hWw-l6-1R0"/>
+                            <constraint firstItem="qnE-Ae-e6b" firstAttribute="leading" secondItem="EGi-GN-H5H" secondAttribute="leading" constant="20" id="mSK-f8-1t1"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bonusNumberLabel" destination="qnE-Ae-e6b" id="rAt-hB-6GX"/>
