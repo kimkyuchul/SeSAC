@@ -22,11 +22,18 @@ final class BeerListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
+        setNavgation()
+        self.view.backgroundColor = UIColor.tertiarySystemGroupedBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getBeerData()
+    }
+    
+    private func setNavgation() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Beer보단 Soju"
     }
     
     private func setCollectionView() {
@@ -44,6 +51,8 @@ final class BeerListViewController: UIViewController {
 //        let size: CGFloat = (UIScreen.main.bounds.width - (20 * 4))
         flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.width - 40)
         beerCollectionView.collectionViewLayout = flowLayout
+        
+        beerCollectionView.backgroundColor = UIColor.tertiarySystemGroupedBackground
     }
 }
 

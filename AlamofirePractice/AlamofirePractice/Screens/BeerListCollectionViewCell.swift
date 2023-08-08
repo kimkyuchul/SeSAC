@@ -19,7 +19,9 @@ final class BeerListCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setLayout()
-        self.backgroundColor = .brown
+        self.backgroundColor = .white
+        layer.cornerRadius = 20
+        clipsToBounds = true
     }
     private func setLayout() {
         beerImageView.contentMode = .scaleAspectFit
