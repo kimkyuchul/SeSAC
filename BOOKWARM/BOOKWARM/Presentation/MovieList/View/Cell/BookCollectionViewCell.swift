@@ -36,6 +36,10 @@ final class BookCollectionViewCell: UICollectionViewCell {
         setButtonAction()
     }
     
+    override func prepareForReuse() {
+        posterImageView.image = nil
+    }
+    
     private func setLayout() {
         self.backgroundColor = UIColor.green
         

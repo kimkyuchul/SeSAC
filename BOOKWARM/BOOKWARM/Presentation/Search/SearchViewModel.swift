@@ -24,11 +24,6 @@ protocol bookSearchOutput: AnyObject {
 
 class SearchViewModel: bookSearchInput, bookSearchOutput {
     
-//    enum viewState {
-//        case isAvailable
-//        case isLoding
-//    }
-    
     var query: String?
     var BookList: [Book] = []
     
