@@ -10,11 +10,27 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+struct Movie {
+    var title: String
+    var release: String
+}
+
+
+
 final class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var movieList: [Movie] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         callRequest()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .green
+        tableView.rowHeight = 61
+        
     }
 
     func callRequest() {
@@ -26,11 +42,47 @@ final class ViewController: UIViewController {
                 print("JSON: \(json)")
                 
                 let name = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
-                print(name, "====")
+                let name1 = json["boxOfficeResult"]["dailyBoxOfficeList"][1]["movieNm"].stringValue
+                let name2 = json["boxOfficeResult"]["dailyBoxOfficeList"][2]["movieNm"].stringValue
+                
+                print(name, name1, name2)
+                
+//                self.movieList.append(contentsOf: [name, name1, name2])
+                
+                
+                for item in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
+                    
+                    let movieNm = item["movieNm"].stringValue
+                    let openDt = item["openDt"].stringValue
+
+                    let data = Movie(title: movieNm, release: openDt)
+                    self.movieList.append(data)
+                }
+                
+                self.tableView.reloadData()
+                
+                
             case .failure(let error):
                 print(error)
             }
         }
     }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movieList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
+        
+        cell.textLabel?.text = movieList[indexPath.row].title
+        cell.detailTextLabel?.text =  movieList[indexPath.row].release
+        
+        return cell
+    }
+    
+    
 }
 
