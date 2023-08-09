@@ -21,6 +21,7 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.tertiarySystemGroupedBackground
         self.title = "찾기"
         setCollectionView()
         setLayout()
@@ -74,15 +75,26 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
         
-        var row = self.viewModel.BookList[indexPath.row]
+        let row = self.viewModel.BookList[indexPath.row]
         
-        cell.posterImageView.kf.setImage(with: URL(string: row.thumbnail))
-        cell.titleLabel.text = row.title
-        cell.ratingTitle.text = String(row.price)
-        
+        cell.configureBookCell(row: row)
+            
         return cell
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            
+        // 현재 보여지는 화면의 좌측상단, contentOffset.y(scroll view bounds origin y)
+        let offsetY = scrollView.contentOffset.y
+        // 화면에 보이지 않는 모든 collectionView 영역을 포함하는 size
+        let contentHeight = scrollView.contentSize.height
+        // 현재 collectionView의 height
+        let visibleHeight = scrollView.frame.height
+        
+        if offsetY > contentHeight - visibleHeight && !viewModel.isEnd {
+            viewModel.getBookData(page: viewModel.currentPage)
+        }
+    }
+
+    }
     
-    
-}

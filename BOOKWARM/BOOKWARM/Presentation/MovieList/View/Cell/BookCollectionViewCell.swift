@@ -37,7 +37,7 @@ final class BookCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        self.backgroundColor = UIColor.random
+        self.backgroundColor = UIColor.green
         
         titleLabel.font = .systemFont(ofSize: 20)
         ratingTitle.font = .systemFont(ofSize: 14)
@@ -70,5 +70,11 @@ extension BookCollectionViewCell {
         } else {
             likeButton.setImage(UIImage.likeButtonImage, for: .normal)
         }
+    }
+    
+    func configureBookCell(row: Book) {
+        titleLabel.text = row.title
+        ratingTitle.text = "\(row.price)"
+        posterImageView.setImage(urlString: row.thumbnail)
     }
 }
