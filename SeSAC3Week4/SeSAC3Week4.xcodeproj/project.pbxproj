@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5AC80C6D2A83230B00FE9D6C /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C6C2A83230B00FE9D6C /* VideoTableViewCell.swift */; };
+		5AC80C812A852B4D00FE9D6C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C802A852B4D00FE9D6C /* NetworkService.swift */; };
+		5AC80C832A852B9B00FE9D6C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C822A852B9B00FE9D6C /* NetworkError.swift */; };
+		5AC80C852A852BD200FE9D6C /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C842A852BD200FE9D6C /* URLConstant.swift */; };
 		5AE854122A80968A004D9104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854112A80968A004D9104 /* AppDelegate.swift */; };
 		5AE854142A80968A004D9104 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854132A80968A004D9104 /* SceneDelegate.swift */; };
 		5AE854162A80968A004D9104 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854152A80968A004D9104 /* ViewController.swift */; };
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		5AC80C6C2A83230B00FE9D6C /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		5AC80C802A852B4D00FE9D6C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5AC80C822A852B9B00FE9D6C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5AC80C842A852BD200FE9D6C /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
 		5AE8540E2A80968A004D9104 /* SeSAC3Week4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3Week4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE854112A80968A004D9104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AE854132A80968A004D9104 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,16 @@
 			name = KaKaoVideo;
 			sourceTree = "<group>";
 		};
+		5AC80C7F2A852B2F00FE9D6C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80C822A852B9B00FE9D6C /* NetworkError.swift */,
+				5AC80C802A852B4D00FE9D6C /* NetworkService.swift */,
+				5AC80C842A852BD200FE9D6C /* URLConstant.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		5AE854052A80968A004D9104 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				5AC80C7A2A84ECD100FE9D6C /* App */,
+				5AC80C7F2A852B2F00FE9D6C /* Network */,
 				5AC80C792A84ECC800FE9D6C /* Presentation */,
 				5AE8541A2A80968D004D9104 /* Assets.xcassets */,
 				5AE8541C2A80968D004D9104 /* LaunchScreen.storyboard */,
@@ -225,10 +242,13 @@
 				5AE854672A81E7BD004D9104 /* VideoViewController.swift in Sources */,
 				5AE854652A81C4E7004D9104 /* WeatherViewController.swift in Sources */,
 				5AE854162A80968A004D9104 /* ViewController.swift in Sources */,
+				5AC80C812A852B4D00FE9D6C /* NetworkService.swift in Sources */,
 				5AE854122A80968A004D9104 /* AppDelegate.swift in Sources */,
 				5AC80C6D2A83230B00FE9D6C /* VideoTableViewCell.swift in Sources */,
 				5AE854142A80968A004D9104 /* SceneDelegate.swift in Sources */,
+				5AC80C852A852BD200FE9D6C /* URLConstant.swift in Sources */,
 				5AE854332A809C5D004D9104 /* APIKey.swift in Sources */,
+				5AC80C832A852B9B00FE9D6C /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
