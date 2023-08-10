@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ukz-1k-Uzf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -57,6 +57,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="FTJ-uL-6yA">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,11 +69,15 @@
                             <constraint firstItem="TrD-yK-fZE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="J7z-mO-NGY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P5I-hT-W8W" secondAttribute="bottom" id="L5s-Un-4Nc"/>
                             <constraint firstItem="TrD-yK-fZE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PO9-TR-Kl4"/>
+                            <constraint firstItem="FTJ-uL-6yA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dLP-cH-ja0"/>
                             <constraint firstItem="P5I-hT-W8W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mkG-Yh-usI"/>
                             <constraint firstItem="P5I-hT-W8W" firstAttribute="top" secondItem="TrD-yK-fZE" secondAttribute="bottom" id="q2t-HM-gJP"/>
+                            <constraint firstItem="FTJ-uL-6yA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tAt-hc-ASp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityView" destination="FTJ-uL-6yA" id="jXv-ll-hHf"/>
+                        <outlet property="searchBar" destination="TrD-yK-fZE" id="cYc-zZ-vDC"/>
                         <outlet property="tableView" destination="P5I-hT-W8W" id="kdg-fI-h5Y"/>
                     </connections>
                 </viewController>
@@ -200,6 +207,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8Qp-FU-Luj">
+                                <rect key="frame" x="186.66666666666666" y="522.66666666666663" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yxu-iu-rHf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -210,10 +220,13 @@
                             <constraint firstItem="09V-7i-Amg" firstAttribute="leading" secondItem="Yxu-iu-rHf" secondAttribute="leading" id="MTJ-bq-Yae"/>
                             <constraint firstItem="09V-7i-Amg" firstAttribute="trailing" secondItem="Yxu-iu-rHf" secondAttribute="trailing" id="QZT-KE-K1p"/>
                             <constraint firstItem="ihe-W3-e1X" firstAttribute="leading" secondItem="Yxu-iu-rHf" secondAttribute="leading" id="YJd-qG-c1z"/>
+                            <constraint firstItem="8Qp-FU-Luj" firstAttribute="centerX" secondItem="skV-JC-v7z" secondAttribute="centerX" id="ilH-NF-9Ne"/>
+                            <constraint firstItem="8Qp-FU-Luj" firstAttribute="centerY" secondItem="skV-JC-v7z" secondAttribute="centerY" multiplier="1:0.8" id="kXh-S2-BA1"/>
                             <constraint firstItem="Yxu-iu-rHf" firstAttribute="trailing" secondItem="ihe-W3-e1X" secondAttribute="trailing" id="pcf-dT-b3x"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicatorView" destination="8Qp-FU-Luj" id="4up-59-I1s"/>
                         <outlet property="searchBar" destination="09V-7i-Amg" id="gvq-OX-4rA"/>
                         <outlet property="videoTableView" destination="ihe-W3-e1X" id="JQn-sp-8in"/>
                     </connections>

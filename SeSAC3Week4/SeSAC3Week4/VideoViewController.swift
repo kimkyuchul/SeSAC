@@ -33,6 +33,7 @@ final class VideoViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var videoTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

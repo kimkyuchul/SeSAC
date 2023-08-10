@@ -20,21 +20,27 @@ struct Movie {
 final class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     private var movieList: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callRequest()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .green
         tableView.rowHeight = 61
+        activityView.isHidden = true
         
     }
 
-    func callRequest() {
-        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=20120101"
+    func callRequest(date: String) {
+        
+        activityView.isHidden = false
+        activityView.startAnimating()
+        
+        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=\(date)"
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -59,6 +65,8 @@ final class ViewController: UIViewController {
                     self.movieList.append(data)
                 }
                 
+                self.activityView.isHidden = true
+                self.activityView.stopAnimating()
                 self.tableView.reloadData()
                 
                 
@@ -66,6 +74,17 @@ final class ViewController: UIViewController {
                 print(error)
             }
         }
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        movieList.removeAll()
+        
+        //20220101 > 1. 8글자 2. 2023333 올바른 날짜 3. 날짜의 범위가 어제의 날짜까지
+        callRequest(date: searchBar.text!)
     }
 }
 
