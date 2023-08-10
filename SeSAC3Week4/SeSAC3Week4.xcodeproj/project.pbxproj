@@ -55,6 +55,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AC80C792A84ECC800FE9D6C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5AE854172A80968A004D9104 /* Main.storyboard */,
+				5AC80C7E2A84ED0A00FE9D6C /* KaKaoVideo */,
+				5AC80C7D2A84ECF600FE9D6C /* PaPago */,
+				5AC80C7C2A84ECF000FE9D6C /* Weather */,
+				5AC80C7B2A84ECE700FE9D6C /* Movie */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+		5AC80C7A2A84ECD100FE9D6C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5AE854322A809C5D004D9104 /* APIKey.swift */,
+				5AE854112A80968A004D9104 /* AppDelegate.swift */,
+				5AE854132A80968A004D9104 /* SceneDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		5AC80C7B2A84ECE700FE9D6C /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				5AE854152A80968A004D9104 /* ViewController.swift */,
+			);
+			name = Movie;
+			sourceTree = "<group>";
+		};
+		5AC80C7C2A84ECF000FE9D6C /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				5AE854642A81C4E7004D9104 /* WeatherViewController.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		5AC80C7D2A84ECF600FE9D6C /* PaPago */ = {
+			isa = PBXGroup;
+			children = (
+				5AE854302A809C49004D9104 /* TranslationViewController.swift */,
+			);
+			name = PaPago;
+			sourceTree = "<group>";
+		};
+		5AC80C7E2A84ED0A00FE9D6C /* KaKaoVideo */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80C6C2A83230B00FE9D6C /* VideoTableViewCell.swift */,
+				5AE854662A81E7BD004D9104 /* VideoViewController.swift */,
+			);
+			name = KaKaoVideo;
+			sourceTree = "<group>";
+		};
 		5AE854052A80968A004D9104 = {
 			isa = PBXGroup;
 			children = (
@@ -74,15 +129,8 @@
 		5AE854102A80968A004D9104 /* SeSAC3Week4 */ = {
 			isa = PBXGroup;
 			children = (
-				5AE854322A809C5D004D9104 /* APIKey.swift */,
-				5AE854112A80968A004D9104 /* AppDelegate.swift */,
-				5AE854132A80968A004D9104 /* SceneDelegate.swift */,
-				5AE854152A80968A004D9104 /* ViewController.swift */,
-				5AE854642A81C4E7004D9104 /* WeatherViewController.swift */,
-				5AE854302A809C49004D9104 /* TranslationViewController.swift */,
-				5AE854172A80968A004D9104 /* Main.storyboard */,
-				5AC80C6C2A83230B00FE9D6C /* VideoTableViewCell.swift */,
-				5AE854662A81E7BD004D9104 /* VideoViewController.swift */,
+				5AC80C7A2A84ECD100FE9D6C /* App */,
+				5AC80C792A84ECC800FE9D6C /* Presentation */,
 				5AE8541A2A80968D004D9104 /* Assets.xcassets */,
 				5AE8541C2A80968D004D9104 /* LaunchScreen.storyboard */,
 				5AE8541F2A80968D004D9104 /* Info.plist */,
