@@ -16,5 +16,13 @@ extension UIView: ReusableViewProtocol {
     static var identifier: String {
         return String(describing: self)
     }
+    
+    func getDeviceWidth() -> CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
+    func getDeviceHeight() -> CGFloat {
+        return UIScreen.main.bounds.height
+    }
 }
 
