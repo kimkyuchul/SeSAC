@@ -11,6 +11,13 @@
 		5AC80C812A852B4D00FE9D6C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C802A852B4D00FE9D6C /* NetworkService.swift */; };
 		5AC80C832A852B9B00FE9D6C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C822A852B9B00FE9D6C /* NetworkError.swift */; };
 		5AC80C852A852BD200FE9D6C /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C842A852BD200FE9D6C /* URLConstant.swift */; };
+		5AC80C8B2A85BAA400FE9D6C /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C8A2A85BAA400FE9D6C /* ReusableViewProtocol.swift */; };
+		5AC80C8D2A85BD2000FE9D6C /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C8C2A85BD2000FE9D6C /* UserDefaultsHelper.swift */; };
+		5AC80C8F2A85C60B00FE9D6C /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C8E2A85C60B00FE9D6C /* URL+.swift */; };
+		5AC80C912A85C66C00FE9D6C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C902A85C66C00FE9D6C /* Endpoint.swift */; };
+		5AC80C932A85C7AF00FE9D6C /* kakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C922A85C7AF00FE9D6C /* kakaoAPIManager.swift */; };
+		5AC80C952A85E36400FE9D6C /* TranslateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C942A85E36400FE9D6C /* TranslateAPIManager.swift */; };
+		5AC80C982A85FA0000FE9D6C /* AsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C972A85FA0000FE9D6C /* AsyncViewController.swift */; };
 		5AE854122A80968A004D9104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854112A80968A004D9104 /* AppDelegate.swift */; };
 		5AE854142A80968A004D9104 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854132A80968A004D9104 /* SceneDelegate.swift */; };
 		5AE854162A80968A004D9104 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854152A80968A004D9104 /* ViewController.swift */; };
@@ -32,6 +39,13 @@
 		5AC80C802A852B4D00FE9D6C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5AC80C822A852B9B00FE9D6C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5AC80C842A852BD200FE9D6C /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
+		5AC80C8A2A85BAA400FE9D6C /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		5AC80C8C2A85BD2000FE9D6C /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		5AC80C8E2A85C60B00FE9D6C /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
+		5AC80C902A85C66C00FE9D6C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5AC80C922A85C7AF00FE9D6C /* kakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoAPIManager.swift; sourceTree = "<group>"; };
+		5AC80C942A85E36400FE9D6C /* TranslateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIManager.swift; sourceTree = "<group>"; };
+		5AC80C972A85FA0000FE9D6C /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewController.swift; sourceTree = "<group>"; };
 		5AE8540E2A80968A004D9104 /* SeSAC3Week4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3Week4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE854112A80968A004D9104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AE854132A80968A004D9104 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +94,7 @@
 		5AC80C7D2A84ECF600FE9D6C /* PaPago */ = {
 			isa = PBXGroup;
 			children = (
+				5AE854302A809C49004D9104 /* TranslationViewController.swift */,
 			);
 			name = PaPago;
 			sourceTree = "<group>";
@@ -96,10 +111,10 @@
 		5AC80C862A85B96100FE9D6C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5AC80C962A85F9E900FE9D6C /* Async */,
 				5AE854172A80968A004D9104 /* Main.storyboard */,
 				5AC80C7E2A84ED0A00FE9D6C /* KaKaoVideo */,
 				5AC80C7D2A84ECF600FE9D6C /* PaPago */,
-				5AE854302A809C49004D9104 /* TranslationViewController.swift */,
 				5AC80C7C2A84ECF000FE9D6C /* Weather */,
 				5AC80C7B2A84ECE700FE9D6C /* Movie */,
 			);
@@ -109,7 +124,6 @@
 		5AC80C872A85B98D00FE9D6C /* App */ = {
 			isa = PBXGroup;
 			children = (
-				5AE854322A809C5D004D9104 /* APIKey.swift */,
 				5AE854112A80968A004D9104 /* AppDelegate.swift */,
 				5AE854132A80968A004D9104 /* SceneDelegate.swift */,
 			);
@@ -122,8 +136,29 @@
 				5AC80C822A852B9B00FE9D6C /* NetworkError.swift */,
 				5AC80C802A852B4D00FE9D6C /* NetworkService.swift */,
 				5AC80C842A852BD200FE9D6C /* URLConstant.swift */,
+				5AC80C922A85C7AF00FE9D6C /* kakaoAPIManager.swift */,
+				5AC80C942A85E36400FE9D6C /* TranslateAPIManager.swift */,
 			);
 			name = Networks;
+			sourceTree = "<group>";
+		};
+		5AC80C892A85BA8900FE9D6C /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80C8C2A85BD2000FE9D6C /* UserDefaultsHelper.swift */,
+				5AC80C8A2A85BAA400FE9D6C /* ReusableViewProtocol.swift */,
+				5AC80C8E2A85C60B00FE9D6C /* URL+.swift */,
+				5AC80C902A85C66C00FE9D6C /* Endpoint.swift */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		5AC80C962A85F9E900FE9D6C /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80C972A85FA0000FE9D6C /* AsyncViewController.swift */,
+			);
+			name = Async;
 			sourceTree = "<group>";
 		};
 		5AE854052A80968A004D9104 = {
@@ -146,12 +181,14 @@
 			isa = PBXGroup;
 			children = (
 				5AC80C872A85B98D00FE9D6C /* App */,
+				5AC80C892A85BA8900FE9D6C /* Global */,
 				5AC80C882A85B99F00FE9D6C /* Networks */,
 				5AC80C862A85B96100FE9D6C /* Presentation */,
 				5AE8541A2A80968D004D9104 /* Assets.xcassets */,
 				5AE8541C2A80968D004D9104 /* LaunchScreen.storyboard */,
 				5AE8541F2A80968D004D9104 /* Info.plist */,
 				5AE8542E2A809B9F004D9104 /* .gitignore */,
+				5AE854322A809C5D004D9104 /* APIKey.swift */,
 			);
 			path = SeSAC3Week4;
 			sourceTree = "<group>";
@@ -239,13 +276,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE854312A809C49004D9104 /* TranslationViewController.swift in Sources */,
+				5AC80C8D2A85BD2000FE9D6C /* UserDefaultsHelper.swift in Sources */,
 				5AE854672A81E7BD004D9104 /* VideoViewController.swift in Sources */,
+				5AC80C982A85FA0000FE9D6C /* AsyncViewController.swift in Sources */,
 				5AE854652A81C4E7004D9104 /* WeatherViewController.swift in Sources */,
+				5AC80C912A85C66C00FE9D6C /* Endpoint.swift in Sources */,
 				5AE854162A80968A004D9104 /* ViewController.swift in Sources */,
 				5AC80C812A852B4D00FE9D6C /* NetworkService.swift in Sources */,
+				5AC80C8B2A85BAA400FE9D6C /* ReusableViewProtocol.swift in Sources */,
 				5AE854122A80968A004D9104 /* AppDelegate.swift in Sources */,
 				5AC80C6D2A83230B00FE9D6C /* VideoTableViewCell.swift in Sources */,
+				5AC80C8F2A85C60B00FE9D6C /* URL+.swift in Sources */,
 				5AE854142A80968A004D9104 /* SceneDelegate.swift in Sources */,
+				5AC80C932A85C7AF00FE9D6C /* kakaoAPIManager.swift in Sources */,
+				5AC80C952A85E36400FE9D6C /* TranslateAPIManager.swift in Sources */,
 				5AC80C852A852BD200FE9D6C /* URLConstant.swift in Sources */,
 				5AE854332A809C5D004D9104 /* APIKey.swift in Sources */,
 				5AC80C832A852B9B00FE9D6C /* NetworkError.swift in Sources */,
