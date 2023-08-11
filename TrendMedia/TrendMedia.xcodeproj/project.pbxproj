@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		5AC80CA62A8629D500FE9D6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CA52A8629D500FE9D6C /* AppDelegate.swift */; };
 		5AC80CA82A8629D500FE9D6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CA72A8629D500FE9D6C /* SceneDelegate.swift */; };
-		5AC80CAA2A8629D500FE9D6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CA92A8629D500FE9D6C /* ViewController.swift */; };
 		5AC80CAD2A8629D500FE9D6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC80CAB2A8629D500FE9D6C /* Main.storyboard */; };
 		5AC80CAF2A8629D800FE9D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC80CAE2A8629D800FE9D6C /* Assets.xcassets */; };
 		5AC80CB22A8629D800FE9D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC80CB02A8629D800FE9D6C /* LaunchScreen.storyboard */; };
 		5AC80CBD2A8629D800FE9D6C /* TrendMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CBC2A8629D800FE9D6C /* TrendMediaTests.swift */; };
 		5AC80CC72A8629D900FE9D6C /* TrendMediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CC62A8629D900FE9D6C /* TrendMediaUITests.swift */; };
 		5AC80CC92A8629D900FE9D6C /* TrendMediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CC82A8629D900FE9D6C /* TrendMediaUITestsLaunchTests.swift */; };
+		5AC80CDB2A862C1300FE9D6C /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CDA2A862C1300FE9D6C /* MovieListViewController.swift */; };
+		5AC80CDD2A862C3B00FE9D6C /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CDC2A862C3B00FE9D6C /* MovieDetailViewController.swift */; };
+		5AC80CE02A862C4E00FE9D6C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC80CDF2A862C4E00FE9D6C /* Alamofire */; };
+		5AC80CE32A862D7400FE9D6C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC80CE22A862D7400FE9D6C /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 		5AC80CA22A8629D500FE9D6C /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC80CA52A8629D500FE9D6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC80CA72A8629D500FE9D6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5AC80CA92A8629D500FE9D6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5AC80CAC2A8629D500FE9D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AC80CAE2A8629D800FE9D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AC80CB12A8629D800FE9D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		5AC80CC22A8629D900FE9D6C /* TrendMediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrendMediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC80CC62A8629D900FE9D6C /* TrendMediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMediaUITests.swift; sourceTree = "<group>"; };
 		5AC80CC82A8629D900FE9D6C /* TrendMediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5AC80CDA2A862C1300FE9D6C /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		5AC80CDC2A862C3B00FE9D6C /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AC80CE32A862D7400FE9D6C /* Kingfisher in Frameworks */,
+				5AC80CE02A862C4E00FE9D6C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +105,10 @@
 		5AC80CA42A8629D500FE9D6C /* TrendMedia */ = {
 			isa = PBXGroup;
 			children = (
-				5AC80CA52A8629D500FE9D6C /* AppDelegate.swift */,
-				5AC80CA72A8629D500FE9D6C /* SceneDelegate.swift */,
-				5AC80CA92A8629D500FE9D6C /* ViewController.swift */,
-				5AC80CAB2A8629D500FE9D6C /* Main.storyboard */,
-				5AC80CAE2A8629D800FE9D6C /* Assets.xcassets */,
-				5AC80CB02A8629D800FE9D6C /* LaunchScreen.storyboard */,
+				5AC80CD62A862B9000FE9D6C /* App */,
+				5AC80CD92A862BC900FE9D6C /* Common */,
+				5AC80CD72A862BA000FE9D6C /* Data */,
+				5AC80CD52A862B8600FE9D6C /* Presentation */,
 				5AC80CB32A8629D800FE9D6C /* Info.plist */,
 			);
 			path = TrendMedia;
@@ -127,6 +131,49 @@
 			path = TrendMediaUITests;
 			sourceTree = "<group>";
 		};
+		5AC80CD52A862B8600FE9D6C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80CAB2A8629D500FE9D6C /* Main.storyboard */,
+				5AC80CDA2A862C1300FE9D6C /* MovieListViewController.swift */,
+				5AC80CDC2A862C3B00FE9D6C /* MovieDetailViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5AC80CD62A862B9000FE9D6C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80CA52A8629D500FE9D6C /* AppDelegate.swift */,
+				5AC80CA72A8629D500FE9D6C /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5AC80CD72A862BA000FE9D6C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5AC80CD82A862BB100FE9D6C /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80CAE2A8629D800FE9D6C /* Assets.xcassets */,
+				5AC80CB02A8629D800FE9D6C /* LaunchScreen.storyboard */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		5AC80CD92A862BC900FE9D6C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80CD82A862BB100FE9D6C /* SupportFile */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +190,10 @@
 			dependencies = (
 			);
 			name = TrendMedia;
+			packageProductDependencies = (
+				5AC80CDF2A862C4E00FE9D6C /* Alamofire */,
+				5AC80CE22A862D7400FE9D6C /* Kingfisher */,
+			);
 			productName = TrendMedia;
 			productReference = 5AC80CA22A8629D500FE9D6C /* TrendMedia.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +266,10 @@
 				Base,
 			);
 			mainGroup = 5AC80C992A8629D500FE9D6C;
+			packageReferences = (
+				5AC80CDE2A862C4E00FE9D6C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5AC80CE12A862D7300FE9D6C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 5AC80CA32A8629D500FE9D6C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AC80CAA2A8629D500FE9D6C /* ViewController.swift in Sources */,
+				5AC80CDD2A862C3B00FE9D6C /* MovieDetailViewController.swift in Sources */,
+				5AC80CDB2A862C1300FE9D6C /* MovieListViewController.swift in Sources */,
 				5AC80CA62A8629D500FE9D6C /* AppDelegate.swift in Sources */,
 				5AC80CA82A8629D500FE9D6C /* SceneDelegate.swift in Sources */,
 			);
@@ -610,6 +666,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5AC80CDE2A862C4E00FE9D6C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		5AC80CE12A862D7300FE9D6C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5AC80CDF2A862C4E00FE9D6C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AC80CDE2A862C4E00FE9D6C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5AC80CE22A862D7400FE9D6C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AC80CE12A862D7300FE9D6C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5AC80C9A2A8629D500FE9D6C /* Project object */;
 }
