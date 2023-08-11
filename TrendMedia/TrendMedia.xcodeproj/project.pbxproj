@@ -20,6 +20,7 @@
 		5AC80CE32A862D7400FE9D6C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC80CE22A862D7400FE9D6C /* Kingfisher */; };
 		5AC80CE62A8641A300FE9D6C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC80CE52A8641A300FE9D6C /* SnapKit */; };
 		5AC80CE82A86420800FE9D6C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CE72A86420800FE9D6C /* BaseViewController.swift */; };
+		5AC80CEF2A8645B600FE9D6C /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CEE2A8645B600FE9D6C /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		5AC80CDA2A862C1300FE9D6C /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		5AC80CDC2A862C3B00FE9D6C /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		5AC80CE72A86420800FE9D6C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5AC80CEE2A8645B600FE9D6C /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		5AC80CD92A862BC900FE9D6C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5AC80CED2A86458300FE9D6C /* Extension */,
 				5AC80CE92A86421400FE9D6C /* Base */,
 				5AC80CD82A862BB100FE9D6C /* SupportFile */,
 			);
@@ -184,6 +187,12 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		5AC80CED2A86458300FE9D6C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80CEE2A8645B600FE9D6C /* UIView+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC80CE82A86420800FE9D6C /* BaseViewController.swift in Sources */,
+				5AC80CEF2A8645B600FE9D6C /* UIView+.swift in Sources */,
 				5AC80CDD2A862C3B00FE9D6C /* MovieDetailViewController.swift in Sources */,
 				5AC80CDB2A862C1300FE9D6C /* MovieListViewController.swift in Sources */,
 				5AC80CA62A8629D500FE9D6C /* AppDelegate.swift in Sources */,
