@@ -8,9 +8,7 @@
 import UIKit
 
 final class VideoTableViewCell: UITableViewCell {
-    
-    static let identifi = "VideoTableViewCell"
-    
+        
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!

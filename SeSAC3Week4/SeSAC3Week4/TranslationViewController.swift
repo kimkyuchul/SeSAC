@@ -45,6 +45,11 @@ final class TranslationViewController: UIViewController {
         self.view.backgroundColor = .systemBackground
         setAddTarget()
         setLayout()
+        
+        UserDefaults.standard.set("고래밥", forKey: "nickname")
+        
+        UserDefaultsHelper.shard.nickname
+        
     }
     
     @objc func requestButtonClicked(_ sender: UIButton) {
