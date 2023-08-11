@@ -7,13 +7,33 @@
 
 import UIKit
 
-final class MovieListViewController: UIViewController {
+import SnapKit
+
+final class MovieListViewController: BaseViewController {
+    
+    private lazy var movieCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .magenta
+        return collectionView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .cyan
-
     }
     
+    override func setHierarchy() {
+        view.addSubview(movieCollectionView)
+    }
+    
+    override func setConstraints() {
+        movieCollectionView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    override func setLayout() {
+        super.setLayout()
+    }
 
 }

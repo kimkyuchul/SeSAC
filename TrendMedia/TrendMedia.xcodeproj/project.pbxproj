@@ -18,6 +18,8 @@
 		5AC80CDD2A862C3B00FE9D6C /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CDC2A862C3B00FE9D6C /* MovieDetailViewController.swift */; };
 		5AC80CE02A862C4E00FE9D6C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC80CDF2A862C4E00FE9D6C /* Alamofire */; };
 		5AC80CE32A862D7400FE9D6C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC80CE22A862D7400FE9D6C /* Kingfisher */; };
+		5AC80CE62A8641A300FE9D6C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AC80CE52A8641A300FE9D6C /* SnapKit */; };
+		5AC80CE82A86420800FE9D6C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CE72A86420800FE9D6C /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		5AC80CC82A8629D900FE9D6C /* TrendMediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5AC80CDA2A862C1300FE9D6C /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		5AC80CDC2A862C3B00FE9D6C /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		5AC80CE72A86420800FE9D6C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AC80CE62A8641A300FE9D6C /* SnapKit in Frameworks */,
 				5AC80CE32A862D7400FE9D6C /* Kingfisher in Frameworks */,
 				5AC80CE02A862C4E00FE9D6C /* Alamofire in Frameworks */,
 			);
@@ -166,9 +170,20 @@
 		5AC80CD92A862BC900FE9D6C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5AC80CE92A86421400FE9D6C /* Base */,
 				5AC80CD82A862BB100FE9D6C /* SupportFile */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		5AC80CE92A86421400FE9D6C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80CE72A86420800FE9D6C /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +205,7 @@
 			packageProductDependencies = (
 				5AC80CDF2A862C4E00FE9D6C /* Alamofire */,
 				5AC80CE22A862D7400FE9D6C /* Kingfisher */,
+				5AC80CE52A8641A300FE9D6C /* SnapKit */,
 			);
 			productName = TrendMedia;
 			productReference = 5AC80CA22A8629D500FE9D6C /* TrendMedia.app */;
@@ -266,6 +282,7 @@
 			packageReferences = (
 				5AC80CDE2A862C4E00FE9D6C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5AC80CE12A862D7300FE9D6C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5AC80CE42A8641A300FE9D6C /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 5AC80CA32A8629D500FE9D6C /* Products */;
 			projectDirPath = "";
@@ -309,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AC80CE82A86420800FE9D6C /* BaseViewController.swift in Sources */,
 				5AC80CDD2A862C3B00FE9D6C /* MovieDetailViewController.swift in Sources */,
 				5AC80CDB2A862C1300FE9D6C /* MovieListViewController.swift in Sources */,
 				5AC80CA62A8629D500FE9D6C /* AppDelegate.swift in Sources */,
@@ -672,6 +690,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		5AC80CE42A8641A300FE9D6C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -684,6 +710,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5AC80CE12A862D7300FE9D6C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		5AC80CE52A8641A300FE9D6C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AC80CE42A8641A300FE9D6C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
