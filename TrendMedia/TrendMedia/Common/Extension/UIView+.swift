@@ -24,5 +24,9 @@ extension UIView: ReusableViewProtocol {
     func getDeviceHeight() -> CGFloat {
         return UIScreen.main.bounds.height
     }
+    
+    func getDeviceHalfHeight() -> CGFloat {
+        return UIScreen.main.bounds.height * 0.5
+    }
 }
 

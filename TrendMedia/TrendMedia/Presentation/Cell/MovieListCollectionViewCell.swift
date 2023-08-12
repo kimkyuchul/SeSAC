@@ -14,6 +14,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
     private let backView: UIView = {
         let view = UIView()
         view.backgroundColor = .blue
+        view.isUserInteractionEnabled = false
         return view
     }()
     private let imageBackView = UIView()
@@ -61,7 +62,6 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         titleLabel.text = "스파이더맨아이언맨배트맨집"
         mediaInfoLabel.text = "타입: 무비 / 청소년관람가능"
         releaseDateLabel.text = "2023.08.27"
-        
     }
     
     required init?(coder: NSCoder) {
@@ -72,7 +72,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         [posterImageView, ratingBadge].forEach { view in
             imageBackView.addSubview(view)
         }
-        
+
         contentView.addSubview(backView)
 
         [imageBackView, infoStackView].forEach { view in
@@ -86,28 +86,28 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
             make.leading.trailing.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(10)
         }
-        
+
         imageBackView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(backView.snp.height).multipliedBy(0.8)
         }
-        
+
         posterImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
+
         ratingBadge.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(20)
         }
-        
+
         titleLabel.snp.makeConstraints { make in
             make.height.equalTo(mediaInfoLabel.snp.height)
         }
         titleLabel.snp.makeConstraints { make in
             make.height.equalTo(mediaInfoLabel.snp.height)
         }
-        
+
         infoStackView.snp.makeConstraints { make in
             make.top.equalTo(posterImageView.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(10)
@@ -118,7 +118,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
     private func setLayout() {
         backView.layer.cornerRadius = 20
         backView.clipsToBounds = true
-        
+
         imageBackView.layer.cornerRadius = 20
         imageBackView.clipsToBounds = true
     }

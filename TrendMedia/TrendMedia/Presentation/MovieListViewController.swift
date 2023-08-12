@@ -15,15 +15,16 @@ final class MovieListViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: view.getDeviceWidth(), height: view.getDeviceHeight() * 0.6)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.backgroundColor = .magenta
-        collectionView.dataSource = self
-        collectionView.dataSource = self
         collectionView.register(MovieListCollectionViewCell.self, forCellWithReuseIdentifier: MovieListCollectionViewCell.identifier)
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func setHierarchy() {
@@ -41,7 +42,7 @@ final class MovieListViewController: BaseViewController {
     }
 }
 
-extension MovieListViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+extension MovieListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -52,6 +53,7 @@ extension MovieListViewController : UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("aa")
         navigationController?.pushViewController(MovieDetailViewController(), animated: true)
     }
 }
