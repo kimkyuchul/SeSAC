@@ -14,7 +14,7 @@ final class MovieDetailViewController: BaseViewController {
     private lazy var detailTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = 65
+        tableView.rowHeight = 100
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MovieDetailTableViewCell.self, forCellReuseIdentifier: MovieDetailTableViewCell.identifier)

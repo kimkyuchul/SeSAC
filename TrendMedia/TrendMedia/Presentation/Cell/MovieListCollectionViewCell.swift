@@ -104,9 +104,6 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         titleLabel.snp.makeConstraints { make in
             make.height.equalTo(mediaInfoLabel.snp.height)
         }
-        titleLabel.snp.makeConstraints { make in
-            make.height.equalTo(mediaInfoLabel.snp.height)
-        }
 
         infoStackView.snp.makeConstraints { make in
             make.top.equalTo(posterImageView.snp.bottom).offset(10)
