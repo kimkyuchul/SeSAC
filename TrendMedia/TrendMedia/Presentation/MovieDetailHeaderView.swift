@@ -13,12 +13,12 @@ final class MovieDetailHeaderView: UITableViewHeaderFooterView {
     
     private let headerImageview: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     private let backView: UIView = {
         let view = UIView()
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         return view
@@ -33,14 +33,15 @@ final class MovieDetailHeaderView: UITableViewHeaderFooterView {
     }()
     private let overviewTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 20)
+        label.text = "overview"
+        label.font = .boldSystemFont(ofSize: 18)
         label.textColor = .black
         label.textAlignment = .left
         return label
     }()
     private let overviewLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 18)
+        label.font = .boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
         label.textColor = .darkGray
         return label
@@ -57,10 +58,6 @@ final class MovieDetailHeaderView: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         setHierarchy()
         setConstraints()
-        headerImageview.image = UIImage(systemName: "star")
-        titleLabel.text = "SPIDER-MAN: ACROSS THE SPIDER"
-        overviewTitleLabel.text = "overview"
-        overviewLabel.text = "An intelligenceoperativeoperativeoperativeoperativeoperativeoperativeoperative operative for a shadowy "
         headerImageview.backgroundColor = .brown
         overviewLabel.frame.size = overviewLabel.intrinsicContentSize
     }
@@ -86,7 +83,7 @@ final class MovieDetailHeaderView: UITableViewHeaderFooterView {
         }
         
         backView.snp.makeConstraints { make in
-            make.top.equalTo(headerImageview.snp.bottom).offset(-50)
+            make.top.equalTo(headerImageview.snp.bottom).offset(-60)
             make.trailing.leading.equalToSuperview().inset(20)
             make.height.equalTo(headerImageview.snp.height).priority(.low)
         }
@@ -115,5 +112,13 @@ final class MovieDetailHeaderView: UITableViewHeaderFooterView {
             make.bottom.equalToSuperview().inset(10).priority(.high)
             make.height.equalTo(backView.snp.height).multipliedBy(0.4).priority(.low)
         }
+    }
+}
+
+extension MovieDetailHeaderView {
+    func configureHeader(row: MovieDetail) {
+        titleLabel.text = row.title
+        overviewLabel.text = row.overview
+        headerImageview.kf.setImage(with: URL(string: URLConstants.image + (row.backdrop_path ?? "")))
     }
 }

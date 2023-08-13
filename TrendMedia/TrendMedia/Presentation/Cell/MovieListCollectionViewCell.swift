@@ -8,26 +8,27 @@
 import UIKit
 
 import SnapKit
+import Kingfisher
 
 final class MovieListCollectionViewCell: UICollectionViewCell {
     
     private let backView: UIView = {
         let view = UIView()
-        view.backgroundColor = .blue
         view.isUserInteractionEnabled = false
+        view.backgroundColor = .tertiarySystemFill
         return view
     }()
     private let imageBackView = UIView()
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .green
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     private let ratingBadge = RatingBadgeView()
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
+        label.numberOfLines = 0
         label.textColor = .black
         return label
     }()
@@ -50,7 +51,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         stackView.alignment = .leading
         stackView.distribution = .fill
         stackView.spacing = 5
-        stackView.addArrangedSubviews(titleLabel, mediaInfoLabel, releaseDateLabel)
+        stackView.addArrangedSubviews(titleLabel, releaseDateLabel)
         return stackView
     }()
     
@@ -59,9 +60,6 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         setHierarchy()
         setConstraints()
         setLayout()
-        titleLabel.text = "스파이더맨아이언맨배트맨집"
-        mediaInfoLabel.text = "타입: 무비 / 청소년관람가능"
-        releaseDateLabel.text = "2023.08.27"
     }
     
     required init?(coder: NSCoder) {
@@ -101,13 +99,10 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
             make.bottom.equalToSuperview().inset(20)
         }
 
-        titleLabel.snp.makeConstraints { make in
-            make.height.equalTo(mediaInfoLabel.snp.height)
-        }
-
         infoStackView.snp.makeConstraints { make in
             make.top.equalTo(posterImageView.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.leading.equalToSuperview().inset(10)
+            make.trailing.equalToSuperview().inset(10).priority(.high)
             make.bottom.equalToSuperview().inset(20).priority(.low)
         }
     }
@@ -118,5 +113,14 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
 
         imageBackView.layer.cornerRadius = 20
         imageBackView.clipsToBounds = true
+    }
+}
+
+extension MovieListCollectionViewCell {
+    func configureCell(row: MovieDetail) {
+        titleLabel.text = row.title
+        ratingBadge.setRatingLabelText(text: String(row.vote_average))
+        posterImageView.kf.setImage(with: URL(string: URLConstants.image + (row.poster_path ?? "")))
+        releaseDateLabel.text = row.release_date
     }
 }

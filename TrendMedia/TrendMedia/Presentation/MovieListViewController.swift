@@ -8,8 +8,13 @@
 import UIKit
 
 import SnapKit
-
 final class MovieListViewController: BaseViewController {
+    
+    private var data: [MovieDetail] = [] {
+        didSet {
+            movieCollectionView.reloadData()
+        }
+    }
     
     private lazy var movieCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -17,13 +22,17 @@ final class MovieListViewController: BaseViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .magenta
+        collectionView.backgroundColor = .tertiarySystemGroupedBackground
         collectionView.register(MovieListCollectionViewCell.self, forCellWithReuseIdentifier: MovieListCollectionViewCell.identifier)
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchMovie()
+        self.title = "영화 목록"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.view.backgroundColor = .tertiarySystemGroupedBackground
         
     }
     
@@ -44,16 +53,31 @@ final class MovieListViewController: BaseViewController {
 
 extension MovieListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieListCollectionViewCell.identifier, for: indexPath) as? MovieListCollectionViewCell else { return UICollectionViewCell() }
+        cell.configureCell(row: data[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("aa")
-        navigationController?.pushViewController(MovieDetailViewController(), animated: true)
+        let vc = MovieDetailViewController()
+        vc.detailData = data[indexPath.item]
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension MovieListViewController {
+    func fetchMovie() {
+        BaseService.shared.request(target: MovieListAPI.getTrandAPI, Movie.self) { result in
+            switch result {
+            case .success(let data):
+                self.data = data.results
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

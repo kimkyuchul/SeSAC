@@ -15,6 +15,7 @@ final class RatingBadgeView: UIStackView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "star.fill")
+        imageView.tintColor = .yellow
         return imageView
     }()
     private let ratingBadgeLabel: UILabel = {
@@ -31,12 +32,15 @@ final class RatingBadgeView: UIStackView {
         axis = .horizontal
         alignment = .fill
         spacing = 1
-        ratingBadgeLabel.text = "4.98"
-        self.backgroundColor = .red
+        self.backgroundColor = .white
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        self.layer.cornerRadius = 10
     }
     
     private func setHierarchy() {
@@ -49,5 +53,11 @@ final class RatingBadgeView: UIStackView {
         ratingBadgeLabel.snp.makeConstraints { make in
             make.height.equalTo(30)
         }
+    }
+}
+
+extension RatingBadgeView {
+    func setRatingLabelText(text: String) {
+        self.ratingBadgeLabel.text = text
     }
 }

@@ -14,13 +14,11 @@ final class MovieDetailTableViewCell: UITableViewCell {
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .green
         imageView.layer.cornerRadius = 10
         return imageView
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "adasdsadasdadad"
         label.font = .boldSystemFont(ofSize: 18)
         label.textColor = .black
         return label
@@ -28,7 +26,6 @@ final class MovieDetailTableViewCell: UITableViewCell {
     private let infoLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "adasdsadasdaadasdsadasdadadadasdsadasdadaddad"
         label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .darkGray
         return label
@@ -90,3 +87,12 @@ final class MovieDetailTableViewCell: UITableViewCell {
         self.backgroundColor = .clear
     }
 }
+
+extension MovieDetailTableViewCell {
+    func configureCell(row: Cast) {
+        titleLabel.text = row.name
+        infoLabel.text = row.character
+        posterImageView.kf.setImage(with: URL(string: URLConstants.image + (row.profilePath ?? "")))
+    }
+}
+
