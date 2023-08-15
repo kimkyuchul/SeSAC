@@ -15,15 +15,14 @@ struct Movie {
     var release: String
 }
 
-
-
 final class ViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     private var movieList: [Movie] = []
+    var result: BoxOffice?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,48 +31,57 @@ final class ViewController: UIViewController {
         tableView.backgroundColor = .green
         tableView.rowHeight = 61
         activityView.isHidden = true
-        
     }
-
+    
     func callRequest(date: String) {
         
         activityView.isHidden = false
         activityView.startAnimating()
         
         let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=\(date)"
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                let name = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
-                let name1 = json["boxOfficeResult"]["dailyBoxOfficeList"][1]["movieNm"].stringValue
-                let name2 = json["boxOfficeResult"]["dailyBoxOfficeList"][2]["movieNm"].stringValue
-                
-                print(name, name1, name2)
-                
-//                self.movieList.append(contentsOf: [name, name1, name2])
-                
-                
-                for item in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
-                    
-                    let movieNm = item["movieNm"].stringValue
-                    let openDt = item["openDt"].stringValue
-
-                    let data = Movie(title: movieNm, release: openDt)
-                    self.movieList.append(data)
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: BoxOffice.self) { response in
+                switch response.result {
+                case .success(let value):
+                    self.result = value
+                case .failure(let error):
+                    print(error)
                 }
-                
-                self.activityView.isHidden = true
-                self.activityView.stopAnimating()
-                self.tableView.reloadData()
-                
-                
-            case .failure(let error):
-                print(error)
             }
-        }
+        //            .responseJSON { response in
+        //            switch response.result {
+        //            case .success(let value):
+        //                let json = JSON(value)
+        //                print("JSON: \(json)")
+        //
+        //                let name = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
+        //                let name1 = json["boxOfficeResult"]["dailyBoxOfficeList"][1]["movieNm"].stringValue
+        //                let name2 = json["boxOfficeResult"]["dailyBoxOfficeList"][2]["movieNm"].stringValue
+        //
+        //                print(name, name1, name2)
+        //
+        ////                self.movieList.append(contentsOf: [name, name1, name2])
+        //
+        //
+        //                for item in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
+        //
+        //                    let movieNm = item["movieNm"].stringValue
+        //                    let openDt = item["openDt"].stringValue
+        //
+        //                    let data = Movie(title: movieNm, release: openDt)
+        //                    self.movieList.append(data)
+        //                }
+        //
+        //                self.activityView.isHidden = true
+        //                self.activityView.stopAnimating()
+        //                self.tableView.reloadData()
+        //
+        //
+        //            case .failure(let error):
+        //                print(error)
+        //            }
+        //        }
+        //    }
     }
 }
 
@@ -90,7 +98,7 @@ extension ViewController: UISearchBarDelegate {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.count
+        return result?.boxOfficeResult.dailyBoxOfficeList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

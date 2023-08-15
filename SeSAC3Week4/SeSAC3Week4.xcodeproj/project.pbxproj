@@ -32,6 +32,7 @@
 		5AE854332A809C5D004D9104 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854322A809C5D004D9104 /* APIKey.swift */; };
 		5AE854652A81C4E7004D9104 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854642A81C4E7004D9104 /* WeatherViewController.swift */; };
 		5AE854672A81E7BD004D9104 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854662A81E7BD004D9104 /* VideoViewController.swift */; };
+		5AEFAA9E2A8A023600A67C43 /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFAA9D2A8A023600A67C43 /* BoxOffice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		5AE854322A809C5D004D9104 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		5AE854642A81C4E7004D9104 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		5AE854662A81E7BD004D9104 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		5AEFAA9D2A8A023600A67C43 /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		5AC80C882A85B99F00FE9D6C /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				5AEFAA9C2A8A022200A67C43 /* Model */,
 				5AC80C822A852B9B00FE9D6C /* NetworkError.swift */,
 				5AC80C802A852B4D00FE9D6C /* NetworkService.swift */,
 				5AC80C842A852BD200FE9D6C /* URLConstant.swift */,
@@ -191,6 +194,14 @@
 				5AE854322A809C5D004D9104 /* APIKey.swift */,
 			);
 			path = SeSAC3Week4;
+			sourceTree = "<group>";
+		};
+		5AEFAA9C2A8A022200A67C43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AEFAA9D2A8A023600A67C43 /* BoxOffice.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 				5AC80C952A85E36400FE9D6C /* TranslateAPIManager.swift in Sources */,
 				5AC80C852A852BD200FE9D6C /* URLConstant.swift in Sources */,
 				5AE854332A809C5D004D9104 /* APIKey.swift in Sources */,
+				5AEFAA9E2A8A023600A67C43 /* BoxOffice.swift in Sources */,
 				5AC80C832A852B9B00FE9D6C /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

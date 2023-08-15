@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yzo-Da-qZO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -346,104 +346,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAh-s9-fcf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2956" y="712"/>
-        </scene>
-        <!--Video View Controller-->
-        <scene sceneID="VRl-Kj-uGp">
-            <objects>
-                <viewController id="7c0-LY-dVl" customClass="VideoViewController" customModule="SeSAC3Week4" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0go-cA-lou">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="d8E-kK-8uv">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Fhv-kL-Vwo"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="7c0-LY-dVl" id="mtP-zA-BD6"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cmP-wg-ODl">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="148" id="9NM-fA-HBl" customClass="VideoTableViewCell" customModule="SeSAC3Week4" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="148"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9NM-fA-HBl" id="L32-fp-XgA">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="148"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zjl-UG-O0h">
-                                                    <rect key="frame" x="16" y="8" width="197.33333333333334" height="132"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목제목목제목제aadadadadadad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm0-Tv-Db3">
-                                                    <rect key="frame" x="221.33333333333337" y="8" width="155.66666666666663" height="40.666666666666664"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4분 30초 || 22.08.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6E-5H-kZI">
-                                                    <rect key="frame" x="221.33333333333337" y="52.666666666666657" width="155.66666666666663" height="36"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="36" id="CTN-d9-cde"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="i6E-5H-kZI" secondAttribute="trailing" constant="16" id="2Y5-7Q-apo"/>
-                                                <constraint firstAttribute="bottom" secondItem="Zjl-UG-O0h" secondAttribute="bottom" constant="8" id="6JL-nn-iDT"/>
-                                                <constraint firstItem="hm0-Tv-Db3" firstAttribute="leading" secondItem="Zjl-UG-O0h" secondAttribute="trailing" constant="8" id="9nf-Lu-Zzt"/>
-                                                <constraint firstItem="i6E-5H-kZI" firstAttribute="leading" secondItem="Zjl-UG-O0h" secondAttribute="trailing" constant="8" id="Fjb-wj-91z"/>
-                                                <constraint firstAttribute="trailing" secondItem="hm0-Tv-Db3" secondAttribute="trailing" constant="16" id="HUb-0d-CMG"/>
-                                                <constraint firstItem="Zjl-UG-O0h" firstAttribute="leading" secondItem="L32-fp-XgA" secondAttribute="leading" constant="16" id="J1r-TF-Eba"/>
-                                                <constraint firstItem="i6E-5H-kZI" firstAttribute="top" secondItem="hm0-Tv-Db3" secondAttribute="bottom" constant="4" id="QyP-JZ-QuW"/>
-                                                <constraint firstItem="Zjl-UG-O0h" firstAttribute="width" secondItem="L32-fp-XgA" secondAttribute="height" multiplier="4:3" id="Swr-g3-1AK"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i6E-5H-kZI" secondAttribute="bottom" constant="8" id="bF8-lB-tjR"/>
-                                                <constraint firstItem="hm0-Tv-Db3" firstAttribute="top" secondItem="L32-fp-XgA" secondAttribute="top" constant="8" id="c2o-og-Mms"/>
-                                                <constraint firstItem="Zjl-UG-O0h" firstAttribute="top" secondItem="L32-fp-XgA" secondAttribute="top" constant="8" id="jjn-IT-da6"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="contentLabel" destination="i6E-5H-kZI" id="KQv-nf-GV3"/>
-                                            <outlet property="thumbnailImageView" destination="Zjl-UG-O0h" id="apU-PJ-oUh"/>
-                                            <outlet property="titleLabel" destination="hm0-Tv-Db3" id="nXe-tj-Zht"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="haq-oy-Qu6">
-                                <rect key="frame" x="186.66666666666666" y="522.66666666666663" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="LHe-Nb-LTE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="d8E-kK-8uv" firstAttribute="trailing" secondItem="LHe-Nb-LTE" secondAttribute="trailing" id="1Zw-7q-iqt"/>
-                            <constraint firstItem="cmP-wg-ODl" firstAttribute="leading" secondItem="LHe-Nb-LTE" secondAttribute="leading" id="2aN-6E-weI"/>
-                            <constraint firstItem="d8E-kK-8uv" firstAttribute="leading" secondItem="LHe-Nb-LTE" secondAttribute="leading" id="NWi-3A-Hnm"/>
-                            <constraint firstItem="cmP-wg-ODl" firstAttribute="top" secondItem="d8E-kK-8uv" secondAttribute="bottom" id="dQL-S8-7I6"/>
-                            <constraint firstItem="haq-oy-Qu6" firstAttribute="centerX" secondItem="0go-cA-lou" secondAttribute="centerX" id="fhb-fX-ou0"/>
-                            <constraint firstItem="LHe-Nb-LTE" firstAttribute="trailing" secondItem="cmP-wg-ODl" secondAttribute="trailing" id="hZw-O1-KJh"/>
-                            <constraint firstItem="d8E-kK-8uv" firstAttribute="top" secondItem="LHe-Nb-LTE" secondAttribute="top" id="i9s-aE-yHd"/>
-                            <constraint firstItem="haq-oy-Qu6" firstAttribute="centerY" secondItem="0go-cA-lou" secondAttribute="centerY" multiplier="1:0.8" id="reX-ok-gYk"/>
-                            <constraint firstItem="LHe-Nb-LTE" firstAttribute="bottom" secondItem="cmP-wg-ODl" secondAttribute="bottom" id="yVD-wd-va7"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="indicatorView" destination="haq-oy-Qu6" id="IYx-Do-abt"/>
-                        <outlet property="searchBar" destination="d8E-kK-8uv" id="H89-0p-t1J"/>
-                        <outlet property="videoTableView" destination="cmP-wg-ODl" id="Gr4-ab-4ao"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a3n-Qr-QLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4903" y="23"/>
         </scene>
     </scenes>
     <resources>
