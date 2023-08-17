@@ -118,54 +118,6 @@
 			name = KaKaoVideo;
 			sourceTree = "<group>";
 		};
-		5AC80C862A85B96100FE9D6C /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				5AC80C962A85F9E900FE9D6C /* Async */,
-				5AE854172A80968A004D9104 /* Main.storyboard */,
-				5AC80C7E2A84ED0A00FE9D6C /* KaKaoVideo */,
-				5AC80C7D2A84ECF600FE9D6C /* PaPago */,
-				5AC80C7C2A84ECF000FE9D6C /* Weather */,
-				5AC80C7B2A84ECE700FE9D6C /* Movie */,
-			);
-			name = Presentation;
-			sourceTree = "<group>";
-		};
-		5AC80C872A85B98D00FE9D6C /* App */ = {
-			isa = PBXGroup;
-			children = (
-				5AE854112A80968A004D9104 /* AppDelegate.swift */,
-				5AE854132A80968A004D9104 /* SceneDelegate.swift */,
-			);
-			name = App;
-			sourceTree = "<group>";
-		};
-		5AC80C882A85B99F00FE9D6C /* Networks */ = {
-			isa = PBXGroup;
-			children = (
-				5AEFAADC2A8E1C8700A67C43 /* API */,
-				5AEFAAD72A8E19A900A67C43 /* Foundation */,
-				5AEFAA9C2A8A022200A67C43 /* Model */,
-				5AC80C822A852B9B00FE9D6C /* NetworkError.swift */,
-				5AC80C802A852B4D00FE9D6C /* NetworkService.swift */,
-				5AC80C842A852BD200FE9D6C /* URLConstant.swift */,
-				5AC80C922A85C7AF00FE9D6C /* kakaoAPIManager.swift */,
-				5AC80C942A85E36400FE9D6C /* TranslateAPIManager.swift */,
-			);
-			name = Networks;
-			sourceTree = "<group>";
-		};
-		5AC80C892A85BA8900FE9D6C /* Global */ = {
-			isa = PBXGroup;
-			children = (
-				5AC80C8C2A85BD2000FE9D6C /* UserDefaultsHelper.swift */,
-				5AC80C8A2A85BAA400FE9D6C /* ReusableViewProtocol.swift */,
-				5AC80C8E2A85C60B00FE9D6C /* URL+.swift */,
-				5AC80C902A85C66C00FE9D6C /* Endpoint.swift */,
-			);
-			name = Global;
-			sourceTree = "<group>";
-		};
 		5AC80C962A85F9E900FE9D6C /* Async */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,10 +145,10 @@
 		5AE854102A80968A004D9104 /* SeSAC3Week4 */ = {
 			isa = PBXGroup;
 			children = (
-				5AC80C872A85B98D00FE9D6C /* App */,
-				5AC80C892A85BA8900FE9D6C /* Global */,
-				5AC80C882A85B99F00FE9D6C /* Networks */,
-				5AC80C862A85B96100FE9D6C /* Presentation */,
+				5AEFAAE52A8E260800A67C43 /* Presentation */,
+				5AEFAAE32A8E25D200A67C43 /* Networks */,
+				5AEFAAE22A8E25C200A67C43 /* Global */,
+				5AEFAAE12A8E25AF00A67C43 /* App */,
 				5AE8541A2A80968D004D9104 /* Assets.xcassets */,
 				5AE8541C2A80968D004D9104 /* LaunchScreen.storyboard */,
 				5AE8541F2A80968D004D9104 /* Info.plist */,
@@ -230,6 +182,62 @@
 				5AEFAADD2A8E1C9A00A67C43 /* kakaoVideoAPI.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		5AEFAAE12A8E25AF00A67C43 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5AE854112A80968A004D9104 /* AppDelegate.swift */,
+				5AE854132A80968A004D9104 /* SceneDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		5AEFAAE22A8E25C200A67C43 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80C8C2A85BD2000FE9D6C /* UserDefaultsHelper.swift */,
+				5AC80C8A2A85BAA400FE9D6C /* ReusableViewProtocol.swift */,
+				5AC80C8E2A85C60B00FE9D6C /* URL+.swift */,
+				5AC80C902A85C66C00FE9D6C /* Endpoint.swift */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		5AEFAAE32A8E25D200A67C43 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				5AEFAAE42A8E25EE00A67C43 /* JackNetwork */,
+				5AEFAADC2A8E1C8700A67C43 /* API */,
+				5AEFAAD72A8E19A900A67C43 /* Foundation */,
+				5AEFAA9C2A8A022200A67C43 /* Model */,
+			);
+			name = Networks;
+			sourceTree = "<group>";
+		};
+		5AEFAAE42A8E25EE00A67C43 /* JackNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				5AC80C822A852B9B00FE9D6C /* NetworkError.swift */,
+				5AC80C802A852B4D00FE9D6C /* NetworkService.swift */,
+				5AC80C842A852BD200FE9D6C /* URLConstant.swift */,
+				5AC80C922A85C7AF00FE9D6C /* kakaoAPIManager.swift */,
+				5AC80C942A85E36400FE9D6C /* TranslateAPIManager.swift */,
+			);
+			name = JackNetwork;
+			sourceTree = "<group>";
+		};
+		5AEFAAE52A8E260800A67C43 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5AE854172A80968A004D9104 /* Main.storyboard */,
+				5AC80C962A85F9E900FE9D6C /* Async */,
+				5AC80C7E2A84ED0A00FE9D6C /* KaKaoVideo */,
+				5AC80C7D2A84ECF600FE9D6C /* PaPago */,
+				5AC80C7C2A84ECF000FE9D6C /* Weather */,
+				5AC80C7B2A84ECE700FE9D6C /* Movie */,
+			);
+			name = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
