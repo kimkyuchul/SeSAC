@@ -26,6 +26,8 @@ class kakaoAPIManager {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                print(json)
+                print(response.request?.allHTTPHeaderFields)
                 
                 completion(json)
                 

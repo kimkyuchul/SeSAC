@@ -26,7 +26,11 @@ struct Video {
 
 final class VideoViewController: UIViewController {
     
-    private var videoList: [Video] = []
+    private var videoList: [Document] = [] {
+        didSet {
+            videoTableView.reloadData()
+        }
+    }
     // 페이지 수 관리
     var page = 1
     var isEnd = false // 현재 페이지가 마지막 페이지인지 점검하는 프로퍼티
@@ -50,50 +54,16 @@ final class VideoViewController: UIViewController {
 extension VideoViewController {
     
     func callRequest(query: String, page: Int) {
-//        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-//        let url = "https://dapi.kakao.com/v2/search/vclip?query=\(text!)&size=10&page=\(page)"
-//        let header: HTTPHeaders = ["Authorization":"KakaoAK \(APIKey.kakaoKey)"]
-        
-        kakaoAPIManager.shared.callRequest(type: .video, query: searchBar.text!) { json in
-            print(json)
+        BaseService.shared.request(target: kakaoVideoAPI.getVideo(query: query, page: page), KaKaoVideo.self) { response in
+            switch response {
+            case .success(let value):
+                print(value)
+                self.videoList.append(contentsOf: value.documents)
+                self.isEnd = value.meta.isEnd
+            case .failure(let error):
+                print(error)
+            }
         }
-    
-//        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//                print("JSON: \(json)")
-//
-//                // response가 옵셔널 체이닝이기 때문에 옵셔널이 올 시 처리가 필요
-//                let statusCode = response.response?.statusCode ?? 500
-//
-//                // 마지막 페이지인지 확인하는 플래그
-//                let isEnd = json["meta"]["is_end"].boolValue
-//                self.isEnd = isEnd
-//
-//                if statusCode == 200 {
-//                    for item in json["documents"].arrayValue {
-//                        let author = item["author"].stringValue
-//                        let date = item["datetime"].stringValue
-//                        let time = item["play_time"].intValue
-//                        let thumbnail = item["thumbnail"].stringValue
-//                        let title = item["title"].stringValue
-//                        let link = item["url"].stringValue
-//
-//                        let data = Video(author: author, datetime: date, playTime: time, thumbnail: thumbnail, title: title, link: link)
-//
-//                        self.videoList.append(data)
-//                    }
-//
-//                    self.videoTableView.reloadData()
-//
-//                } else {
-//                    print("문제가 발생.")
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
     }
 }
 
@@ -142,12 +112,20 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier, for: indexPath) as? VideoTableViewCell else { return UITableViewCell() }
         
+        let row = videoList[indexPath.row]
+        
         cell.titleLabel.text = videoList[indexPath.row].title
-        cell.contentLabel.text = videoList[indexPath.row].contents
+        
+        var contents: String {
+            return "\(row.author) | \(row.playTime)회\n\(row.datetime)"
+        }
+        
+        cell.contentLabel.text = contents
         cell.thumbnailImageView.kf.setImage(with: URL(string: videoList[indexPath.row].thumbnail)) { image in
             switch image {
             case .success(_):
                 print("성공")
+                
             case .failure(_):
                 print("실패")
             }

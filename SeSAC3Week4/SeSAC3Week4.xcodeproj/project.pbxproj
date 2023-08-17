@@ -33,6 +33,10 @@
 		5AE854652A81C4E7004D9104 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854642A81C4E7004D9104 /* WeatherViewController.swift */; };
 		5AE854672A81E7BD004D9104 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE854662A81E7BD004D9104 /* VideoViewController.swift */; };
 		5AEFAA9E2A8A023600A67C43 /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFAA9D2A8A023600A67C43 /* BoxOffice.swift */; };
+		5AEFAAD92A8E1B1A00A67C43 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFAAD82A8E1B1A00A67C43 /* EndPointType.swift */; };
+		5AEFAADB2A8E1C3B00A67C43 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFAADA2A8E1C3B00A67C43 /* BaseService.swift */; };
+		5AEFAADE2A8E1C9A00A67C43 /* kakaoVideoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFAADD2A8E1C9A00A67C43 /* kakaoVideoAPI.swift */; };
+		5AEFAAE02A8E1EAD00A67C43 /* KaKaoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFAADF2A8E1EAD00A67C43 /* KaKaoVideo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,10 @@
 		5AE854642A81C4E7004D9104 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		5AE854662A81E7BD004D9104 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		5AEFAA9D2A8A023600A67C43 /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
+		5AEFAAD82A8E1B1A00A67C43 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		5AEFAADA2A8E1C3B00A67C43 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		5AEFAADD2A8E1C9A00A67C43 /* kakaoVideoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoVideoAPI.swift; sourceTree = "<group>"; };
+		5AEFAADF2A8E1EAD00A67C43 /* KaKaoVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoVideo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,8 @@
 		5AC80C882A85B99F00FE9D6C /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				5AEFAADC2A8E1C8700A67C43 /* API */,
+				5AEFAAD72A8E19A900A67C43 /* Foundation */,
 				5AEFAA9C2A8A022200A67C43 /* Model */,
 				5AC80C822A852B9B00FE9D6C /* NetworkError.swift */,
 				5AC80C802A852B4D00FE9D6C /* NetworkService.swift */,
@@ -200,8 +210,26 @@
 			isa = PBXGroup;
 			children = (
 				5AEFAA9D2A8A023600A67C43 /* BoxOffice.swift */,
+				5AEFAADF2A8E1EAD00A67C43 /* KaKaoVideo.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		5AEFAAD72A8E19A900A67C43 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				5AEFAAD82A8E1B1A00A67C43 /* EndPointType.swift */,
+				5AEFAADA2A8E1C3B00A67C43 /* BaseService.swift */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		5AEFAADC2A8E1C8700A67C43 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5AEFAADD2A8E1C9A00A67C43 /* kakaoVideoAPI.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +322,12 @@
 				5AC80C912A85C66C00FE9D6C /* Endpoint.swift in Sources */,
 				5AE854162A80968A004D9104 /* ViewController.swift in Sources */,
 				5AC80C812A852B4D00FE9D6C /* NetworkService.swift in Sources */,
+				5AEFAADE2A8E1C9A00A67C43 /* kakaoVideoAPI.swift in Sources */,
+				5AEFAAD92A8E1B1A00A67C43 /* EndPointType.swift in Sources */,
 				5AC80C8B2A85BAA400FE9D6C /* ReusableViewProtocol.swift in Sources */,
 				5AE854122A80968A004D9104 /* AppDelegate.swift in Sources */,
+				5AEFAAE02A8E1EAD00A67C43 /* KaKaoVideo.swift in Sources */,
+				5AEFAADB2A8E1C3B00A67C43 /* BaseService.swift in Sources */,
 				5AC80C6D2A83230B00FE9D6C /* VideoTableViewCell.swift in Sources */,
 				5AC80C8F2A85C60B00FE9D6C /* URL+.swift in Sources */,
 				5AE854142A80968A004D9104 /* SceneDelegate.swift in Sources */,
