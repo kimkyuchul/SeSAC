@@ -33,7 +33,6 @@ final class MovieListViewController: BaseViewController {
         self.title = "영화 목록"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.view.backgroundColor = .tertiarySystemGroupedBackground
-        
     }
     
     override func setHierarchy() {

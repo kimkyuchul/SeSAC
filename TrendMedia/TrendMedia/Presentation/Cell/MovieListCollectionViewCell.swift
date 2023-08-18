@@ -25,7 +25,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     private let ratingBadge = RatingBadgeView()
-    private let titleLabel: UILabel = {
+     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
         label.numberOfLines = 0

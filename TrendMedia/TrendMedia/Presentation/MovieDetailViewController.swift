@@ -38,6 +38,11 @@ final class MovieDetailViewController: BaseViewController {
         super.viewWillAppear(animated)
         fetchCredit(movieId: detailData?.id ?? 0)
     }
+        
+    @objc
+    func similarPageButtonTapped() {
+        self.navigationController?.pushViewController(SimilarViewController(), animated: true)
+    }
     
     override func setHierarchy() {
         view.addSubview(detailTableView)
@@ -48,6 +53,12 @@ final class MovieDetailViewController: BaseViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
+    
+    override func setNavigationBar() {
+        let rightBarButton = UIBarButtonItem(title: "Similar Movie", style: .plain, target: self, action: #selector(similarPageButtonTapped))
+        self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+
     
 }
 
