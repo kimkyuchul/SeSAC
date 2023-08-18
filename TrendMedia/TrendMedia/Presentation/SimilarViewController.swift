@@ -11,20 +11,29 @@ import SnapKit
 
 final class SimilarViewController: BaseViewController {
     
-    enum SegmentSectionType: CaseIterable {
+    enum SegmentControlSectionType: CaseIterable {
         case similar
         case recommendation
     }
     
-    private var similarData: [SimilarData] = []
+    typealias SectionType = SegmentControlSectionType
     
-    private let segmentCotrol: UISegmentedControl = {
+    private var similarData: [SimilarData] = [] {
+        didSet {
+            setEmptyView(isEmptyData: similarData.isEmpty)
+        }
+    }
+    
+    private var recommendaionData: [RecommendaionData] = []
+    
+    var movieID = Int()
+    
+    private lazy var segmentCotrol: UISegmentedControl = {
         let segment = UISegmentedControl(items: ["Similar", "Recommendation"])
-//        segment.selectedSegmentIndex = 0
+        segment.selectedSegmentIndex = 0
         segment.addTarget(self, action: #selector(segmentValueChanged), for: .valueChanged)
         return segment
     }()
-    
     private lazy var similarCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: view.getDeviceWidth(), height: view.getDeviceHeight() * 0.6)
@@ -35,18 +44,17 @@ final class SimilarViewController: BaseViewController {
         collectionView.register(MovieListCollectionViewCell.self, forCellWithReuseIdentifier: MovieListCollectionViewCell.identifier)
         return collectionView
     }()
-
+    private let emptyView = EmptyView(isHidden: true)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Similar"
-        self.view.backgroundColor = .systemRed
-        self.segmentCotrol.selectedSegmentIndex = 0
+        self.title = "관련 영화"
+        self.view.backgroundColor = .tertiarySystemGroupedBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchSimilarData(movieId: 402)
-        self.similarCollectionView.reloadData()
+        featchAllData()
     }
     
     @objc
@@ -55,34 +63,56 @@ final class SimilarViewController: BaseViewController {
     }
     
     private func switchSegment(index: Int) {
-        let type = SegmentSectionType.allCases[index]
+        let type = SectionType.allCases[index]
         
         switch type {
         case .similar:
-            self.similarCollectionView.collectionViewLayout = configurationCollectionViewLayout(index: index)
-            self.similarCollectionView.reloadData()
+            if self.similarData.isEmpty {
+                setEmptyView(isEmptyData: true)
+            } else {
+                setEmptyView(isEmptyData: false)
+                self.similarCollectionView.collectionViewLayout = configurationCollectionViewLayout(index: index)
+                self.similarCollectionView.reloadData()
+            }
         case .recommendation:
-            self.similarCollectionView.collectionViewLayout = configurationCollectionViewLayout(index: index)
-            self.similarCollectionView.reloadData()
+            if self.recommendaionData.isEmpty {
+                setEmptyView(isEmptyData: true)
+            } else {
+                setEmptyView(isEmptyData: false)
+                self.similarCollectionView.collectionViewLayout = configurationCollectionViewLayout(index: index)
+                self.similarCollectionView.reloadData()
+            }
         }
     }
     
     private func configurationCollectionViewLayout(index: Int) -> UICollectionViewFlowLayout {
-        let type = SegmentSectionType.allCases[index]
+        let type = SectionType.allCases[index]
+        let flowLayout = UICollectionViewFlowLayout()
+        
         switch type {
         case .similar:
-            let flowLayout = UICollectionViewFlowLayout()
             flowLayout.itemSize = CGSize(width: view.getDeviceWidth(), height: view.getDeviceHeight() * 0.6)
             return flowLayout
         case .recommendation:
-            let flowLayout = UICollectionViewFlowLayout()
             flowLayout.itemSize = CGSize(width: view.getDeviceWidth(), height: view.getDeviceHeight() * 0.3)
             return flowLayout
         }
     }
+    
+    private func setEmptyView(isEmptyData: Bool) {
+        if isEmptyData {
+            self.emptyView.isHidden = false
+            self.similarCollectionView.isHidden = true
+        } else {
+            self.emptyView.isHidden = true
+            self.similarCollectionView.isHidden = false
+        }
+    }
+    
     override func setHierarchy() {
         view.addSubview(segmentCotrol)
         view.addSubview(similarCollectionView)
+        view.addSubview(emptyView)
     }
     
     override func setConstraints() {
@@ -95,45 +125,83 @@ final class SimilarViewController: BaseViewController {
             make.top.equalTo(segmentCotrol.snp.bottom).offset(10)
             make.leading.trailing.bottom.equalToSuperview()
         }
+        
+        emptyView.snp.makeConstraints { make in
+            make.edges.equalTo(similarCollectionView.snp.edges)
+        }
     }
 }
 
 extension SimilarViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let type = SegmentSectionType.allCases[self.segmentCotrol.selectedSegmentIndex]
+        let type = SectionType.allCases[self.segmentCotrol.selectedSegmentIndex]
         switch type {
         case .similar:
-            print(self.similarData.count)
             return self.similarData.count
         case .recommendation:
-            return 20
+            return self.recommendaionData.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieListCollectionViewCell.identifier, for: indexPath) as? MovieListCollectionViewCell else { return UICollectionViewCell() }
         
-        let type = SegmentSectionType.allCases[self.segmentCotrol.selectedSegmentIndex]
+        
+        let type = SectionType.allCases[self.segmentCotrol.selectedSegmentIndex]
         switch type {
         case .similar:
             let row = self.similarData[indexPath.item]
             cell.similarConfigureCell(row: row)
             return cell
         case .recommendation:
+            let row = self.recommendaionData[indexPath.item]
+            cell.recommendationConfigureCell(row: row)
             return cell
         }
     }
 }
 
 extension SimilarViewController {
-    func fetchSimilarData(movieId: Int) {
+    func featchAllData() {
+        let group = DispatchGroup()
+        
+        group.enter()
+        fetchSimilarData(movieId: self.movieID) { [weak self] data in
+            self?.similarData = data.results
+            group.leave()
+        }
+        
+        group.enter()
+        fetchRecommendationData(movieId: self.movieID) { [weak self] data in
+            self?.recommendaionData = data.results
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            self.similarCollectionView.reloadData()
+        }
+    }
+    
+    func fetchSimilarData(movieId: Int, completion: @escaping (Similar) -> Void) {
         BaseService.shared.request(target: MovieAPI.getSimilarAPI(movieId: movieId), Similar.self) { result in
             switch result {
             case .success(let data):
-                self.similarData = data.results
-                self.similarCollectionView.reloadData() 
+                completion(data)
             case .failure(let error):
-                print(error)
+                self.setEmptyView(isEmptyData: true)
+                print(error.errorMessage)
+            }
+        }
+    }
+    
+    func fetchRecommendationData(movieId: Int, completion: @escaping (Recommendaion) -> Void) {
+        BaseService.shared.request(target: MovieAPI.getRecommendationsAPI(movieId: movieId), Recommendaion.self) { result in
+            switch result {
+            case .success(let data):
+                completion(data)
+            case .failure(let error):
+                self.setEmptyView(isEmptyData: true)
+                print(error.errorMessage)
             }
         }
     }

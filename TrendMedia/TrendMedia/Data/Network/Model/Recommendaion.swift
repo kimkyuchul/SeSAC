@@ -1,5 +1,5 @@
 //
-//  Similar.swift
+//  Recommendaion.swift
 //  TrendMedia
 //
 //  Created by 김규철 on 2023/08/18.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Similar: Codable {
+struct Recommendaion: Codable {
     let page: Int
-    let results: [SimilarData]
+    let results: [RecommendaionData]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -20,16 +20,16 @@ struct Similar: Codable {
 }
 
 // MARK: - Result
-struct SimilarData: Codable {
+struct RecommendaionData: Codable {
     let adult: Bool
     let backdropPath: String?
-    let genreIDS: [Int]
     let id: Int
-    let originalLanguage: String
-    let originalTitle, overview: String
-    let popularity: Double
+    let title, originalLanguage, originalTitle, overview: String
     let posterPath: String?
-    let releaseDate, title: String
+    let mediaType: MediaType
+    let genreIDS: [Int]
+    let popularity: Double
+    let releaseDate: String
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
@@ -37,22 +37,21 @@ struct SimilarData: Codable {
     enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"
-        case genreIDS = "genre_ids"
-        case id
+        case id, title
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
-        case overview, popularity
+        case overview
         case posterPath = "poster_path"
+        case mediaType = "media_type"
+        case genreIDS = "genre_ids"
+        case popularity
         case releaseDate = "release_date"
-        case title, video
+        case video
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
 }
 
-enum OriginalLanguage: String, Codable {
-    case de = "de"
-    case en = "en"
-    case es = "es"
-    case ko = "ko"
+enum MediaType: String, Codable {
+    case movie = "movie"
 }

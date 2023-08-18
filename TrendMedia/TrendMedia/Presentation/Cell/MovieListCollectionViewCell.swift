@@ -15,7 +15,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
     private let backView: UIView = {
         let view = UIView()
         view.isUserInteractionEnabled = false
-        view.backgroundColor = .tertiarySystemFill
+        view.backgroundColor = .clear
         return view
     }()
     private let imageBackView = UIView()
@@ -73,7 +73,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
 
         contentView.addSubview(backView)
 
-        [imageBackView, infoStackView].forEach { view in
+        [imageBackView, titleLabel, releaseDateLabel].forEach { view in
             backView.addSubview(view)
         }
     }
@@ -87,7 +87,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
 
         imageBackView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(backView.snp.height).multipliedBy(0.8)
+            make.height.equalTo(backView.snp.height).multipliedBy(0.7)
         }
 
         posterImageView.snp.makeConstraints { make in
@@ -98,12 +98,20 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
             make.leading.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(20)
         }
-
-        infoStackView.snp.makeConstraints { make in
+        
+        titleLabel.snp.makeConstraints { make in
             make.top.equalTo(posterImageView.snp.bottom).offset(10)
             make.leading.equalToSuperview().inset(10)
-            make.trailing.equalToSuperview().inset(10).priority(.high)
-            make.bottom.equalToSuperview().inset(20).priority(.low)
+            make.trailing.equalToSuperview().inset(5).priority(.high)
+            make.height.equalTo(posterImageView.snp.height).multipliedBy(0.1)
+        }
+        
+        releaseDateLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.leading.equalToSuperview().inset(10)
+            make.trailing.equalToSuperview().inset(5).priority(.high)
+            make.bottom.equalToSuperview().inset(10).priority(.low)
+            make.height.equalTo(titleLabel.snp.height)
         }
     }
     
@@ -127,7 +135,14 @@ extension MovieListCollectionViewCell {
     func similarConfigureCell(row: SimilarData) {
         titleLabel.text = row.title
         ratingBadge.setRatingLabelText(text: String(row.voteAverage))
-        posterImageView.kf.setImage(with: URL(string: URLConstants.image + row.posterPath ))
+        posterImageView.kf.setImage(with: URL(string: URLConstants.image + (row.posterPath ?? "") ))
+        releaseDateLabel.text = row.releaseDate
+    }
+    
+    func recommendationConfigureCell(row: RecommendaionData) {
+        titleLabel.text = row.title
+        ratingBadge.setRatingLabelText(text: String(row.voteAverage))
+        posterImageView.kf.setImage(with: URL(string: URLConstants.image + (row.posterPath ?? "") ))
         releaseDateLabel.text = row.releaseDate
     }
 }

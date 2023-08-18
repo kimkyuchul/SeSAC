@@ -17,7 +17,7 @@ final class MovieDetailViewController: BaseViewController {
             detailTableView.reloadData()
         }
     }
-        
+
     private lazy var detailTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.showsVerticalScrollIndicator = false
@@ -41,7 +41,10 @@ final class MovieDetailViewController: BaseViewController {
         
     @objc
     func similarPageButtonTapped() {
-        self.navigationController?.pushViewController(SimilarViewController(), animated: true)
+        let VC = SimilarViewController()
+        guard let castIndex = creditList.first else { return }
+        VC.movieID = castIndex.id
+        self.navigationController?.pushViewController(VC, animated: true)
     }
     
     override func setHierarchy() {
@@ -55,7 +58,7 @@ final class MovieDetailViewController: BaseViewController {
     }
     
     override func setNavigationBar() {
-        let rightBarButton = UIBarButtonItem(title: "Similar Movie", style: .plain, target: self, action: #selector(similarPageButtonTapped))
+        let rightBarButton = UIBarButtonItem(title: "추천 & 관련 영화", style: .plain, target: self, action: #selector(similarPageButtonTapped))
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
 
@@ -95,7 +98,6 @@ extension MovieDetailViewController {
             switch result {
             case .success(let data):
                 self.creditList = data.cast
-                print(data)
             case .failure(let error):
                 print(error)
             }

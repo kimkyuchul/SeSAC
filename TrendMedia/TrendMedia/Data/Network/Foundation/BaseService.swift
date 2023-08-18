@@ -15,7 +15,7 @@ final class BaseService {
     
     private init() {}
         
-    func request<T: Codable>(target: EndPointType, _ type: T.Type, completion: @escaping (Result<T, Error>) -> (Void)) {
+    func request<T: Codable>(target: EndPointType, _ type: T.Type, completion: @escaping (Result<T, NetworkError>) -> (Void)) {
         AF.request(target)
             .validate()
             .responseDecodable(of: type) { response in
@@ -23,7 +23,12 @@ final class BaseService {
                 case .success(let value):
                     completion(.success(value))
                 case .failure(let error):
-                    completion(.failure(error))
+                    switch response.response?.statusCode {
+                    case 404:
+                        completion(.failure(NetworkError.notBeFoundData))
+                    default:
+                        completion(.failure(NetworkError.noneError(error: error)))
+                    }
                 }
             }
     }

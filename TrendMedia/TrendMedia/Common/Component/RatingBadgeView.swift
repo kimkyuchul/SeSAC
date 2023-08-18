@@ -32,7 +32,7 @@ final class RatingBadgeView: UIStackView {
         axis = .horizontal
         alignment = .fill
         spacing = 1
-        self.backgroundColor = .white
+        self.backgroundColor = .tertiarySystemGroupedBackground
     }
     
     required init(coder: NSCoder) {
@@ -40,7 +40,7 @@ final class RatingBadgeView: UIStackView {
     }
     
     override func layoutSubviews() {
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 5
     }
     
     private func setHierarchy() {
