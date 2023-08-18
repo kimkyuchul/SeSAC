@@ -57,7 +57,7 @@ extension MovieListViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieListCollectionViewCell.identifier, for: indexPath) as? MovieListCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(row: data[indexPath.item])
+        cell.movieConfigureCell(row: data[indexPath.item])
         return cell
     }
     
@@ -70,7 +70,7 @@ extension MovieListViewController: UICollectionViewDataSource, UICollectionViewD
 
 extension MovieListViewController {
     func fetchMovie() {
-        BaseService.shared.request(target: MovieListAPI.getTrandAPI, Movie.self) { result in
+        BaseService.shared.request(target: MovieAPI.getTrandAPI, Movie.self) { result in
             switch result {
             case .success(let data):
                 self.data = data.results

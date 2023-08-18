@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A10B1BA2A8F6C5100139E89 /* SimilarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1B92A8F6C5100139E89 /* SimilarViewController.swift */; };
+		5A10B1BC2A8F844A00139E89 /* Similar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1BB2A8F844A00139E89 /* Similar.swift */; };
 		5AC80CA62A8629D500FE9D6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CA52A8629D500FE9D6C /* AppDelegate.swift */; };
 		5AC80CA82A8629D500FE9D6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80CA72A8629D500FE9D6C /* SceneDelegate.swift */; };
 		5AC80CAF2A8629D800FE9D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC80CAE2A8629D800FE9D6C /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		5A10B1B92A8F6C5100139E89 /* SimilarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarViewController.swift; sourceTree = "<group>"; };
+		5A10B1BB2A8F844A00139E89 /* Similar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Similar.swift; sourceTree = "<group>"; };
 		5AC80CA22A8629D500FE9D6C /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC80CA52A8629D500FE9D6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC80CA72A8629D500FE9D6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				5AEFAA962A89232300A67C43 /* Movie.swift */,
 				5AEFAA982A893D1C00A67C43 /* Credit.swift */,
+				5A10B1BB2A8F844A00139E89 /* Similar.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				5AC80CDD2A862C3B00FE9D6C /* MovieDetailViewController.swift in Sources */,
 				5AC80CDB2A862C1300FE9D6C /* MovieListViewController.swift in Sources */,
 				5AC80CA62A8629D500FE9D6C /* AppDelegate.swift in Sources */,
+				5A10B1BC2A8F844A00139E89 /* Similar.swift in Sources */,
 				5AC80CA82A8629D500FE9D6C /* SceneDelegate.swift in Sources */,
 				5AEFAA992A893D1C00A67C43 /* Credit.swift in Sources */,
 				5AEFAA972A89232300A67C43 /* Movie.swift in Sources */,

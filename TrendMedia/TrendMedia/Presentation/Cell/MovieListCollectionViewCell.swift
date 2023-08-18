@@ -117,10 +117,17 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
 }
 
 extension MovieListCollectionViewCell {
-    func configureCell(row: MovieDetail) {
+    func movieConfigureCell(row: MovieDetail) {
         titleLabel.text = row.title
         ratingBadge.setRatingLabelText(text: String(row.vote_average))
         posterImageView.kf.setImage(with: URL(string: URLConstants.image + (row.poster_path ?? "")))
         releaseDateLabel.text = row.release_date
+    }
+    
+    func similarConfigureCell(row: SimilarData) {
+        titleLabel.text = row.title
+        ratingBadge.setRatingLabelText(text: String(row.voteAverage))
+        posterImageView.kf.setImage(with: URL(string: URLConstants.image + row.posterPath ))
+        releaseDateLabel.text = row.releaseDate
     }
 }

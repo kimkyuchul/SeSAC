@@ -14,12 +14,13 @@ final class SimilarViewController: BaseViewController {
     enum SegmentSectionType: CaseIterable {
         case similar
         case recommendation
-        
     }
     
-    private lazy var segmentCotrol: UISegmentedControl = {
+    private var similarData: [SimilarData] = []
+    
+    private let segmentCotrol: UISegmentedControl = {
         let segment = UISegmentedControl(items: ["Similar", "Recommendation"])
-        segment.selectedSegmentIndex = 0
+//        segment.selectedSegmentIndex = 0
         segment.addTarget(self, action: #selector(segmentValueChanged), for: .valueChanged)
         return segment
     }()
@@ -39,12 +40,18 @@ final class SimilarViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "Similar"
         self.view.backgroundColor = .systemRed
-
+        self.segmentCotrol.selectedSegmentIndex = 0
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchSimilarData(movieId: 402)
+        self.similarCollectionView.reloadData()
     }
     
     @objc
     func segmentValueChanged(segment: UISegmentedControl) {
-        switchSegment(index: segment.selectedSegmentIndex)
+        switchSegment(index: self.segmentCotrol.selectedSegmentIndex)
     }
     
     private func switchSegment(index: Int) {
@@ -96,7 +103,8 @@ extension SimilarViewController: UICollectionViewDelegate, UICollectionViewDataS
         let type = SegmentSectionType.allCases[self.segmentCotrol.selectedSegmentIndex]
         switch type {
         case .similar:
-            return 2
+            print(self.similarData.count)
+            return self.similarData.count
         case .recommendation:
             return 20
         }
@@ -104,9 +112,29 @@ extension SimilarViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieListCollectionViewCell.identifier, for: indexPath) as? MovieListCollectionViewCell else { return UICollectionViewCell() }
-        cell.titleLabel.text = "test"
-        return cell
+        
+        let type = SegmentSectionType.allCases[self.segmentCotrol.selectedSegmentIndex]
+        switch type {
+        case .similar:
+            let row = self.similarData[indexPath.item]
+            cell.similarConfigureCell(row: row)
+            return cell
+        case .recommendation:
+            return cell
+        }
     }
-    
-    
+}
+
+extension SimilarViewController {
+    func fetchSimilarData(movieId: Int) {
+        BaseService.shared.request(target: MovieAPI.getSimilarAPI(movieId: movieId), Similar.self) { result in
+            switch result {
+            case .success(let data):
+                self.similarData = data.results
+                self.similarCollectionView.reloadData() 
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

@@ -91,7 +91,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension MovieDetailViewController {
     func fetchCredit(movieId: Int) {
-        BaseService.shared.request(target: MovieListAPI.getCreditsAPI(movieId: movieId), Credit.self) { result in
+        BaseService.shared.request(target: MovieAPI.getCreditsAPI(movieId: movieId), Credit.self) { result in
             switch result {
             case .success(let data):
                 self.creditList = data.cast
