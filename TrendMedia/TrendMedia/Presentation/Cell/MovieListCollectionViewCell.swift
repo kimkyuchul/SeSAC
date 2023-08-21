@@ -25,13 +25,20 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     private let ratingBadge = RatingBadgeView()
-     let titleLabel: UILabel = {
+     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
         label.numberOfLines = 0
         label.textColor = .black
         return label
     }()
+    private let originalTitleLabel: UILabel = {
+       let label = UILabel()
+       label.font = .boldSystemFont(ofSize: 16)
+       label.numberOfLines = 0
+        label.textColor = .gray
+       return label
+   }()
     // type & adult
     private let mediaInfoLabel: UILabel = {
         let label = UILabel()
@@ -73,7 +80,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
 
         contentView.addSubview(backView)
 
-        [imageBackView, titleLabel, releaseDateLabel].forEach { view in
+        [imageBackView, titleLabel, originalTitleLabel, releaseDateLabel].forEach { view in
             backView.addSubview(view)
         }
     }
@@ -101,10 +108,22 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(posterImageView.snp.bottom).offset(10)
-            make.leading.equalToSuperview().inset(10)
-            make.trailing.equalToSuperview().inset(5).priority(.high)
+            make.leading.equalToSuperview().inset(5)
+//            make.trailing.equalToSuperview().inset(5).priority(.high)
             make.height.equalTo(posterImageView.snp.height).multipliedBy(0.1)
         }
+        
+        originalTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(posterImageView.snp.bottom).offset(10)
+            make.leading.equalTo(titleLabel.snp.trailing).offset(5)
+            make.trailing.equalToSuperview().inset(5)
+            make.height.equalTo(posterImageView.snp.height).multipliedBy(0.1)
+        }
+        
+        // 공간이 남을 경우 titleLabel의 크기는 유지하고 originalTitleLabel의 길이가 늘어난다.
+        titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        // 공간이 부족할 경우 titleLabel의 크기는 유지하고 originalTitleLabel의 길이가 줄어든다.
+        titleLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         
         releaseDateLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
@@ -127,6 +146,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
 extension MovieListCollectionViewCell {
     func movieConfigureCell(row: MovieDetail) {
         titleLabel.text = row.title
+        originalTitleLabel.text = row.original_title
         ratingBadge.setRatingLabelText(text: String(row.vote_average))
         posterImageView.kf.setImage(with: URL(string: URLConstants.image + (row.poster_path ?? "")))
         releaseDateLabel.text = row.release_date
