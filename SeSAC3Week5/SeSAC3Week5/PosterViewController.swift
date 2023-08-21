@@ -13,6 +13,7 @@ import Kingfisher
 
 class PosterViewController: UIViewController {
     
+    @IBOutlet weak var notificationButton: UIButton!
     @IBOutlet weak var posterCollectionView: UICollectionView!
     
     private var list: Recommendation = Recommendation(page: 0, results: [], totalPages: 0, totalResults: 0)
@@ -23,32 +24,50 @@ class PosterViewController: UIViewController {
     
     private var fourList: Recommendation = Recommendation(page: 0, results: [], totalPages: 0, totalResults: 0)
     
-    let queue1 = DispatchQueue(label: "queue1", attributes: .concurrent)
-    let group = DispatchGroup()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         configureCollectionViewLayout()
         callAllRecommendation()
-//        callRecommendation(id: 976573) { data in
-//            self.list = data
-//        }
-//
-//        callRecommendation(id: 479718) { data in
-//            self.secondList = data
-//        }
-//        LottoManager.shared.callLotto { bonus, number in
-//            print(bonus, number)
-//        }
+        
+        let group = DispatchGroup()
+        
+        let id = [673, 674, 675, 675]
+        
+        for item in id {
+            group.enter()
+            callRecommendation(id: item) { data in
+                if item == 673 {
+                    self.list = data
+                }
+                group.leave()
+            }
+        }
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        self.showAlert(title: "aa", message: "bb", button: "cc") {
-//            print("adada")
-//        }
-//    }
+    
+    @IBAction func sendNotification(_ sender: UIButton) {
+        
+        // 포그라운드에서 알림이 안뜨는게 디폴트
+        // 알림이 백그라운드에서만 뜨게 하는게 애플의 정책이다.
+        
+        // 1. 컨텐츠 2. 언제 => 알림 보내!
+        let content = UNMutableNotificationContent()
+        content.title = "다마고치에게 물을 줘"
+        content.body = "아직 레벨 3이에요. 물을 \(Int.random(in: 1...49)) 줘"
+        content.badge = 100
+        
+        // timeInterval의 최솟값은 60이다.
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        // repeats(반복)을 false를 하면 timeInterval을 60 이하로 설정 가능
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            print(error)
+        }
+    }
     
     func callAllRecommendation() {
         let group = DispatchGroup() // DispatchGroup 생성
@@ -81,7 +100,7 @@ class PosterViewController: UIViewController {
             group.leave() // levave (Task - 1)
         }
         
-        // Task == 0 
+        // Task == 0
         group.notify(queue: .main) {
             self.posterCollectionView.reloadData()
         }
@@ -93,7 +112,6 @@ class PosterViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 compleationHandler(value)
-                print(value)
             case .failure(let error):
                 print(error)
             }
@@ -167,6 +185,7 @@ extension PosterViewController: UICollectionViewDataSource, UICollectionViewDele
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HearderPosterCollectionReusableView", for: indexPath) as?  HearderPosterCollectionReusableView else { return UICollectionReusableView() }
             
             header.titleLabel.text = "테스트 섹션@"
+            header.titleLabel.font = UIFont(name: "GangwonStateot-SemiBold", size: 15)
             
             return header
         } else {
@@ -207,3 +226,6 @@ extension PosterViewController: UICollectionViewDataSource, UICollectionViewDele
 //// C는 A를 상속받고 있기 때문에 오류가 나지 않는다.
 //// 만약 = B() <- 오류
 //let value: A = C()
+
+
+

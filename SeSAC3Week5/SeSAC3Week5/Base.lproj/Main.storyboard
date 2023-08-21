@@ -186,7 +186,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DIQ-kP-tZV">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BKb-fn-RSg">
                                     <size key="itemSize" width="128" height="128"/>
@@ -205,17 +205,27 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y29-Db-Ayi">
+                                <rect key="frame" x="159" y="66" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="sendNotification:" destination="4Ro-ns-yUH" eventType="touchUpInside" id="cFw-Mg-Q7N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HBH-OW-759"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DIQ-kP-tZV" firstAttribute="top" secondItem="HBH-OW-759" secondAttribute="top" id="AAC-wb-K8G"/>
+                            <constraint firstItem="DIQ-kP-tZV" firstAttribute="top" secondItem="HBH-OW-759" secondAttribute="top" constant="50" id="AAC-wb-K8G"/>
                             <constraint firstItem="DIQ-kP-tZV" firstAttribute="leading" secondItem="HBH-OW-759" secondAttribute="leading" id="Ppk-mG-AgV"/>
                             <constraint firstItem="HBH-OW-759" firstAttribute="trailing" secondItem="DIQ-kP-tZV" secondAttribute="trailing" id="bIj-s1-Hcf"/>
                             <constraint firstItem="HBH-OW-759" firstAttribute="bottom" secondItem="DIQ-kP-tZV" secondAttribute="bottom" id="l0f-4s-2DW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="notificationButton" destination="Y29-Db-Ayi" id="P0k-dV-sDh"/>
                         <outlet property="posterCollectionView" destination="DIQ-kP-tZV" id="XmG-pM-04l"/>
                     </connections>
                 </viewController>
