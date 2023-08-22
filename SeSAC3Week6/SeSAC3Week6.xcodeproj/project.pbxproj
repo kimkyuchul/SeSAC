@@ -20,6 +20,9 @@
 		5A97A16A2A94467200264AB5 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A1692A94467200264AB5 /* SnapViewController.swift */; };
 		5A97A16C2A945CC600264AB5 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A16B2A945CC600264AB5 /* TextViewController.swift */; };
 		5A97A16E2A94792A00264AB5 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A16D2A94792A00264AB5 /* LocationViewController.swift */; };
+		5A97A1702A9499BA00264AB5 /* KakaoProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A16F2A9499BA00264AB5 /* KakaoProfileViewController.swift */; };
+		5A97A1742A94B3E600264AB5 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A1732A94B3E600264AB5 /* ChattingViewController.swift */; };
+		5A97A1762A94BFFB00264AB5 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A1752A94BFFB00264AB5 /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		5A97A1692A94467200264AB5 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		5A97A16B2A945CC600264AB5 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		5A97A16D2A94792A00264AB5 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		5A97A16F2A9499BA00264AB5 /* KakaoProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoProfileViewController.swift; sourceTree = "<group>"; };
+		5A97A1732A94B3E600264AB5 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		5A97A1752A94BFFB00264AB5 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,9 @@
 				5A97A1422A930A1500264AB5 /* Info.plist */,
 				5A97A16B2A945CC600264AB5 /* TextViewController.swift */,
 				5A97A16D2A94792A00264AB5 /* LocationViewController.swift */,
+				5A97A16F2A9499BA00264AB5 /* KakaoProfileViewController.swift */,
+				5A97A1732A94B3E600264AB5 /* ChattingViewController.swift */,
+				5A97A1752A94BFFB00264AB5 /* PaddingLabel.swift */,
 			);
 			path = SeSAC3Week6;
 			sourceTree = "<group>";
@@ -275,12 +284,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A97A1742A94B3E600264AB5 /* ChattingViewController.swift in Sources */,
 				5A97A16C2A945CC600264AB5 /* TextViewController.swift in Sources */,
 				5A97A16A2A94467200264AB5 /* SnapViewController.swift in Sources */,
 				5A97A1392A930A1300264AB5 /* ViewController.swift in Sources */,
 				5A97A16E2A94792A00264AB5 /* LocationViewController.swift in Sources */,
 				5A97A1352A930A1300264AB5 /* AppDelegate.swift in Sources */,
+				5A97A1762A94BFFB00264AB5 /* PaddingLabel.swift in Sources */,
 				5A97A1372A930A1300264AB5 /* SceneDelegate.swift in Sources */,
+				5A97A1702A9499BA00264AB5 /* KakaoProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

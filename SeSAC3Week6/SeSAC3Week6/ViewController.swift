@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
     
     @objc func signButtonClicked() {
-        let vc = TextViewController()
+        let vc = ChattingViewController()
         
         present(vc, animated: true)
     }
