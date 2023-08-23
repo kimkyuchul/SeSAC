@@ -18,7 +18,7 @@ protocol BaseViewControllerProtocol: AnyObject {
 }
 
 class BaseViewController: UIViewController, BaseViewControllerProtocol {
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setHierarchy()

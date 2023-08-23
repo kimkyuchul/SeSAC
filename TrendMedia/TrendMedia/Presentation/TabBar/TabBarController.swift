@@ -10,11 +10,11 @@ import UIKit
 class TabBarController: UITabBarController {
     
     let movieListViewController = UINavigationController(rootViewController: MovieListViewController())
-    let movieMapViewController = UINavigationController(rootViewController: MovieMapViewController())
+    let movieMapViewController = UINavigationController(rootViewController: MovieMapViewController(viewModel: MovieMapViewModel(locationService: DefaultLocationService())))
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewControllers = [movieListViewController, movieMapViewController]
+        self.viewControllers = [movieMapViewController, movieListViewController]
         setUpTabBar()
     }
     
