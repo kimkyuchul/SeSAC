@@ -10,6 +10,7 @@ import CoreLocation
 
 class DefaultLocationService: NSObject {
     var locationManager: CLLocationManager?
+    
     var coordinate: ((CLLocationCoordinate2D) -> Void)?
     var authorizationStatus: ((CLAuthorizationStatus) -> Void)?
     
@@ -46,24 +47,32 @@ class DefaultLocationService: NSObject {
     func setAuthorizationStatusHandler(handler: @escaping (CLAuthorizationStatus) -> Void) {
         handler(authorizationStatusHandler)
     }
-        
+    
     func setLocationUpdateHandler(handler: @escaping (CLLocationCoordinate2D?) -> Void) {
         handler(locationUpdateHandler)
-        print(locationUpdateHandler)
     }
     
     func checkLocationAuthorization() {
-        switch self.authorizationStatusHandler {
-        case .notDetermined:
-            self.authorizationStatusHandler = .notDetermined
-            self.requestAuthorization() 
-        case .restricted, .denied:
-            self.authorizationStatusHandler = .denied
-        case .authorizedWhenInUse, .authorizedAlways:
-            self.authorizationStatusHandler = .authorizedWhenInUse
-            self.startLocation()
-        @unknown default:
-            break
+        DispatchQueue.global().async {
+            guard CLLocationManager.locationServicesEnabled() else {
+                self.authorizationStatusHandler = .denied
+                return
+            }
+            
+            DispatchQueue.main.async {
+                switch self.authorizationStatusHandler {
+                case .notDetermined:
+                    self.authorizationStatusHandler = .notDetermined
+                    self.requestAuthorization()
+                case .restricted, .denied:
+                    self.authorizationStatusHandler = .denied
+                case .authorizedWhenInUse, .authorizedAlways:
+                    self.authorizationStatusHandler = .authorizedWhenInUse
+                    self.startLocation()
+                @unknown default:
+                    break
+                }
+            }
         }
     }
 }
@@ -84,7 +93,7 @@ extension DefaultLocationService: CLLocationManagerDelegate {
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        print("========\(#function)", manager.authorizationStatus.rawValue)
+        print("===\(#function)", manager.authorizationStatus.rawValue)
         authorizationStatusHandler = manager.authorizationStatus
         checkLocationAuthorization()
     }

@@ -38,15 +38,6 @@ class MovieMapViewModel {
     }
         
     func checkDeviceLocationAuthorization() {
-        DispatchQueue.global().async {
-            guard CLLocationManager.locationServicesEnabled() else {
-                self.authorizationAlertShouldShow?(true)
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.locationService.checkLocationAuthorization()
-            }
-        }
+        self.locationService.checkLocationAuthorization()
     }
 }
