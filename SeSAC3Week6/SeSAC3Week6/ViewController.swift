@@ -49,9 +49,10 @@ class ViewController: UIViewController {
     }
     
     @objc func signButtonClicked() {
-        let vc = ChattingViewController()
+        let vc = LocationViewController()
+        let nav = UINavigationController(rootViewController: vc)
         
-        present(vc, animated: true)
+        present(nav, animated: true)
     }
     
     
