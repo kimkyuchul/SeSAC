@@ -60,7 +60,14 @@ class PosterViewController: UIViewController {
         // timeInterval의 최솟값은 60이다.
 //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         // repeats(반복)을 false를 하면 timeInterval을 60 이하로 설정 가능
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        var component = DateComponents()
+        component.minute = 5
+        component.hour = 10
+        
+        // 캘린더 기반으로 알림 설정
+        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: true)
         
         let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
         

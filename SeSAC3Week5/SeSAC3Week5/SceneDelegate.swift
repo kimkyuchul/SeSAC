@@ -28,6 +28,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidBecomeActive(_ scene: UIScene) {
         UIApplication.shared.applicationIconBadgeNumber = 1
+        // 사용자에게 이미 전달된 노티
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        // 사용자에게 전달된 예정인 노티
+        // 투두 알림 받기 -> 투두 장보기 알림 받기 
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

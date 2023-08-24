@@ -44,6 +44,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     // 포그라운드 상태에서 UNNotificationPresentationOptions을 받겠다.
     // 포그라운드 상태에서도 알림을 받을 수 있도록 설정
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        // 특정화면, 특정 조건에서만 포그라운드 알림 받기,
+        // 특정 화면에서는 알림 안받기
         completionHandler([.sound, .badge, .banner, .list])
+        
+        // 특정 푸시 클릭하면 특정 화면으로 이동
+        // 알림 갯수 제한 :  64개로 제한 (identifier)
     }
 }

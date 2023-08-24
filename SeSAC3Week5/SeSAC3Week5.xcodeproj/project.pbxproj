@@ -18,6 +18,7 @@
 		041AE3E72A899D84007724AE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AE3E62A899D84007724AE /* Endpoint.swift */; };
 		041AE3E92A89A265007724AE /* GCDBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AE3E82A89A265007724AE /* GCDBasicViewController.swift */; };
 		5A10B1B32A8EF01F00139E89 /* GANGWONSTATE-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A10B1B22A8EF01F00139E89 /* GANGWONSTATE-SemiBold.otf */; };
+		5A97A1272A92F4FE00264AB5 /* SeSACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A1262A92F4FE00264AB5 /* SeSACButton.swift */; };
 		5AEFAAAE2A8C4ACE00A67C43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5AEFAAAD2A8C4ACE00A67C43 /* Alamofire */; };
 		5AEFAAB12A8C4AD800A67C43 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AEFAAB02A8C4AD800A67C43 /* Kingfisher */; };
 		5AEFAAB32A8C4B0400A67C43 /* CodableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFAAB22A8C4B0400A67C43 /* CodableViewController.swift */; };
@@ -49,6 +50,7 @@
 		041AE3E62A899D84007724AE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		041AE3E82A89A265007724AE /* GCDBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBasicViewController.swift; sourceTree = "<group>"; };
 		5A10B1B22A8EF01F00139E89 /* GANGWONSTATE-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GANGWONSTATE-SemiBold.otf"; sourceTree = "<group>"; };
+		5A97A1262A92F4FE00264AB5 /* SeSACButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACButton.swift; sourceTree = "<group>"; };
 		5AEFAAB22A8C4B0400A67C43 /* CodableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableViewController.swift; sourceTree = "<group>"; };
 		5AEFAAB52A8C750900A67C43 /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		5AEFAAB62A8C750900A67C43 /* PosterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosterCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		041AE3C02A899B28007724AE = {
 			isa = PBXGroup;
 			children = (
+				5A97A1262A92F4FE00264AB5 /* SeSACButton.swift */,
 				041AE3E12A899D1C007724AE /* .gitignore */,
 				041AE3CB2A899B28007724AE /* SeSAC3Week5 */,
 				041AE3CA2A899B28007724AE /* Products */,
@@ -281,6 +284,7 @@
 				5AEFAAD32A8DE30700A67C43 /* Weather.swift in Sources */,
 				5AEFAACB2A8DB26500A67C43 /* ReusableView+.swift in Sources */,
 				041AE3E92A89A265007724AE /* GCDBasicViewController.swift in Sources */,
+				5A97A1272A92F4FE00264AB5 /* SeSACButton.swift in Sources */,
 				5AEFAAB32A8C4B0400A67C43 /* CodableViewController.swift in Sources */,
 				5AEFAAC62A8DA32000A67C43 /* Alert+.swift in Sources */,
 				5AEFAABE2A8C778D00A67C43 /* PosterViewController.swift in Sources */,
