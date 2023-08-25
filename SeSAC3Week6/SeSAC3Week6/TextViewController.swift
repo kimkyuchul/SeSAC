@@ -23,7 +23,7 @@ class TextViewController: UIViewController {
    private let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemCyan
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     private let titleTextField = {
@@ -54,6 +54,8 @@ class TextViewController: UIViewController {
         view.font = .boldSystemFont(ofSize: 15)
         return view
     }()
+    
+    private let photoPicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +67,34 @@ class TextViewController: UIViewController {
         }
         
         setConstraints()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 사용할 수 있는지 체크
+//        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+//            print("갤러리 사용 불가, 사용자에게 토스트/얼럿")
+//            return
+//        }
+//
+//        // sourceType을 photoLibrary로
+//        photoPicker.sourceType = .photoLibrary
+        
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("카메라 사용 불가, 사용자에게 토스트/얼럿")
+            return
+        }
+
+        // sourceType을 photoLibrary로
+        photoPicker.delegate = self
+        photoPicker.sourceType = .camera
+        photoPicker.allowsEditing = true
+        
+//        let fontPicker = UIFontPickerViewController()
+//        let colorPicker = UIColorPickerViewController()
+        
+        present(photoPicker, animated: true)
     }
     
     private func setConstraints() {
@@ -102,5 +132,24 @@ class TextViewController: UIViewController {
         imageView.backgroundColor = .systemCyan
         imageView.contentMode = .scaleAspectFill
         return imageView
+    }
+}
+
+extension TextViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // 취소 버튼 클릭 시
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+        print(#function)
+    }
+    
+    // 사진을 선택하거나 카메라 촬용 직후 호출
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        // originalImage: 원본이미지, editedImage: allowsEditing한 이미지
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.photoImageView.image = image
+            dismiss(animated: true)
+        }
     }
 }
