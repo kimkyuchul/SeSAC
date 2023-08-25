@@ -44,9 +44,10 @@ final class MovieMapViewController: BaseViewController {
         self.view.backgroundColor = .magenta
         self.title = "영화관 보기"
         viewModel.checkDeviceLocationAuthorization()
-        viewModel.setRegionAndAnnotation()
+        viewModel.setCoordinate()
         viewModel.checkDenied()
         bind()
+        
         locationButton.addTarget(self, action: #selector(locationButtonTapped), for: .touchUpInside)
     }
     

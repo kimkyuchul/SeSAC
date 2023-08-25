@@ -21,7 +21,7 @@ class MovieMapViewModel {
         self.locationService = locationService
     }
         
-    func setRegionAndAnnotation() {
+    func setCoordinate() {
         locationService.coordinate = { coordinate in
             self.locationCoordinate?(coordinate)
         }
