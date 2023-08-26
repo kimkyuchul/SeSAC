@@ -14,6 +14,16 @@
 		5A10B1C22A8FB3C700139E89 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1C12A8FB3C600139E89 /* NetworkError.swift */; };
 		5A10B1C42A8FB92E00139E89 /* UIVIewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1C32A8FB92E00139E89 /* UIVIewController+.swift */; };
 		5A10B1C72A8FB97200139E89 /* ErrorAlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1C62A8FB97200139E89 /* ErrorAlertType.swift */; };
+		5A21C65F2A99D2D200E7CC95 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C65E2A99D2D200E7CC95 /* OnboardingViewController.swift */; };
+		5A21C6622A99D69600E7CC95 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C6612A99D69600E7CC95 /* FirstViewController.swift */; };
+		5A21C6642A99D6A400E7CC95 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C6632A99D6A400E7CC95 /* SecondViewController.swift */; };
+		5A21C6662A99D6B000E7CC95 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C6652A99D6B000E7CC95 /* ThirdViewController.swift */; };
+		5A21C6692A99E49500E7CC95 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 5A21C6682A99E49500E7CC95 /* RxBlocking */; };
+		5A21C66B2A99E49500E7CC95 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5A21C66A2A99E49500E7CC95 /* RxCocoa */; };
+		5A21C66D2A99E49500E7CC95 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5A21C66C2A99E49500E7CC95 /* RxRelay */; };
+		5A21C66F2A99E49500E7CC95 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A21C66E2A99E49500E7CC95 /* RxSwift */; };
+		5A21C6732A99E8EA00E7CC95 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C6722A99E8EA00E7CC95 /* UserDefault.swift */; };
+		5A21C6752A99E90600E7CC95 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C6742A99E90600E7CC95 /* UserDefaultManager.swift */; };
 		5A97A17A2A95E6C900264AB5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A1792A95E6C900264AB5 /* TabBarController.swift */; };
 		5A97A17C2A95E84900264AB5 /* MovieMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A17B2A95E84900264AB5 /* MovieMapViewController.swift */; };
 		5A97A17E2A95F32900264AB5 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A17D2A95F32900264AB5 /* CustomAnnotation.swift */; };
@@ -76,6 +86,12 @@
 		5A10B1C12A8FB3C600139E89 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5A10B1C32A8FB92E00139E89 /* UIVIewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+.swift"; sourceTree = "<group>"; };
 		5A10B1C62A8FB97200139E89 /* ErrorAlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertType.swift; sourceTree = "<group>"; };
+		5A21C65E2A99D2D200E7CC95 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		5A21C6612A99D69600E7CC95 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		5A21C6632A99D6A400E7CC95 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5A21C6652A99D6B000E7CC95 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		5A21C6722A99E8EA00E7CC95 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		5A21C6742A99E90600E7CC95 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		5A97A1792A95E6C900264AB5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5A97A17B2A95E84900264AB5 /* MovieMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMapViewController.swift; sourceTree = "<group>"; };
 		5A97A17D2A95F32900264AB5 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
@@ -119,9 +135,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A21C66D2A99E49500E7CC95 /* RxRelay in Frameworks */,
 				5AEFAA7D2A87D09500A67C43 /* Kingfisher in Frameworks */,
+				5A21C6692A99E49500E7CC95 /* RxBlocking in Frameworks */,
+				5A21C66B2A99E49500E7CC95 /* RxCocoa in Frameworks */,
 				5AEFAA772A87D08100A67C43 /* Alamofire in Frameworks */,
 				5AEFAA7A2A87D08C00A67C43 /* SnapKit in Frameworks */,
+				5A21C66F2A99E49500E7CC95 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +170,33 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		5A21C65D2A99D1B100E7CC95 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5A21C65E2A99D2D200E7CC95 /* OnboardingViewController.swift */,
+				5A21C6602A99D67D00E7CC95 /* Page */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5A21C6602A99D67D00E7CC95 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				5A21C6612A99D69600E7CC95 /* FirstViewController.swift */,
+				5A21C6632A99D6A400E7CC95 /* SecondViewController.swift */,
+				5A21C6652A99D6B000E7CC95 /* ThirdViewController.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		5A21C6762A99E92800E7CC95 /* PropertyWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				5A21C6722A99E8EA00E7CC95 /* UserDefault.swift */,
+			);
+			path = PropertyWrapper;
+			sourceTree = "<group>";
+		};
 		5A97A1782A95E68A00264AB5 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,8 +208,10 @@
 		5A97A1832A9660B200264AB5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5A21C6762A99E92800E7CC95 /* PropertyWrapper */,
 				5A97A1842A9660DE00264AB5 /* Theater.swift */,
 				5A97A17F2A95F61000264AB5 /* DefaultLocationService.swift */,
+				5A21C6742A99E90600E7CC95 /* UserDefaultManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -229,6 +278,7 @@
 		5AC80CD52A862B8600FE9D6C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5A21C65D2A99D1B100E7CC95 /* Onboarding */,
 				5A97A1862A967E5C00264AB5 /* Map */,
 				5A97A1782A95E68A00264AB5 /* TabBar */,
 				5AC80CEA2A86452E00FE9D6C /* Cell */,
@@ -395,6 +445,10 @@
 				5AEFAA762A87D08100A67C43 /* Alamofire */,
 				5AEFAA792A87D08C00A67C43 /* SnapKit */,
 				5AEFAA7C2A87D09500A67C43 /* Kingfisher */,
+				5A21C6682A99E49500E7CC95 /* RxBlocking */,
+				5A21C66A2A99E49500E7CC95 /* RxCocoa */,
+				5A21C66C2A99E49500E7CC95 /* RxRelay */,
+				5A21C66E2A99E49500E7CC95 /* RxSwift */,
 			);
 			productName = TrendMedia;
 			productReference = 5AC80CA22A8629D500FE9D6C /* TrendMedia.app */;
@@ -472,6 +526,7 @@
 				5AEFAA752A87D08100A67C43 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5AEFAA782A87D08C00A67C43 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5AEFAA7B2A87D09500A67C43 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5A21C6672A99E49500E7CC95 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 5AC80CA32A8629D500FE9D6C /* Products */;
 			projectDirPath = "";
@@ -518,23 +573,29 @@
 			files = (
 				5AC80CE82A86420800FE9D6C /* BaseViewController.swift in Sources */,
 				5AC80CEC2A86454100FE9D6C /* MovieListCollectionViewCell.swift in Sources */,
+				5A21C6662A99D6B000E7CC95 /* ThirdViewController.swift in Sources */,
 				5AEFAA812A88FBE300A67C43 /* EndPointType.swift in Sources */,
+				5A21C65F2A99D2D200E7CC95 /* OnboardingViewController.swift in Sources */,
 				5AEFAA8A2A89080700A67C43 /* MovieListAPI.swift in Sources */,
 				5A97A1802A95F61000264AB5 /* DefaultLocationService.swift in Sources */,
 				5A10B1C02A8FA0E800139E89 /* EmptyView.swift in Sources */,
 				5AEFAA832A88FE3500A67C43 /* URLConstants.swift in Sources */,
+				5A21C6752A99E90600E7CC95 /* UserDefaultManager.swift in Sources */,
 				5A97A17C2A95E84900264AB5 /* MovieMapViewController.swift in Sources */,
 				5AC80CF62A8652EB00FE9D6C /* SizeLiteral.swift in Sources */,
 				5A10B1C72A8FB97200139E89 /* ErrorAlertType.swift in Sources */,
 				5AC80CFE2A87C97200FE9D6C /* MovieDetailTableViewCell.swift in Sources */,
+				5A21C6642A99D6A400E7CC95 /* SecondViewController.swift in Sources */,
 				5AC80CEF2A8645B600FE9D6C /* UIView+.swift in Sources */,
 				5AEFAA902A8914C100A67C43 /* BaseService.swift in Sources */,
+				5A21C6732A99E8EA00E7CC95 /* UserDefault.swift in Sources */,
 				5AC80CF42A8649F300FE9D6C /* RatingBadgeView.swift in Sources */,
 				5AC80CDD2A862C3B00FE9D6C /* MovieDetailViewController.swift in Sources */,
 				5AC80CDB2A862C1300FE9D6C /* MovieListViewController.swift in Sources */,
 				5A10B1BE2A8F8B8700139E89 /* Recommendaion.swift in Sources */,
 				5AC80CA62A8629D500FE9D6C /* AppDelegate.swift in Sources */,
 				5A97A17E2A95F32900264AB5 /* CustomAnnotation.swift in Sources */,
+				5A21C6622A99D69600E7CC95 /* FirstViewController.swift in Sources */,
 				5A10B1BC2A8F844A00139E89 /* Similar.swift in Sources */,
 				5AC80CA82A8629D500FE9D6C /* SceneDelegate.swift in Sources */,
 				5AEFAA992A893D1C00A67C43 /* Credit.swift in Sources */,
@@ -894,6 +955,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A21C6672A99E49500E7CC95 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		5AEFAA752A87D08100A67C43 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -921,6 +990,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A21C6682A99E49500E7CC95 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A21C6672A99E49500E7CC95 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		5A21C66A2A99E49500E7CC95 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A21C6672A99E49500E7CC95 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		5A21C66C2A99E49500E7CC95 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A21C6672A99E49500E7CC95 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		5A21C66E2A99E49500E7CC95 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A21C6672A99E49500E7CC95 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		5AEFAA762A87D08100A67C43 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AEFAA752A87D08100A67C43 /* XCRemoteSwiftPackageReference "Alamofire" */;

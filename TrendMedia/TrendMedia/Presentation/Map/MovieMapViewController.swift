@@ -41,7 +41,7 @@ final class MovieMapViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .magenta
+        self.view.backgroundColor = .white
         self.title = "영화관 보기"
         viewModel.checkDeviceLocationAuthorization()
         viewModel.setCoordinate()
@@ -69,7 +69,7 @@ final class MovieMapViewController: BaseViewController {
         viewModel.checkDenied()
     }
     
-    private func bind() {
+    override func bind() {
         viewModel.locationCoordinate = { data in
             self.setRegionAndAnnotation(center: data)
         }

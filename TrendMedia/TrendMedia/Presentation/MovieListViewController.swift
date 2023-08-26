@@ -30,7 +30,7 @@ final class MovieListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchMovie()
-        self.title = "영화 목록"
+        self.title = "영화 리스트"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.view.backgroundColor = .tertiarySystemGroupedBackground
     }

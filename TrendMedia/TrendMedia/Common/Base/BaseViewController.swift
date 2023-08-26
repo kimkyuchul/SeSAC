@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 @objc
 protocol BaseViewControllerProtocol: AnyObject {
@@ -15,9 +16,12 @@ protocol BaseViewControllerProtocol: AnyObject {
     func setDelegate()
     func setNavigationBar()
     @objc optional func bind()
+     
 }
 
 class BaseViewController: UIViewController, BaseViewControllerProtocol {
+    
+    var disposeBag: DisposeBag = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,7 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
         setLayout()
         setDelegate()
         setNavigationBar()
+        bind()
     }
     
     func setHierarchy() {}
@@ -39,5 +44,7 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
     func setDelegate() {}
     
     func setNavigationBar() {}
+    
+    func bind() {}
     
 }

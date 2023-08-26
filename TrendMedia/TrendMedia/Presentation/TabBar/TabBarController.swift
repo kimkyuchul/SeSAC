@@ -23,6 +23,9 @@ class TabBarController: UITabBarController {
         self.tabBar.unselectedItemTintColor = .darkGray
         self.tabBar.backgroundColor = .white
         
+        movieMapViewController.tabBarItem.title = "영화관 보기"
+        movieListViewController.tabBarItem.title = "영화 리스트"
+        
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         tabBar.standardAppearance = appearance
