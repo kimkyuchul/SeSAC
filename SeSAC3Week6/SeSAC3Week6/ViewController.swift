@@ -49,10 +49,13 @@ class ViewController: UIViewController {
     }
     
     @objc func signButtonClicked() {
-        let vc = LocationViewController()
-        let nav = UINavigationController(rootViewController: vc)
+//        let vc = GenericViewController()
+//        let nav = UINavigationController(rootViewController: vc)
+//
+//        present(nav, animated: true)
         
-        present(nav, animated: true)
+        // GenericViewController 그자체 -> 클래스의 인스턴스가 아닌 클래스 자체를 넘겨준다.
+        transition(viewController: GenericViewController.self, stroyBoard: "Main", style: .presentNavigation)
     }
     
     

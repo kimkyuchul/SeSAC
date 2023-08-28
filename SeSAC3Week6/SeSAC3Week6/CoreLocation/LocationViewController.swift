@@ -56,6 +56,10 @@ class LocationViewController: UIViewController {
         if type == 0 { //viewDidLoad
             mapView.addAnnotations([annotation1, annotation2])
         } else if type == 1 {
+            
+            // annotation1이 클래스 밖에 있었으면 제거가 가능
+//            mapView.removeAnnotations([annotation1])
+            
             mapView.removeAnnotations(mapView.annotations)
             mapView.addAnnotations([annotation2])
         }
