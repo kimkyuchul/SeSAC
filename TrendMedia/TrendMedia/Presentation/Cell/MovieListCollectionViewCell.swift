@@ -7,10 +7,9 @@
 
 import UIKit
 
-import SnapKit
 import Kingfisher
 
-final class MovieListCollectionViewCell: UICollectionViewCell {
+final class MovieListCollectionViewCell: BaseCollectionViewCell {
     
     private let backView: UIView = {
         let view = UIView()
@@ -61,19 +60,8 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubviews(titleLabel, releaseDateLabel)
         return stackView
     }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setHierarchy()
-        setConstraints()
-        setLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setHierarchy() {
+        
+    override func setHierarchy() {
         [posterImageView, ratingBadge].forEach { view in
             imageBackView.addSubview(view)
         }
@@ -85,7 +73,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func setConstraints() {
+    override func setConstraints() {
         backView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(10)
             make.leading.trailing.equalToSuperview().inset(20)
@@ -134,7 +122,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func setLayout() {
+    override func setLayout() {
         backView.layer.cornerRadius = 20
         backView.clipsToBounds = true
 

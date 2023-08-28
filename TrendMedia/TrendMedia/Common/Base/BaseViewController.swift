@@ -6,18 +6,9 @@
 //
 
 import UIKit
-import RxSwift
 
-@objc
-protocol BaseViewControllerProtocol: AnyObject {
-    func setHierarchy()
-    func setConstraints()
-    func setLayout()
-    func setDelegate()
-    func setNavigationBar()
-    @objc optional func bind()
-     
-}
+import SnapKit
+import RxSwift
 
 class BaseViewController: UIViewController, BaseViewControllerProtocol {
     

@@ -7,9 +7,7 @@
 
 import UIKit
 
-import SnapKit
-
-final class MovieDetailTableViewCell: UITableViewCell {
+final class MovieDetailTableViewCell: BaseTableViewCell {
     
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
@@ -39,25 +37,14 @@ final class MovieDetailTableViewCell: UITableViewCell {
         stackView.addArrangedSubviews(titleLabel, infoLabel)
         return stackView
     }()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setHierarchy()
-        setConstraints()
-        setLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setHierarchy() {
+        
+    override func setHierarchy() {
         [posterImageView, titleLabel, infoLabel].forEach { view in
             contentView.addSubview(view)
         }
     }
     
-    private func setConstraints() {
+    override func setConstraints() {
         posterImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(10)
             make.leading.equalToSuperview().inset(10)
@@ -83,7 +70,7 @@ final class MovieDetailTableViewCell: UITableViewCell {
         }
     }
     
-    private func setLayout() {
+    override func setLayout() {
         self.backgroundColor = .clear
     }
 }

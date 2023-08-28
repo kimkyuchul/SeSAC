@@ -7,9 +7,7 @@
 
 import UIKit
 
-import SnapKit
-
-final class EmptyView: UIView {
+final class EmptyView: BaseView {
     
     private let emptyViewLabel: UILabel = {
         let label = UILabel()
@@ -19,31 +17,23 @@ final class EmptyView: UIView {
         label.textAlignment = .center
         return label
     }()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setHierarchy()
-        setConstraints()
-        self.backgroundColor = .tertiarySystemGroupedBackground
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     convenience init(isHidden: Bool) {
         self.init()
         self.isHidden = isHidden
     }
     
-    private func setHierarchy() {
+    override func setHierarchy() {
         self.addSubview(emptyViewLabel)
     }
     
-    private func setConstraints() {
+    override func setConstraints() {
         emptyViewLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
     }
     
+    override func setLayout() {
+        super.setLayout()
+    }
 }
