@@ -9,12 +9,13 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    let movieListViewController = UINavigationController(rootViewController: MovieListViewController())
-    let movieMapViewController = UINavigationController(rootViewController: MovieMapViewController(viewModel: MovieMapViewModel(locationService: DefaultLocationService())))
+    private let movieListViewController = UINavigationController(rootViewController: MovieListViewController())
+    private let movieMapViewController = UINavigationController(rootViewController: MovieMapViewController(viewModel: MovieMapViewModel(locationService: DefaultLocationService())))
+    private let profileViewController = UINavigationController(rootViewController: ProfileViewController())
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewControllers = [movieMapViewController, movieListViewController]
+        self.viewControllers = [profileViewController, movieMapViewController, movieListViewController]
         setUpTabBar()
     }
     
@@ -25,6 +26,7 @@ class TabBarController: UITabBarController {
         
         movieMapViewController.tabBarItem.title = "영화관 보기"
         movieListViewController.tabBarItem.title = "영화 리스트"
+        profileViewController.tabBarItem.title = "프로필"
         
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()

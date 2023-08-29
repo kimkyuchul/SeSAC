@@ -29,6 +29,11 @@
 		5A21C6FE2A9C9B1D00E7CC95 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C6FD2A9C9B1D00E7CC95 /* BaseTableViewCell.swift */; };
 		5A21C7012A9C9B6800E7CC95 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C7002A9C9B6800E7CC95 /* BaseViewProtocol.swift */; };
 		5A21C7032A9C9B8B00E7CC95 /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C7022A9C9B8B00E7CC95 /* BaseViewControllerProtocol.swift */; };
+		5A21C74B2A9DCF7B00E7CC95 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C74A2A9DCF7B00E7CC95 /* ProfileViewController.swift */; };
+		5A21C74F2A9DDAB500E7CC95 /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C74E2A9DDAB500E7CC95 /* ProfileType.swift */; };
+		5A21C7532A9DDF0200E7CC95 /* ProfileButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C7522A9DDF0200E7CC95 /* ProfileButtonView.swift */; };
+		5A21C7552A9DF65800E7CC95 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C7542A9DF65800E7CC95 /* ProfileDetailViewController.swift */; };
+		5A21C7572A9DF67700E7CC95 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C7562A9DF67700E7CC95 /* ProfileDetailView.swift */; };
 		5A97A17A2A95E6C900264AB5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A1792A95E6C900264AB5 /* TabBarController.swift */; };
 		5A97A17C2A95E84900264AB5 /* MovieMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A17B2A95E84900264AB5 /* MovieMapViewController.swift */; };
 		5A97A17E2A95F32900264AB5 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A17D2A95F32900264AB5 /* CustomAnnotation.swift */; };
@@ -102,6 +107,11 @@
 		5A21C6FD2A9C9B1D00E7CC95 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		5A21C7002A9C9B6800E7CC95 /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
 		5A21C7022A9C9B8B00E7CC95 /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
+		5A21C74A2A9DCF7B00E7CC95 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5A21C74E2A9DDAB500E7CC95 /* ProfileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
+		5A21C7522A9DDF0200E7CC95 /* ProfileButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonView.swift; sourceTree = "<group>"; };
+		5A21C7542A9DF65800E7CC95 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
+		5A21C7562A9DF67700E7CC95 /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
 		5A97A1792A95E6C900264AB5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5A97A17B2A95E84900264AB5 /* MovieMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMapViewController.swift; sourceTree = "<group>"; };
 		5A97A17D2A95F32900264AB5 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
@@ -176,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				5A10B1C62A8FB97200139E89 /* ErrorAlertType.swift */,
+				5A21C74E2A9DDAB500E7CC95 /* ProfileType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -214,6 +225,17 @@
 				5A21C7022A9C9B8B00E7CC95 /* BaseViewControllerProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5A21C7492A9DCECC00E7CC95 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5A21C7522A9DDF0200E7CC95 /* ProfileButtonView.swift */,
+				5A21C74A2A9DCF7B00E7CC95 /* ProfileViewController.swift */,
+				5A21C7542A9DF65800E7CC95 /* ProfileDetailViewController.swift */,
+				5A21C7562A9DF67700E7CC95 /* ProfileDetailView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		5A97A1782A95E68A00264AB5 /* TabBar */ = {
@@ -297,6 +319,7 @@
 		5AC80CD52A862B8600FE9D6C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5A21C7492A9DCECC00E7CC95 /* Profile */,
 				5A21C65D2A99D1B100E7CC95 /* Onboarding */,
 				5A97A1862A967E5C00264AB5 /* Map */,
 				5A97A1782A95E68A00264AB5 /* TabBar */,
@@ -604,8 +627,11 @@
 				5A10B1C02A8FA0E800139E89 /* EmptyView.swift in Sources */,
 				5A21C6FE2A9C9B1D00E7CC95 /* BaseTableViewCell.swift in Sources */,
 				5AEFAA832A88FE3500A67C43 /* URLConstants.swift in Sources */,
+				5A21C7532A9DDF0200E7CC95 /* ProfileButtonView.swift in Sources */,
+				5A21C7572A9DF67700E7CC95 /* ProfileDetailView.swift in Sources */,
 				5A21C6752A99E90600E7CC95 /* UserDefaultManager.swift in Sources */,
 				5A97A17C2A95E84900264AB5 /* MovieMapViewController.swift in Sources */,
+				5A21C7552A9DF65800E7CC95 /* ProfileDetailViewController.swift in Sources */,
 				5A21C7012A9C9B6800E7CC95 /* BaseViewProtocol.swift in Sources */,
 				5AC80CF62A8652EB00FE9D6C /* SizeLiteral.swift in Sources */,
 				5A10B1C72A8FB97200139E89 /* ErrorAlertType.swift in Sources */,
@@ -616,6 +642,7 @@
 				5AEFAA902A8914C100A67C43 /* BaseService.swift in Sources */,
 				5A21C6732A99E8EA00E7CC95 /* UserDefault.swift in Sources */,
 				5A21C6FA2A9C989400E7CC95 /* BaseView.swift in Sources */,
+				5A21C74F2A9DDAB500E7CC95 /* ProfileType.swift in Sources */,
 				5AC80CF42A8649F300FE9D6C /* RatingBadgeView.swift in Sources */,
 				5AC80CDD2A862C3B00FE9D6C /* MovieDetailViewController.swift in Sources */,
 				5AC80CDB2A862C1300FE9D6C /* MovieListViewController.swift in Sources */,
@@ -636,6 +663,7 @@
 				5AC80CFA2A8659A900FE9D6C /* UIStackView+.swift in Sources */,
 				5A97A1822A960A2900264AB5 /* MovieMapViewModel.swift in Sources */,
 				5A97A17A2A95E6C900264AB5 /* TabBarController.swift in Sources */,
+				5A21C74B2A9DCF7B00E7CC95 /* ProfileViewController.swift in Sources */,
 				5A10B1BA2A8F6C5100139E89 /* SimilarViewController.swift in Sources */,
 				5AEFAA8E2A890DA000A67C43 /* APIKey.swift in Sources */,
 			);
