@@ -11,6 +11,8 @@ class SearchViewController: BaseViewController {
     
     let mainView = SearchView()
     
+    weak var delegate: PassImageProtocol?
+    
     let imageList = ["pencil", "star", "person", "star.fill", "xmark"]
     
     override func loadView() {
@@ -57,7 +59,9 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(imageList[indexPath.row])
         
-        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.row], "sample": "고래밥"])
+//        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.row], "sample": "고래밥"])
+        
+        self.delegate?.receiveImage(ImageString: imageList[indexPath.row])
         
         dismiss(animated: true)
     }
