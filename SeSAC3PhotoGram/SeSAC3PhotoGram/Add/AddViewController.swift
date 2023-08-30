@@ -32,6 +32,8 @@ final class AddViewController: BaseViewController {
 //        ClassPublicExample.publicExample()
 //        ClassPublicExample.internalExample()
 //        ClassInternalExample
+        
+        APIService.shared.callRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {

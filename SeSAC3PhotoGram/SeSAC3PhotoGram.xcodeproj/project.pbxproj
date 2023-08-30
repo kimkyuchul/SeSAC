@@ -31,6 +31,8 @@
 		5A21C7432A9D9BBA00E7CC95 /* seSACFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A21C73E2A9D9B3600E7CC95 /* seSACFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A21C7462A9DB53D00E7CC95 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C7452A9DB53D00E7CC95 /* TitleViewController.swift */; };
 		5A21C7482A9DC75F00E7CC95 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C7472A9DC75F00E7CC95 /* WebViewController.swift */; };
+		5A21C75D2A9EC78600E7CC95 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C75C2A9EC78600E7CC95 /* APIService.swift */; };
+		5A21C75F2A9EEBD800E7CC95 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C75E2A9EEBD800E7CC95 /* URLSessionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		5A21C7382A9D9B3600E7CC95 /* seSACFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = seSACFramework.xcodeproj; path = ../seSACFramework/seSACFramework.xcodeproj; sourceTree = "<group>"; };
 		5A21C7452A9DB53D00E7CC95 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		5A21C7472A9DC75F00E7CC95 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		5A21C75C2A9EC78600E7CC95 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		5A21C75E2A9EEBD800E7CC95 /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		5A21C6B22A9C1D8F00E7CC95 /* SeSAC3PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				5A21C75B2A9EC77300E7CC95 /* Network */,
 				5A21C7072A9D7BC800E7CC95 /* Extension */,
 				5A21C6ED2A9C2FC900E7CC95 /* Add */,
 				5A21C6F02A9C337F00E7CC95 /* Search */,
@@ -245,6 +250,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A21C75B2A9EC77300E7CC95 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5A21C75C2A9EC78600E7CC95 /* APIService.swift */,
+				5A21C75E2A9EEBD800E7CC95 /* URLSessionViewController.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,8 +421,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A21C75D2A9EC78600E7CC95 /* APIService.swift in Sources */,
 				5A21C6EF2A9C2FF100E7CC95 /* AddView.swift in Sources */,
 				5A21C6EA2A9C274A00E7CC95 /* SearchViewController.swift in Sources */,
+				5A21C75F2A9EEBD800E7CC95 /* URLSessionViewController.swift in Sources */,
 				5A21C7092A9D7BE100E7CC95 /* NotificationName+.swift in Sources */,
 				5A21C6F42A9C368400E7CC95 /* BaseCollectionViewCell.swift in Sources */,
 				5A21C6B82A9C1D8F00E7CC95 /* AddViewController.swift in Sources */,

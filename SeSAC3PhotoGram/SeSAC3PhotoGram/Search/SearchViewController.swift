@@ -26,6 +26,9 @@ class SearchViewController: BaseViewController {
         // addVC (post) -> search(addObserver) 형태이기 때문에 post 할 때 addObserver가 미리 등록되어 있지 않았다.
         // addObserver보다 post가 먼저 신호를 보내면 받을 수 없음
         NotificationCenter.default.addObserver(self, selector: #selector(recommandKetwordNotificationObserver), name: NSNotification.Name("RecommandKeyword"), object: nil)
+        
+        mainView.searchBar.becomeFirstResponder()
+        mainView.searchBar.delegate = self
 
     }
     
@@ -66,4 +69,11 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         dismiss(animated: true)
     }
     
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        mainView.searchBar.resignFirstResponder()
+    }
 }
