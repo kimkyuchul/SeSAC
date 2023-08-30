@@ -33,6 +33,14 @@
 		5A21C7482A9DC75F00E7CC95 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C7472A9DC75F00E7CC95 /* WebViewController.swift */; };
 		5A21C75D2A9EC78600E7CC95 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C75C2A9EC78600E7CC95 /* APIService.swift */; };
 		5A21C75F2A9EEBD800E7CC95 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A21C75E2A9EEBD800E7CC95 /* URLSessionViewController.swift */; };
+		5A320FB02A9FC419003A40BD /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FAF2A9FC419003A40BD /* HTTPMethod.swift */; };
+		5A320FB22A9FC43F003A40BD /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FB12A9FC43F003A40BD /* URLConstants.swift */; };
+		5A320FB42A9FC61C003A40BD /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FB32A9FC61C003A40BD /* EndPointType.swift */; };
+		5A320FB62A9FC687003A40BD /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FB52A9FC687003A40BD /* PhotoAPI.swift */; };
+		5A320FB92A9FCAE0003A40BD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FB82A9FCAE0003A40BD /* NetworkError.swift */; };
+		5A320FBC2A9FD09D003A40BD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FBB2A9FD09D003A40BD /* Photo.swift */; };
+		5A320FBE2A9FD18C003A40BD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FBD2A9FD18C003A40BD /* APIKey.swift */; };
+		5A320FC12A9FD9B5003A40BD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5A320FC02A9FD9B5003A40BD /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +117,13 @@
 		5A21C7472A9DC75F00E7CC95 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		5A21C75C2A9EC78600E7CC95 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5A21C75E2A9EEBD800E7CC95 /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
+		5A320FAF2A9FC419003A40BD /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5A320FB12A9FC43F003A40BD /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		5A320FB32A9FC61C003A40BD /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		5A320FB52A9FC687003A40BD /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
+		5A320FB82A9FCAE0003A40BD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5A320FBB2A9FD09D003A40BD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		5A320FBD2A9FD18C003A40BD /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A320FC12A9FD9B5003A40BD /* Kingfisher in Frameworks */,
 				5A21C6E52A9C1E2400E7CC95 /* SnapKit in Frameworks */,
 				5A21C7422A9D9BBA00E7CC95 /* seSACFramework.framework in Frameworks */,
 			);
@@ -163,17 +179,11 @@
 		5A21C6B22A9C1D8F00E7CC95 /* SeSAC3PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
-				5A21C75B2A9EC77300E7CC95 /* Network */,
-				5A21C7072A9D7BC800E7CC95 /* Extension */,
-				5A21C6ED2A9C2FC900E7CC95 /* Add */,
-				5A21C6F02A9C337F00E7CC95 /* Search */,
-				5A21C6E62A9C240100E7CC95 /* Base */,
-				5A21C6B32A9C1D8F00E7CC95 /* AppDelegate.swift */,
-				5A21C6B52A9C1D8F00E7CC95 /* SceneDelegate.swift */,
-				5A21C6BC2A9C1D9400E7CC95 /* Assets.xcassets */,
-				5A21C6BE2A9C1D9400E7CC95 /* LaunchScreen.storyboard */,
+				5A320FAB2A9FB74A003A40BD /* App */,
+				5A320FAD2A9FB76C003A40BD /* Common */,
+				5A320FAA2A9FB72B003A40BD /* Data */,
+				5A320FA92A9FB6FF003A40BD /* Presentation  */,
 				5A21C6C12A9C1D9400E7CC95 /* Info.plist */,
-				5A21C7472A9DC75F00E7CC95 /* WebViewController.swift */,
 			);
 			path = SeSAC3PhotoGram;
 			sourceTree = "<group>";
@@ -255,10 +265,87 @@
 		5A21C75B2A9EC77300E7CC95 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				5A21C75C2A9EC78600E7CC95 /* APIService.swift */,
+				5A320FB72A9FC68B003A40BD /* API */,
+				5A320FAE2A9FC406003A40BD /* _Foundation */,
 				5A21C75E2A9EEBD800E7CC95 /* URLSessionViewController.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5A320FA92A9FB6FF003A40BD /* Presentation  */ = {
+			isa = PBXGroup;
+			children = (
+				5A21C7472A9DC75F00E7CC95 /* WebViewController.swift */,
+				5A21C6F02A9C337F00E7CC95 /* Search */,
+				5A21C6ED2A9C2FC900E7CC95 /* Add */,
+			);
+			path = "Presentation ";
+			sourceTree = "<group>";
+		};
+		5A320FAA2A9FB72B003A40BD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5A320FBA2A9FD092003A40BD /* Model */,
+				5A21C75B2A9EC77300E7CC95 /* Network */,
+				5A320FBD2A9FD18C003A40BD /* APIKey.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5A320FAB2A9FB74A003A40BD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5A320FAC2A9FB758003A40BD /* Support */,
+				5A21C6B32A9C1D8F00E7CC95 /* AppDelegate.swift */,
+				5A21C6B52A9C1D8F00E7CC95 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5A320FAC2A9FB758003A40BD /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				5A21C6BC2A9C1D9400E7CC95 /* Assets.xcassets */,
+				5A21C6BE2A9C1D9400E7CC95 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		5A320FAD2A9FB76C003A40BD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5A21C7072A9D7BC800E7CC95 /* Extension */,
+				5A21C6E62A9C240100E7CC95 /* Base */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5A320FAE2A9FC406003A40BD /* _Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				5A320FB32A9FC61C003A40BD /* EndPointType.swift */,
+				5A320FAF2A9FC419003A40BD /* HTTPMethod.swift */,
+				5A320FB12A9FC43F003A40BD /* URLConstants.swift */,
+				5A21C75C2A9EC78600E7CC95 /* APIService.swift */,
+				5A320FB82A9FCAE0003A40BD /* NetworkError.swift */,
+			);
+			path = _Foundation;
+			sourceTree = "<group>";
+		};
+		5A320FB72A9FC68B003A40BD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5A320FB52A9FC687003A40BD /* PhotoAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5A320FBA2A9FD092003A40BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A320FBB2A9FD09D003A40BD /* Photo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +367,7 @@
 			name = SeSAC3PhotoGram;
 			packageProductDependencies = (
 				5A21C6E42A9C1E2400E7CC95 /* SnapKit */,
+				5A320FC02A9FD9B5003A40BD /* Kingfisher */,
 			);
 			productName = SeSAC3PhotoGram;
 			productReference = 5A21C6B02A9C1D8F00E7CC95 /* SeSAC3PhotoGram.app */;
@@ -355,6 +443,7 @@
 			mainGroup = 5A21C6A72A9C1D8F00E7CC95;
 			packageReferences = (
 				5A21C6E32A9C1E2400E7CC95 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5A320FBF2A9FD9B5003A40BD /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5A21C6B12A9C1D8F00E7CC95 /* Products */;
 			projectDirPath = "";
@@ -421,7 +510,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A320FBC2A9FD09D003A40BD /* Photo.swift in Sources */,
+				5A320FB02A9FC419003A40BD /* HTTPMethod.swift in Sources */,
+				5A320FB22A9FC43F003A40BD /* URLConstants.swift in Sources */,
+				5A320FB92A9FCAE0003A40BD /* NetworkError.swift in Sources */,
 				5A21C75D2A9EC78600E7CC95 /* APIService.swift in Sources */,
+				5A320FB62A9FC687003A40BD /* PhotoAPI.swift in Sources */,
 				5A21C6EF2A9C2FF100E7CC95 /* AddView.swift in Sources */,
 				5A21C6EA2A9C274A00E7CC95 /* SearchViewController.swift in Sources */,
 				5A21C75F2A9EEBD800E7CC95 /* URLSessionViewController.swift in Sources */,
@@ -435,10 +529,12 @@
 				5A21C6F22A9C338F00E7CC95 /* SearchView.swift in Sources */,
 				5A21C70F2A9D8E9200E7CC95 /* DateFormatter+.swift in Sources */,
 				5A21C6EC2A9C2EB400E7CC95 /* BaseView.swift in Sources */,
+				5A320FBE2A9FD18C003A40BD /* APIKey.swift in Sources */,
 				5A21C6B42A9C1D8F00E7CC95 /* AppDelegate.swift in Sources */,
 				5A21C6B62A9C1D8F00E7CC95 /* SceneDelegate.swift in Sources */,
 				5A21C7462A9DB53D00E7CC95 /* TitleViewController.swift in Sources */,
 				5A21C7482A9DC75F00E7CC95 /* WebViewController.swift in Sources */,
+				5A320FB42A9FC61C003A40BD /* EndPointType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +884,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		5A320FBF2A9FD9B5003A40BD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -795,6 +899,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A21C6E32A9C1E2400E7CC95 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		5A320FC02A9FD9B5003A40BD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A320FBF2A9FD9B5003A40BD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

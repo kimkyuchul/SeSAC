@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 class SearchViewController: BaseViewController {
     
     let mainView = SearchView()
@@ -14,6 +16,7 @@ class SearchViewController: BaseViewController {
     weak var delegate: PassImageProtocol?
     
     let imageList = ["pencil", "star", "person", "star.fill", "xmark"]
+    private var photoURLData: [String] = []
     
     override func loadView() {
         self.view = mainView
@@ -49,22 +52,25 @@ class SearchViewController: BaseViewController {
 
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageList.count
+        return photoURLData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.imageView.image = UIImage(systemName: imageList[indexPath.row])
+        cell.imageView.kf.setImage(
+                    with: URL(string: photoURLData[indexPath.item])
+                )
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(imageList[indexPath.row])
+        print(photoURLData[indexPath.row])
         
 //        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.row], "sample": "고래밥"])
         
-        self.delegate?.receiveImage(ImageString: imageList[indexPath.row])
+        self.delegate?.receiveImage(ImageString: photoURLData[indexPath.row])
         
         dismiss(animated: true)
     }
@@ -74,6 +80,25 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        
+        guard let query = searchBar.text else { return }
+        
+        APIService.shared.requstCall(type: PhotoURLPage.self, endPoint: PhotoAPI.getSearchPhoto(query: query)) { [weak self] result in
+            switch result {
+            case .success(let data):
+                guard let urls = data.results?.compactMap({ $0.urls?.regular }) else { return }
+                self?.photoURLData = urls
+                
+                DispatchQueue.main.async {
+                    self?.mainView.collectionView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        mainView.searchBar.text = ""
         mainView.searchBar.resignFirstResponder()
     }
 }
