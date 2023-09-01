@@ -20,7 +20,7 @@ extension MovieAPI: EndPointType {
     var path: String {
         switch self {
         case .getTrandAPI:
-            return "/trending/movie/week"
+            return "/trending/all/week"
         case .getCreditsAPI(let movieId):
             return "/movie/\(movieId)/credits"
         case .getSimilarAPI(let movieId):

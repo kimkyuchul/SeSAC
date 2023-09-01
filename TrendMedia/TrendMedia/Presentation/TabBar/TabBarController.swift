@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewControllers = [profileViewController, movieMapViewController, movieListViewController]
+        self.viewControllers = [movieListViewController, movieMapViewController, profileViewController]
         setUpTabBar()
     }
     

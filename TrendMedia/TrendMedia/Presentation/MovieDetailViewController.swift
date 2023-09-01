@@ -11,13 +11,13 @@ import SnapKit
 
 final class MovieDetailViewController: BaseViewController {
     
-    var detailData: MovieDetail?
-    private var creditList: [Cast] = [] {
+    var detailData: TrandData?
+    var creditList: [Cast] = [] {
         didSet {
             detailTableView.reloadData()
         }
     }
-
+    
     private lazy var detailTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.showsVerticalScrollIndicator = false
@@ -32,11 +32,11 @@ final class MovieDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "출연/제작"
+        setNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchCredit(movieId: detailData?.id ?? 0)
     }
         
     @objc
@@ -58,8 +58,10 @@ final class MovieDetailViewController: BaseViewController {
     }
     
     override func setNavigationBar() {
-        let rightBarButton = UIBarButtonItem(title: "추천 & 관련 영화", style: .plain, target: self, action: #selector(similarPageButtonTapped))
-        self.navigationItem.rightBarButtonItem = rightBarButton
+        if case TrandType.movie.rawValue = detailData?.mediaType {
+            let rightBarButton = UIBarButtonItem(title: "추천 & 관련 영화", style: .plain, target: self, action: #selector(similarPageButtonTapped))
+            self.navigationItem.rightBarButtonItem = rightBarButton
+        }
     }
 
     
@@ -81,6 +83,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: MovieDetailHeaderView.identifier) as? MovieDetailHeaderView else {
             return UIView()
         }
+
         if let data = detailData {
             header.configureHeader(row: data)
         }
@@ -92,15 +95,3 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
-extension MovieDetailViewController {
-    func fetchCredit(movieId: Int) {
-        BaseService.shared.request(target: MovieAPI.getCreditsAPI(movieId: movieId), Credit.self) { result in
-            switch result {
-            case .success(let data):
-                self.creditList = data.cast
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-}

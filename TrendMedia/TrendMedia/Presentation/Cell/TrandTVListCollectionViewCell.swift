@@ -1,20 +1,18 @@
 //
-//  MovieListCollectionViewCell.swift
+//  TrandTVListCollectionViewCell.swift
 //  TrendMedia
 //
-//  Created by 김규철 on 2023/08/11.
+//  Created by 김규철 on 2023/09/01.
 //
 
 import UIKit
 
-import Kingfisher
-
-final class MovieListCollectionViewCell: BaseCollectionViewCell {
+final class TrandTVListCollectionViewCell: BaseCollectionViewCell {
     
     private let backView: UIView = {
         let view = UIView()
         view.isUserInteractionEnabled = false
-        view.backgroundColor = .clear
+        view.backgroundColor = .lightGray
         return view
     }()
     private let imageBackView = UIView()
@@ -24,7 +22,7 @@ final class MovieListCollectionViewCell: BaseCollectionViewCell {
         return imageView
     }()
     private let ratingBadge = RatingBadgeView()
-    private let titleLabel: UILabel = {
+     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
         label.numberOfLines = 0
@@ -32,19 +30,11 @@ final class MovieListCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
     private let originalTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 16)
-        label.numberOfLines = 0
+       let label = UILabel()
+       label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .gray
-        return label
-    }()
-    // type & adult
-    private let mediaInfoLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 18)
-        label.textColor = .darkGray
-        return label
-    }()
+       return label
+   }()
     private let releaseDateLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
@@ -60,14 +50,14 @@ final class MovieListCollectionViewCell: BaseCollectionViewCell {
         stackView.addArrangedSubviews(titleLabel, releaseDateLabel)
         return stackView
     }()
-    
+        
     override func setHierarchy() {
         [posterImageView, ratingBadge].forEach { view in
             imageBackView.addSubview(view)
         }
-        
+
         contentView.addSubview(backView)
-        
+
         [imageBackView, titleLabel, originalTitleLabel, releaseDateLabel].forEach { view in
             backView.addSubview(view)
         }
@@ -79,16 +69,16 @@ final class MovieListCollectionViewCell: BaseCollectionViewCell {
             make.leading.trailing.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(10)
         }
-        
+
         imageBackView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(backView.snp.height).multipliedBy(0.7)
         }
-        
+
         posterImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
+
         ratingBadge.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(20)
@@ -97,7 +87,7 @@ final class MovieListCollectionViewCell: BaseCollectionViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(posterImageView.snp.bottom).offset(10)
             make.leading.equalToSuperview().inset(5)
-            //            make.trailing.equalToSuperview().inset(5).priority(.high)
+//            make.trailing.equalToSuperview().inset(5).priority(.high)
             make.height.equalTo(posterImageView.snp.height).multipliedBy(0.1)
         }
         
@@ -125,32 +115,19 @@ final class MovieListCollectionViewCell: BaseCollectionViewCell {
     override func setLayout() {
         backView.layer.cornerRadius = 20
         backView.clipsToBounds = true
-        
+
         imageBackView.layer.cornerRadius = 20
         imageBackView.clipsToBounds = true
     }
 }
 
-extension MovieListCollectionViewCell {
-    func movieConfigureCell(row: TrandData) {
-        titleLabel.text = row.title
-        originalTitleLabel.text = row.originalTitle
+extension TrandTVListCollectionViewCell {
+    func tvConfigureCell(row: TrandData) {
+        titleLabel.text = row.originalName
+        originalTitleLabel.text = row.mediaType
         ratingBadge.setRatingLabelText(text: "\(row.voteAverage)")
         posterImageView.kf.setImage(with: URL(string: URLConstants.image + (row.posterPath)))
-        releaseDateLabel.text = row.releaseDate
-    }
-    
-    func similarConfigureCell(row: SimilarData) {
-        titleLabel.text = row.title
-        ratingBadge.setRatingLabelText(text: String(row.voteAverage))
-        posterImageView.kf.setImage(with: URL(string: URLConstants.image + (row.posterPath ?? "") ))
-        releaseDateLabel.text = row.releaseDate
-    }
-    
-    func recommendationConfigureCell(row: RecommendaionData) {
-        titleLabel.text = row.title
-        ratingBadge.setRatingLabelText(text: String(row.voteAverage))
-        posterImageView.kf.setImage(with: URL(string: URLConstants.image + (row.posterPath ?? "") ))
-        releaseDateLabel.text = row.releaseDate
+        releaseDateLabel.text = row.firstAirDate
     }
 }
+    

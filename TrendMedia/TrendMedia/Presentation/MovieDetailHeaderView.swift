@@ -39,7 +39,7 @@ final class MovieDetailHeaderView: UITableViewHeaderFooterView {
         label.textAlignment = .left
         return label
     }()
-    private let overviewLabel: UILabel = {
+     let overviewLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
@@ -116,9 +116,14 @@ final class MovieDetailHeaderView: UITableViewHeaderFooterView {
 }
 
 extension MovieDetailHeaderView {
-    func configureHeader(row: MovieDetail) {
-        titleLabel.text = row.title
+    func configureHeader(row: TrandData) {
+        if case TrandType.movie.rawValue = row.mediaType {
+            titleLabel.text = row.title
+        } else {
+            titleLabel.text = row.name
+            sectionTitleLabel.isHidden = true
+        }
         overviewLabel.text = row.overview
-        headerImageview.kf.setImage(with: URL(string: URLConstants.image + (row.backdrop_path ?? "")))
+        headerImageview.kf.setImage(with: URL(string: URLConstants.image + (row.backdropPath)))
     }
 }
