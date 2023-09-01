@@ -35,6 +35,10 @@ class SearchViewController: BaseViewController {
 
     }
     
+    deinit {
+        print(self)
+    }
+    
     @objc func recommandKetwordNotificationObserver(notification: NSNotification) {
         print(recommandKetwordNotificationObserver)
     }

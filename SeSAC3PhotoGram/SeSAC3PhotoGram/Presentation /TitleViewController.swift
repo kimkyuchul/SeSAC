@@ -27,6 +27,10 @@ final class TitleViewController: BaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "끝", style: .plain, target: self, action: #selector(doneButtonClicked))
     }
     
+    deinit {
+        print(self)
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         //Closure - 2
         completionHandler?(textField.text ?? "", 77, false)

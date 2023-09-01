@@ -25,6 +25,10 @@ class DateViewController: BaseViewController {
 
     }
     
+    deinit {
+        print(self)
+    }
+    
     // protocol 값 전달 3
     override func viewDidDisappear(_ animated: Bool) {
         delegate?.receiveDate(date: mainView.getDate())

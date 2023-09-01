@@ -30,14 +30,10 @@ final class AddViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        ClassOpenExample.publicExample()
-        //        ClassPublicExample.publicExample()
-        //        ClassPublicExample.internalExample()
-        //        ClassInternalExample
-        
-        //        APIService.shared.callRequest()
-        
+    }
+    
+    deinit {
+        print(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +66,6 @@ final class AddViewController: BaseViewController {
         if let name = notification.userInfo?["name"] as? String {
             mainView.photoImageView.image = UIImage(systemName: name)
         }
-        
     }
     
     @objc func searchButtonClicked() {
@@ -105,9 +100,12 @@ final class AddViewController: BaseViewController {
     }
     
     @objc func dateButtonClicked() {
-        let vc = DateViewController()
-        // protocol 값 전달 5
-        vc.delegate = self
+//        let vc = DateViewController()
+//        // protocol 값 전달 5
+//        vc.delegate = self
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = HomeViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -127,11 +125,8 @@ final class AddViewController: BaseViewController {
     }
     
     @objc func closureButtonClicked() {
-        let vc = TitleViewController()
-        vc.textviewCompletionHandler = { [weak self] text in
-            self?.mainView.closureButton.setTitle(text, for: .normal)
-        }
-        present(vc, animated: true)
+        let vc = ContentViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func configureView() {
