@@ -91,7 +91,7 @@ extension MovieListViewController: UICollectionViewDataSource, UICollectionViewD
         vc.detailData = data
         
         if case TrandType.movie.rawValue = data.mediaType {
-            fetchCredit(movieId: data.id) { data in
+            fetchURLSessionCredit(movieId: data.id) { data in
                 vc.creditList = data.cast
             }
         }
@@ -122,4 +122,16 @@ extension MovieListViewController {
             }
         }
     }
+    
+    func fetchURLSessionCredit(movieId: Int, completion: @escaping (Credit) -> Void)  {
+        BaseURLSessionService.shared.baseRequest(type: Credit.self, endPoint: URLSessionMovieAPI.getCreditsAPI(movieId: movieId)) { result in
+            switch result {
+            case .success(let data):
+                completion(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
 }
