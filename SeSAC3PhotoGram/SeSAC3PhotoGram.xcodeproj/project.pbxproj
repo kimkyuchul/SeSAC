@@ -41,6 +41,10 @@
 		5A320FBC2A9FD09D003A40BD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FBB2A9FD09D003A40BD /* Photo.swift */; };
 		5A320FBE2A9FD18C003A40BD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FBD2A9FD18C003A40BD /* APIKey.swift */; };
 		5A320FC12A9FD9B5003A40BD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5A320FC02A9FD9B5003A40BD /* Kingfisher */; };
+		5A320FC52AA01A7E003A40BD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FC42AA01A7E003A40BD /* HomeView.swift */; };
+		5A320FC72AA01A8C003A40BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FC62AA01A8C003A40BD /* HomeViewController.swift */; };
+		5A320FC92AA05825003A40BD /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FC82AA05825003A40BD /* ContentViewController.swift */; };
+		5A320FCB2AA17494003A40BD /* JackPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FCA2AA17494003A40BD /* JackPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +128,10 @@
 		5A320FB82A9FCAE0003A40BD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5A320FBB2A9FD09D003A40BD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5A320FBD2A9FD18C003A40BD /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		5A320FC42AA01A7E003A40BD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5A320FC62AA01A8C003A40BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5A320FC82AA05825003A40BD /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		5A320FCA2AA17494003A40BD /* JackPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,9 +228,6 @@
 			children = (
 				5A21C6B72A9C1D8F00E7CC95 /* AddViewController.swift */,
 				5A21C6EE2A9C2FF100E7CC95 /* AddView.swift */,
-				5A21C70A2A9D7C7800E7CC95 /* DateView.swift */,
-				5A21C70C2A9D7DBF00E7CC95 /* DateViewController.swift */,
-				5A21C7452A9DB53D00E7CC95 /* TitleViewController.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -275,9 +280,13 @@
 		5A320FA92A9FB6FF003A40BD /* Presentation  */ = {
 			isa = PBXGroup;
 			children = (
-				5A21C7472A9DC75F00E7CC95 /* WebViewController.swift */,
-				5A21C6F02A9C337F00E7CC95 /* Search */,
+				5A320FC32AA01A57003A40BD /* Home */,
 				5A21C6ED2A9C2FC900E7CC95 /* Add */,
+				5A21C6F02A9C337F00E7CC95 /* Search */,
+				5A320FC22AA018F7003A40BD /* Date */,
+				5A21C7452A9DB53D00E7CC95 /* TitleViewController.swift */,
+				5A21C7472A9DC75F00E7CC95 /* WebViewController.swift */,
+				5A320FC82AA05825003A40BD /* ContentViewController.swift */,
 			);
 			path = "Presentation ";
 			sourceTree = "<group>";
@@ -344,8 +353,27 @@
 			isa = PBXGroup;
 			children = (
 				5A320FBB2A9FD09D003A40BD /* Photo.swift */,
+				5A320FCA2AA17494003A40BD /* JackPhoto.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5A320FC22AA018F7003A40BD /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				5A21C70A2A9D7C7800E7CC95 /* DateView.swift */,
+				5A21C70C2A9D7DBF00E7CC95 /* DateViewController.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		5A320FC32AA01A57003A40BD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5A320FC42AA01A7E003A40BD /* HomeView.swift */,
+				5A320FC62AA01A8C003A40BD /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,6 +545,7 @@
 				5A21C75D2A9EC78600E7CC95 /* APIService.swift in Sources */,
 				5A320FB62A9FC687003A40BD /* PhotoAPI.swift in Sources */,
 				5A21C6EF2A9C2FF100E7CC95 /* AddView.swift in Sources */,
+				5A320FCB2AA17494003A40BD /* JackPhoto.swift in Sources */,
 				5A21C6EA2A9C274A00E7CC95 /* SearchViewController.swift in Sources */,
 				5A21C75F2A9EEBD800E7CC95 /* URLSessionViewController.swift in Sources */,
 				5A21C7092A9D7BE100E7CC95 /* NotificationName+.swift in Sources */,
@@ -524,10 +553,13 @@
 				5A21C6B82A9C1D8F00E7CC95 /* AddViewController.swift in Sources */,
 				5A21C70D2A9D7DBF00E7CC95 /* DateViewController.swift in Sources */,
 				5A21C6F62A9C37F600E7CC95 /* SearchCollectionViewCell.swift in Sources */,
+				5A320FC72AA01A8C003A40BD /* HomeViewController.swift in Sources */,
 				5A21C70B2A9D7C7800E7CC95 /* DateView.swift in Sources */,
+				5A320FC52AA01A7E003A40BD /* HomeView.swift in Sources */,
 				5A21C6E82A9C240C00E7CC95 /* BaseViewController.swift in Sources */,
 				5A21C6F22A9C338F00E7CC95 /* SearchView.swift in Sources */,
 				5A21C70F2A9D8E9200E7CC95 /* DateFormatter+.swift in Sources */,
+				5A320FC92AA05825003A40BD /* ContentViewController.swift in Sources */,
 				5A21C6EC2A9C2EB400E7CC95 /* BaseView.swift in Sources */,
 				5A320FBE2A9FD18C003A40BD /* APIKey.swift in Sources */,
 				5A21C6B42A9C1D8F00E7CC95 /* AppDelegate.swift in Sources */,

@@ -30,6 +30,7 @@ final class AddViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        APIService.shared.callRequest(query: "Gucci", completionHandler: <#(JackPhoto?) -> Void#>)
     }
     
     deinit {
