@@ -64,16 +64,16 @@ final class BookCollectionViewCell: UICollectionViewCell {
 }
 
 extension BookCollectionViewCell {
-    func configureCell(row: Movie) {
+    func configureCell(row: BookRealmModel) {
         titleLabel.text = row.title
-        ratingTitle.text = String(row.rate)
-        posterImageView.image = UIImage(named: "\(row.title)")
+        ratingTitle.text = String(row.price)
+        posterImageView.setImage(urlString: row.thumbnail)
         
-        if row.like {
-            likeButton.setImage(UIImage.likeButtonTappedImage, for: .normal)
-        } else {
-            likeButton.setImage(UIImage.likeButtonImage, for: .normal)
-        }
+//        if row.like {
+//            likeButton.setImage(UIImage.likeButtonTappedImage, for: .normal)
+//        } else {
+//            likeButton.setImage(UIImage.likeButtonImage, for: .normal)
+//        }
     }
     
     func configureBookCell(row: Book) {

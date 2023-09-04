@@ -77,7 +77,7 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     }
     
     private func bind() {
-        viewModel.getMovieObservar = { [weak self] in
+        viewModel.getDataObservar = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -87,26 +87,29 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.isFiltering ? self.viewModel.searchList.count : self.viewModel.movie.count
+//        return self.viewModel.isFiltering ? self.viewModel.tasks.count : self.viewModel.movie.count
+        return self.viewModel.tasks.count 
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
         
-        var row = self.viewModel.movie[indexPath.row]
+//        var row = self.viewModel.movie[indexPath.row]
         
-        if viewModel.isFiltering {
-            row = self.viewModel.searchList[indexPath.row]
-        }
+        var task = self.viewModel.tasks[indexPath.row]
         
-        cell.likeButtonAction = { [weak self] in
-            self?.viewModel.likeButtonTapped(indexPath: indexPath)
-            DispatchQueue.main.async {
-                collectionView.reloadItems(at: [indexPath])
-            }
-        }
+//        if viewModel.isFiltering {
+//            row = self.viewModel.searchList[indexPath.row]
+//        }
+//
+//        cell.likeButtonAction = { [weak self] in
+//            self?.viewModel.likeButtonTapped(indexPath: indexPath)
+//            DispatchQueue.main.async {
+//                collectionView.reloadItems(at: [indexPath])
+//            }
+//        }
         
-        cell.configureCell(row: row)
+        cell.configureCell(row: task)
         return cell
     }
     
@@ -142,9 +145,9 @@ extension BookListCollectionViewController: UISearchBarDelegate {
         self.collectionView.reloadData()
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.isFiltering = false
-        
-        self.collectionView.reloadData()
-    }
+//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        viewModel.isFiltering = false
+//
+//        self.collectionView.reloadData()
+//    }
 }

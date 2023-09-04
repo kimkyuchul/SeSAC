@@ -82,6 +82,12 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.showAlertMessage(title: "저장완료", button: "ok") { [weak self] in
+            self?.viewModel.saveBookdata(indexPath: indexPath, book: self?.viewModel.BookList ?? [])
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
             
         // 현재 보여지는 화면의 좌측상단, contentOffset.y(scroll view bounds origin y)
@@ -98,3 +104,13 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 
     }
     
+extension SearchViewController {
+    func showAlertMessage(title: String, button: String = "확인", handler: (() -> ())? = nil ) { //매개변수 기본값
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: button, style: .default) { _ in
+            handler?()
+        }
+        alert.addAction(ok)
+        present(alert, animated: true)
+    }
+}

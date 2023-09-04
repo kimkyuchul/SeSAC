@@ -7,6 +7,8 @@
 
 import Foundation
 
+import RealmSwift
+
 
 protocol MovieListInput: AnyObject {
     func viewWillAppear()
@@ -17,11 +19,13 @@ protocol MovieListOutput: AnyObject {
 
 class MovieListViewModel: MovieListInput, MovieListOutput {
     
+    var tasks: Results<BookRealmModel>!
+    
     /// 검색 모드 or 일반 모드 분기
     var isFiltering = false
     
     var movie = [Movie]()
-    var getMovieObservar: (() -> Void)?
+    var getDataObservar: (() -> Void)?
     
     /// 검색 시 데이터
     var searchList: [Movie] = []
@@ -33,7 +37,7 @@ class MovieListViewModel: MovieListInput, MovieListOutput {
     
     
     func viewWillAppear() {
-        getMovieList()
+        getBookRealmData()
     }
     
     /// likeButton 선택 시
@@ -61,6 +65,17 @@ extension MovieListViewModel {
     
     func getMovieList() {
         self.movie = MovieInfo().movie
-        self.getMovieObservar?()
+        self.getDataObservar?()
+    }
+    
+    func getBookRealmData() {
+        let realm = try! Realm()
+        tasks = realm
+            .objects(BookRealmModel.self)
+            .sorted(
+                byKeyPath: "price",
+                ascending: false
+            )
+        self.getDataObservar?()
     }
 }

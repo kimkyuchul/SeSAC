@@ -9,6 +9,7 @@ import Foundation
 
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 enum ViewState {
     case isActive
@@ -23,6 +24,8 @@ protocol bookSearchOutput: AnyObject {
 }
 
 class SearchViewModel: bookSearchInput, bookSearchOutput {
+    
+    let localRealm = try! Realm()
     
     var query: String?
     var BookList: [Book] = []
@@ -77,6 +80,18 @@ extension SearchViewModel {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    func saveBookdata(indexPath: IndexPath, book: [Book]) {
+        
+        let bookdata = book[indexPath.row]
+        
+        let data = BookRealmModel(title: bookdata.title, price: bookdata.price, thumbnail: bookdata.thumbnail)
+        
+        try! localRealm.write {
+            localRealm.add(data)
+            print("add")
         }
     }
 }
