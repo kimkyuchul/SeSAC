@@ -34,15 +34,17 @@ final class RealmManager {
         }
     }
     
-    func updateBook(_ object: BookRealmModel, completion: @escaping (Result<Bool, Error>) -> Void) {
+    func updateBook(_ object: BookRealmModel, text: String, completion: @escaping (Result<Bool, Error>) -> Void) {
         
-        do {
-            try localRealm.write {
-                localRealm.add(object, update: .modified)
-                completion(.success(true))
+        if let data = localRealm.object(ofType: BookRealmModel.self, forPrimaryKey: object._id) {
+            do {
+                try localRealm.write {
+                    data.overview = text
+                    completion(.success(true))
+                }
+            } catch {
+                completion(.failure(error))
             }
-        } catch {
-            completion(.failure(error))
         }
     }
     

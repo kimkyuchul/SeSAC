@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RealmSwift
+
 enum Metric {
     static let inset: CGFloat = 20.0
 }
@@ -27,6 +29,9 @@ final class BookListCollectionViewController: BaseCollectionViewController {
         self.title = "김규철의 책장"
         bind()
         searchBar.delegate = self
+        
+        let realm = try! Realm()
+        print(realm.configuration.fileURL)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +101,7 @@ final class BookListCollectionViewController: BaseCollectionViewController {
         
 //        var row = self.viewModel.movie[indexPath.row]
         
-        var task = self.viewModel.tasks[indexPath.row]
+        let task = self.viewModel.tasks[indexPath.row]
         
 //        if viewModel.isFiltering {
 //            row = self.viewModel.searchList[indexPath.row]
@@ -115,8 +120,8 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
-        vc.title = viewModel.movie[indexPath.row].title
-        vc.viewModel.movie = self.viewModel.movie[indexPath.row]
+        vc.title = viewModel.tasks[indexPath.row].title
+        vc.viewModel.BookList = self.viewModel.tasks[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
         
         collectionView.deselectItem(at: indexPath, animated: true)

@@ -13,6 +13,8 @@ final class SearchViewController: UIViewController {
     @IBOutlet weak var searchcollectionView: UICollectionView!
     
     var viewModel: SearchViewModel!
+    
+    private var data: BookRealmModel?
         
         required init?(coder: NSCoder) {
             super.init(coder: coder)
@@ -43,6 +45,15 @@ final class SearchViewController: UIViewController {
             DispatchQueue.main.async {
                 self.searchcollectionView.reloadData()
             }
+        }
+        
+        viewModel.addBookObservar = { [weak self] _, data in
+            self?.data = data
+            self?.showAlertMessage(title: "추가 성공", button: "닫기")
+        }
+        
+        viewModel.addErrorObservar = { [weak self] error in
+            self?.showAlertMessage(title: "추가 실패 \(error.localizedDescription)", button: "닫기")
         }
     }
     
@@ -83,9 +94,13 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.showAlertMessage(title: "저장완료", button: "ok") { [weak self] in
-            self?.viewModel.saveBookdata(indexPath: indexPath, book: self?.viewModel.BookList ?? [])
-        }
+        viewModel.saveBookdata(indexPath: indexPath, book: viewModel.BookList)
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! BookCollectionViewCell
+        
+        guard let data = self.data else { return }
+        
+        ImageFileManager.shared.saveImageToDocument(fileName: "\(data._id).jpg", image: cell.posterImageView.image ?? UIImage())
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

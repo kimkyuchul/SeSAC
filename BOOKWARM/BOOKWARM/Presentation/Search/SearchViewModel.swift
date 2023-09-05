@@ -35,6 +35,8 @@ class SearchViewModel: bookSearchInput, bookSearchOutput {
     var viewState = ViewState.isActive
     
     var getBookObservar: (() -> Void)?
+    var addBookObservar: ((Bool, BookRealmModel) -> Void)?
+    var addErrorObservar: ((Error) -> Void)?
     
     func viewWillAppear() {
         getBookData(page: currentPage)
@@ -66,12 +68,13 @@ extension SearchViewModel {
                 let book = json["documents"].arrayValue
                     .map {
                         Book(
+                            
+                            isbn: $0["isbn"].stringValue.trimmingWhitespace(),
                             title: $0["title"].stringValue,
                             price: $0["price"].intValue,
                             thumbnail: $0["thumbnail"].stringValue
                         )
                     }
-                
 
                 self.BookList.append(contentsOf: book)
                 self.currentPage += 1
@@ -84,14 +87,17 @@ extension SearchViewModel {
     }
     
     func saveBookdata(indexPath: IndexPath, book: [Book]) {
-        
         let bookdata = book[indexPath.row]
         
-        let data = BookRealmModel(title: bookdata.title, price: bookdata.price, thumbnail: bookdata.thumbnail)
+        let data = BookRealmModel(title: bookdata.title, price: bookdata.price, thumbnail: bookdata.thumbnail, overview: nil)
         
-        try! localRealm.write {
-            localRealm.add(data)
-            print("add")
+        RealmManager.shared.writeBook(data) { [weak self] result in
+            switch result {
+            case .success(let value):
+                self?.addBookObservar?(value, data)
+            case .failure(let error):
+                self?.addErrorObservar?(error)
+            }
         }
     }
 }

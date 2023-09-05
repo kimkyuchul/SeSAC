@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 enum TransitionType {
     case add
@@ -20,7 +21,8 @@ protocol DetailOutput: AnyObject {
 }
 
 class DetailViewModel: DetailInput, DetailOutput {
-
+    
+    var BookList: BookRealmModel?
     var movie: Movie?
     var binding: (() -> Void)?
     
@@ -31,4 +33,28 @@ class DetailViewModel: DetailInput, DetailOutput {
     func viewWillAppear() {
         binding?()
     }
+    
+    func updateBookData(text: String) {
+        RealmManager.shared.updateBook(BookList ?? BookRealmModel(), text: text) { result in
+            switch result {
+            case .success( _):
+                print("succes")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func deleteBookData() {
+        RealmManager.shared.deleteBook(BookList ?? BookRealmModel()) { result in
+            switch result {
+            case .success( _):
+                print("succes")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
+
+

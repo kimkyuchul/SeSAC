@@ -69,13 +69,9 @@ extension MovieListViewModel {
     }
     
     func getBookRealmData() {
-        let realm = try! Realm()
-        tasks = realm
-            .objects(BookRealmModel.self)
-            .sorted(
-                byKeyPath: "price",
-                ascending: false
-            )
+        let data = RealmManager.shared.readBook(BookRealmModel.self)
+        tasks = data.sorted(byKeyPath: "price", ascending: false)
+        
         self.getDataObservar?()
     }
 }
