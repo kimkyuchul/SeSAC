@@ -56,6 +56,10 @@ class AddViewController: BaseViewController {
         view.addTarget(self, action: #selector(searchWebButtonClicked), for: .touchUpInside)
         return view
     }()
+    
+    var fullUrl: String?
+    
+    let repository = DiaryTableRepository()
       
     override func viewDidLoad() {
         super.viewDidLoad() //안하는 경우 생기는 문제
@@ -66,14 +70,20 @@ class AddViewController: BaseViewController {
     @objc func saveButtonClicked() {
         
         // realm 파일에 접근할 수 있도록, 위치를 찾는 코드
-        let realm = try! Realm()
+//        let realm = try! Realm()
         
-        let task = DiaryTable(diaryTitle: titleTextField.text!, diaryDate: Date(), diaryContents: contentTextView.text, diaryPhoto: nil)
+        let task = DiaryTable(diaryTitle: titleTextField.text!, diaryDate: Date(), diaryContents: contentTextView.text, diaryPhoto: fullUrl)
         
         // 트랜잭션 단위 때문에 try를 실행
-        try! realm.write {
-            realm.add(task)
-            print("add")
+//        try! realm.write {
+//            realm.add(task)
+//            print("add")
+//        }
+        
+        repository.createItem(task)
+        
+        if userImageView.image != nil {
+            saveImageToDocument(fileName: "\(task._id).jpg", image: userImageView.image!)
         }
           
         navigationController?.popViewController(animated: true)
@@ -90,6 +100,8 @@ class AddViewController: BaseViewController {
     @objc func searchWebButtonClicked() {
         let vc = SearchViewController()
         vc.didSelectItemHandler = { [weak self] value in
+            
+            self?.fullUrl = value
             
             DispatchQueue.global().async {
                 if let url = URL(string: value), let data = try? Data(contentsOf: url ) {
