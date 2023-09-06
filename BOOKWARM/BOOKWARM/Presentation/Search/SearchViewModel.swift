@@ -38,6 +38,12 @@ class SearchViewModel: bookSearchInput, bookSearchOutput {
     var addBookObservar: ((Bool, BookRealmModel) -> Void)?
     var addErrorObservar: ((Error) -> Void)?
     
+    let bookRepository: BookRepository
+    
+    init(bookRepository: BookRepository) {
+        self.bookRepository = bookRepository
+    }
+    
     func viewWillAppear() {
         getBookData(page: currentPage)
     }
@@ -89,9 +95,9 @@ extension SearchViewModel {
     func saveBookdata(indexPath: IndexPath, book: [Book]) {
         let bookdata = book[indexPath.row]
         
-        let data = BookRealmModel(title: bookdata.title, price: bookdata.price, thumbnail: bookdata.thumbnail, overview: nil)
+        let data = BookRealmModel(title: bookdata.title, price: bookdata.price, thumbnail: bookdata.thumbnail, overView: nil, subTitle: "꼭 한번 읽어봐요.")
         
-        RealmManager.shared.writeBook(data) { [weak self] result in
+        bookRepository.writeBook(data) { [weak self] result in
             switch result {
             case .success(let value):
                 self?.addBookObservar?(value, data)

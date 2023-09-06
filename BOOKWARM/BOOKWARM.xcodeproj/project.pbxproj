@@ -36,7 +36,7 @@
 		5A320FF22AA5C882003A40BD /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5A320FF12AA5C882003A40BD /* Realm */; };
 		5A320FF42AA5C882003A40BD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A320FF32AA5C882003A40BD /* RealmSwift */; };
 		5A320FF72AA5C91D003A40BD /* BookRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A320FF62AA5C91D003A40BD /* BookRealmModel.swift */; };
-		5A32100D2AA714F3003A40BD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32100C2AA714F3003A40BD /* RealmManager.swift */; };
+		5A32100D2AA714F3003A40BD /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32100C2AA714F3003A40BD /* BookRepository.swift */; };
 		5A3210102AA74135003A40BD /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32100F2AA74135003A40BD /* ImageFileManager.swift */; };
 		5A3210122AA77CAB003A40BD /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3210112AA77CAB003A40BD /* String+.swift */; };
 		5AC80C722A83680F00FE9D6C /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC80C712A83680F00FE9D6C /* UIImageView+.swift */; };
@@ -79,7 +79,7 @@
 		5A1C49282A7B8C2E00CC345A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5A1C492B2A7BAA3F00CC345A /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
 		5A320FF62AA5C91D003A40BD /* BookRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRealmModel.swift; sourceTree = "<group>"; };
-		5A32100C2AA714F3003A40BD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		5A32100C2AA714F3003A40BD /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		5A32100F2AA74135003A40BD /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		5A3210112AA77CAB003A40BD /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		5AC80C712A83680F00FE9D6C /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
@@ -151,10 +151,10 @@
 		5A1C48E52A77F51100CC345A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5A3210172AA85ACC003A40BD /* Repository */,
 				5A320FF52AA5C903003A40BD /* Storage */,
 				5A1C49012A7811A600CC345A /* Model */,
 				5AE8548D2A829CCD004D9104 /* APIKey.swift */,
-				5A32100C2AA714F3003A40BD /* RealmManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -316,6 +316,14 @@
 			path = Utill;
 			sourceTree = "<group>";
 		};
+		5A3210172AA85ACC003A40BD /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5A32100C2AA714F3003A40BD /* BookRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -418,7 +426,7 @@
 				5A1C49032A7811B300CC345A /* Movie.swift in Sources */,
 				5A1C49252A7AC65500CC345A /* BrowsingViewModel.swift in Sources */,
 				5A1C48CF2A77F1EA00CC345A /* AppDelegate.swift in Sources */,
-				5A32100D2AA714F3003A40BD /* RealmManager.swift in Sources */,
+				5A32100D2AA714F3003A40BD /* BookRepository.swift in Sources */,
 				5A1C48F22A77F73800CC345A /* BaseCollectionViewController.swift in Sources */,
 				5A1C49202A7AAA3700CC345A /* ResentlyCollectionViewCell.swift in Sources */,
 				5A1C48FA2A77F9DF00CC345A /* UIImage+.swift in Sources */,

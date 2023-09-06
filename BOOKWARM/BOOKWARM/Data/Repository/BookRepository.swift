@@ -10,11 +10,7 @@ import Foundation
 import RealmSwift
 import UIKit
 
-final class RealmManager {
-    
-    static let shared = RealmManager()
-    
-    private init() {}
+final class BookRepository {
     
     private let localRealm = try! Realm()
     
@@ -39,7 +35,7 @@ final class RealmManager {
         if let data = localRealm.object(ofType: BookRealmModel.self, forPrimaryKey: object._id) {
             do {
                 try localRealm.write {
-                    data.overview = text
+                    data.overView = text
                     completion(.success(true))
                 }
             } catch {
@@ -57,6 +53,15 @@ final class RealmManager {
             }
         } catch {
             completion(.failure(error))
+        }
+    }
+   
+    func checkSchemaVersion() {
+        do {
+            let version = try schemaVersionAtURL(localRealm.configuration.fileURL!)
+            print("Schema Version: \(version)")
+        } catch {
+            print(error)
         }
     }
 }

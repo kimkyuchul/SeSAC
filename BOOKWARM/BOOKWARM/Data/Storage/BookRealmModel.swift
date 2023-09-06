@@ -13,14 +13,18 @@ class BookRealmModel: Object {
     @Persisted var title: String
     @Persisted var price: Int
     @Persisted var thumbnail: String
-    @Persisted var overview: String?
+    @Persisted var overView: String?
+    @Persisted var subTitle: String
+    @Persisted var comment: String
     
-    convenience init(title: String, price: Int, thumbnail: String, overview: String?) {
+    convenience init(title: String, price: Int, thumbnail: String, overView: String?, subTitle: String) {
         self.init()
         self.title = title
         self.price = price
         self.thumbnail = thumbnail
-        self.overview = overview
+        self.overView = overView
+        self.subTitle = subTitle
+        self.comment = "\(title) 이 영화 한번 봐보세요."
     }
 }
 

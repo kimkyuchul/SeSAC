@@ -18,7 +18,7 @@ final class SearchViewController: UIViewController {
         
         required init?(coder: NSCoder) {
             super.init(coder: coder)
-            viewModel = SearchViewModel()
+            viewModel = SearchViewModel(bookRepository: BookRepository())
         }
     
     override func viewDidLoad() {

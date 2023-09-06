@@ -22,16 +22,14 @@ final class DetailViewController: BaseViewController {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        viewModel = DetailViewModel()
+        viewModel = DetailViewModel(bookRepository: BookRepository())
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBlue
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        print(viewModel.BookList)
         bind()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,12 +41,7 @@ final class DetailViewController: BaseViewController {
         self.detailImageView.image = ImageFileManager.shared.loadImageFromDocument(fileName: "\(viewModel.BookList!._id).jpg".trimmingWhitespace())
         detailImageView.backgroundColor = .brown
     }
-    
-//    override func viewDidDisappear(_ animated: Bool) {
-//        viewModel.updateBookData(text: detailTextField.text)
-//    }
-    
-    
+
     @objc
     func dismissAction() {
         ImageFileManager.shared.removeImageFromDocument(fileName: "\(viewModel.BookList!._id).jpg")
@@ -65,13 +58,9 @@ final class DetailViewController: BaseViewController {
             return "가격은: \(data.price)"
         }
         self.ratingLabel.text = rateString
-        self.detailTextField.text = data.overview
+        self.detailTextField.text = data.overView
         
-        self.detailTextViewCounterLabel.text = "메모의 총 양은:  \(data.overview?.count ?? 0)"
-        
-        //        viewModel.binding = { [weak self] in
-        //
-        //            }
+        self.detailTextViewCounterLabel.text = "메모의 총 양은:  \(data.overView?.count ?? 0)"
     }
     
     private func setNavigation() {

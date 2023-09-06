@@ -35,6 +35,16 @@ class MovieListViewModel: MovieListInput, MovieListOutput {
         return movie.map { $0.title }
     }
     
+    let bookRepository: BookRepository
+    
+    init(bookRepository: BookRepository) {
+        self.bookRepository = bookRepository
+    }
+    
+    
+    func viewDidLoad() {
+        getRealmSchemaVersion()
+    }
     
     func viewWillAppear() {
         getBookRealmData()
@@ -69,9 +79,13 @@ extension MovieListViewModel {
     }
     
     func getBookRealmData() {
-        let data = RealmManager.shared.readBook(BookRealmModel.self)
+        let data = bookRepository.readBook(BookRealmModel.self)
         tasks = data.sorted(byKeyPath: "price", ascending: false)
         
         self.getDataObservar?()
+    }
+    
+    func getRealmSchemaVersion() {
+        bookRepository.checkSchemaVersion()
     }
 }

@@ -22,6 +22,12 @@ protocol DetailOutput: AnyObject {
 
 class DetailViewModel: DetailInput, DetailOutput {
     
+    let bookRepository: BookRepository
+    
+    init(bookRepository: BookRepository) {
+        self.bookRepository = bookRepository
+    }
+    
     var BookList: BookRealmModel?
     var movie: Movie?
     var binding: (() -> Void)?
@@ -35,7 +41,7 @@ class DetailViewModel: DetailInput, DetailOutput {
     }
     
     func updateBookData(text: String) {
-        RealmManager.shared.updateBook(BookList ?? BookRealmModel(), text: text) { result in
+        bookRepository.updateBook(BookList ?? BookRealmModel(), text: text) { result in
             switch result {
             case .success( _):
                 print("succes")
@@ -46,7 +52,7 @@ class DetailViewModel: DetailInput, DetailOutput {
     }
     
     func deleteBookData() {
-        RealmManager.shared.deleteBook(BookList ?? BookRealmModel()) { result in
+        bookRepository.deleteBook(BookList ?? BookRealmModel()) { result in
             switch result {
             case .success( _):
                 print("succes")

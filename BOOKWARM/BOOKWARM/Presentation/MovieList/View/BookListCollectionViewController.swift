@@ -21,22 +21,25 @@ final class BookListCollectionViewController: BaseCollectionViewController {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        viewModel = MovieListViewModel()
+        viewModel = MovieListViewModel(bookRepository: BookRepository())
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "김규철의 책장"
+        viewModel.viewDidLoad()
         bind()
         searchBar.delegate = self
         
         let realm = try! Realm()
         print(realm.configuration.fileURL)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
+        print(viewModel.tasks)
     }
     
     override func setCollectionView() {
