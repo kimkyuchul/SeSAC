@@ -28,6 +28,9 @@
 		5AF37F902AB02A9F00368240 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF37F8F2AB02A9F00368240 /* APIKey.swift */; };
 		5AF37F922AB02B5200368240 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF37F912AB02B5200368240 /* PhotoViewController.swift */; };
 		5AF37F942AB02DA600368240 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF37F932AB02DA600368240 /* PhotoViewModel.swift */; };
+		5AF37F962AB094CF00368240 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF37F952AB094CF00368240 /* PhotoTableViewCell.swift */; };
+		5AF37F992AB0951900368240 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AF37F982AB0951900368240 /* SnapKit */; };
+		5AF37F9C2AB096FD00368240 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF37F9B2AB096FD00368240 /* UIImageView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,8 @@
 		5AF37F8F2AB02A9F00368240 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		5AF37F912AB02B5200368240 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		5AF37F932AB02DA600368240 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		5AF37F952AB094CF00368240 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		5AF37F9B2AB096FD00368240 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF37F992AB0951900368240 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +136,7 @@
 		5AF37F2D2AAE994200368240 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
+				5AF37F9A2AB096E700368240 /* Extension */,
 				5AF37F812AAFF2FD00368240 /* Observable.swift */,
 				5AF37F8A2AB02A4A00368240 /* Photo */,
 				5AF37F832AAFFDCD00368240 /* Sample */,
@@ -142,7 +149,6 @@
 				5AF37F372AAE994800368240 /* Assets.xcassets */,
 				5AF37F392AAE994800368240 /* LaunchScreen.storyboard */,
 				5AF37F3C2AAE994800368240 /* Info.plist */,
-				5AF37F6B2AAEBACB00368240 /* String+.swift */,
 			);
 			path = Unsplash;
 			sourceTree = "<group>";
@@ -190,8 +196,18 @@
 				5AF37F8B2AB02A5F00368240 /* Photo.swift */,
 				5AF37F8D2AB02A6B00368240 /* APIService.swift */,
 				5AF37F8F2AB02A9F00368240 /* APIKey.swift */,
+				5AF37F952AB094CF00368240 /* PhotoTableViewCell.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		5AF37F9A2AB096E700368240 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5AF37F6B2AAEBACB00368240 /* String+.swift */,
+				5AF37F9B2AB096FD00368240 /* UIImageView+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +226,9 @@
 			dependencies = (
 			);
 			name = Unsplash;
+			packageProductDependencies = (
+				5AF37F982AB0951900368240 /* SnapKit */,
+			);
 			productName = Unsplash;
 			productReference = 5AF37F2B2AAE994200368240 /* Unsplash.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +303,9 @@
 				ja,
 			);
 			mainGroup = 5AF37F222AAE994200368240;
+			packageReferences = (
+				5AF37F972AB0951900368240 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 5AF37F2C2AAE994200368240 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -328,9 +350,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF37F962AB094CF00368240 /* PhotoTableViewCell.swift in Sources */,
 				5AF37F332AAE994200368240 /* ViewController.swift in Sources */,
 				5AF37F2F2AAE994200368240 /* AppDelegate.swift in Sources */,
 				5AF37F6C2AAEBACB00368240 /* String+.swift in Sources */,
+				5AF37F9C2AB096FD00368240 /* UIImageView+.swift in Sources */,
 				5AF37F802AAFEEAC00368240 /* LoginViewController.swift in Sources */,
 				5AF37F8E2AB02A6B00368240 /* APIService.swift in Sources */,
 				5AF37F8C2AB02A5F00368240 /* Photo.swift in Sources */,
@@ -706,6 +730,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5AF37F972AB0951900368240 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5AF37F982AB0951900368240 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AF37F972AB0951900368240 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5AF37F232AAE994200368240 /* Project object */;
 }

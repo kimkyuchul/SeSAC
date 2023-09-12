@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class PhotoViewController: UIViewController {
 
@@ -17,10 +18,12 @@ final class PhotoViewController: UIViewController {
         super.viewDidLoad()
         photoTableView.delegate = self
         photoTableView.dataSource = self
+        photoTableView.rowHeight = 100
+        photoTableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: "PhotoTableViewCell")
         
         viewModel.fetchPhoto(query: "travis")
         
-        viewModel.list.bind { [weak self] _ in
+        viewModel.list.bind { [weak self] photo in
             DispatchQueue.main.async {
                 self?.photoTableView.reloadData()
             }
@@ -34,9 +37,12 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTableViewCell", for: indexPath) as! PhotoTableViewCell
         let data = viewModel.cellForRowAtPhoto(at: indexPath)
-        cell.backgroundColor = .systemPink
+        cell.diaryImageView.setImageFromStringURL(stringUrl: data.urls.thumb)
+        cell.titleLabel.text = data.user.username
+        cell.dateLabel.text = data.created_at
+        cell.contentLabel.text = data.description
         return cell
     }
 }
