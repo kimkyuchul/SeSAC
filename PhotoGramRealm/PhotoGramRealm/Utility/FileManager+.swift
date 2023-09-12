@@ -9,6 +9,12 @@ import UIKit
 
 extension UIViewController {
     
+    func documentDirectoryPath() -> URL? {
+        //1. 도큐먼트 경로 찾기
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        return documentDirectory
+    }
+    
     // 도큐먼트 폴더에서 이미지를 가져오는 메서드
     func loadImageFromDocument(fileName: String) -> UIImage {
         // 도큐먼트 경로 찾기
