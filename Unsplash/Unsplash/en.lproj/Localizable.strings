@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Unsplash
+
+  Created by 김규철 on 2023/09/11.
+  
+*/
+
+"nickname_result" = "my nick name is %@";
+
+"age_result" = "i am %d years old";
