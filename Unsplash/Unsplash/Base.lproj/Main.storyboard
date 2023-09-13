@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fuX-NG-knQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eUI-9x-U7z">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -302,6 +302,94 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaV-aF-md3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3867.9389312977096" y="-17.605633802816904"/>
+        </scene>
+        <!--Lotto View Controller-->
+        <scene sceneID="GOu-c0-f3q">
+            <objects>
+                <viewController id="eUI-9x-U7z" customClass="LottoViewController" customModule="Unsplash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j9q-U2-9TL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9sC-Zn-jtN">
+                                <rect key="frame" x="10" y="109" width="373" height="20.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFH-Ui-1rd">
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgY-M2-ATb">
+                                        <rect key="frame" x="64" y="0.0" width="53.666666666666657" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgT-32-epC">
+                                        <rect key="frame" x="127.66666666666666" y="0.0" width="54" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glt-3p-w10">
+                                        <rect key="frame" x="191.66666666666666" y="0.0" width="53.666666666666657" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwo-Mh-exa">
+                                        <rect key="frame" x="255.33333333333331" y="0.0" width="54" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-Iz-g2b">
+                                        <rect key="frame" x="319.33333333333331" y="0.0" width="53.666666666666686" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzb-u8-qRU">
+                                <rect key="frame" x="163.33333333333334" y="179.33333333333334" width="66.333333333333343" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opc-cv-SC9">
+                                <rect key="frame" x="151.33333333333334" y="253.00000000000003" width="90.333333333333343" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="1회차부터"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s3V-TQ-stn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="opc-cv-SC9" firstAttribute="top" secondItem="Dzb-u8-qRU" secondAttribute="bottom" constant="40" id="EZ2-4F-kQy"/>
+                            <constraint firstItem="9sC-Zn-jtN" firstAttribute="top" secondItem="s3V-TQ-stn" secondAttribute="top" constant="50" id="XFR-z4-mwb"/>
+                            <constraint firstItem="Dzb-u8-qRU" firstAttribute="top" secondItem="9sC-Zn-jtN" secondAttribute="bottom" constant="50" id="eDD-IH-xrs"/>
+                            <constraint firstItem="s3V-TQ-stn" firstAttribute="trailing" secondItem="9sC-Zn-jtN" secondAttribute="trailing" constant="10" id="gPh-Bu-zs1"/>
+                            <constraint firstItem="9sC-Zn-jtN" firstAttribute="leading" secondItem="s3V-TQ-stn" secondAttribute="leading" constant="10" id="l9K-RK-4XT"/>
+                            <constraint firstItem="opc-cv-SC9" firstAttribute="centerX" secondItem="j9q-U2-9TL" secondAttribute="centerX" id="rvl-iM-rRV"/>
+                            <constraint firstItem="Dzb-u8-qRU" firstAttribute="centerX" secondItem="j9q-U2-9TL" secondAttribute="centerX" id="u5l-cW-DRp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lnumber2Label" destination="jgY-M2-ATb" id="J7P-40-03h"/>
+                        <outlet property="lnumber3Label" destination="XgT-32-epC" id="VgW-D9-Uo9"/>
+                        <outlet property="lnumber5Label" destination="cwo-Mh-exa" id="6GJ-TT-Ss7"/>
+                        <outlet property="lnumber6Label" destination="0gp-Iz-g2b" id="tN9-Ng-PTX"/>
+                        <outlet property="lottoButton" destination="opc-cv-SC9" id="WB3-UK-tzS"/>
+                        <outlet property="lottoResultLabel" destination="Dzb-u8-qRU" id="Xh1-3O-bEM"/>
+                        <outlet property="number1Label" destination="tFH-Ui-1rd" id="iCc-NG-qhQ"/>
+                        <outlet property="number4Label" destination="glt-3p-w10" id="lBQ-Xe-eHx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Did-bI-Pmf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4676" y="-1"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ACs-rg-SUa">
