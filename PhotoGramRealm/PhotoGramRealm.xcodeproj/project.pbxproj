@@ -39,6 +39,9 @@
 		5A3210092AA6CB0D003A40BD /* FileManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3210082AA6CB0D003A40BD /* FileManager+.swift */; };
 		5A32100B2AA6F24A003A40BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32100A2AA6F24A003A40BD /* DetailViewController.swift */; };
 		5A3210142AA80033003A40BD /* DiaryTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3210132AA80033003A40BD /* DiaryTableRepository.swift */; };
+		5A7E39BF2AB2CC8100143175 /* RealmCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39BE2AB2CC8100143175 /* RealmCollectionViewController.swift */; };
+		5A7E39C22AB2EF7E00143175 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5A7E39C12AB2EF7E00143175 /* Kingfisher */; };
+		5A7E39C42AB2F01C00143175 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39C32AB2F01C00143175 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,8 @@
 		5A3210082AA6CB0D003A40BD /* FileManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+.swift"; sourceTree = "<group>"; };
 		5A32100A2AA6F24A003A40BD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5A3210132AA80033003A40BD /* DiaryTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableRepository.swift; sourceTree = "<group>"; };
+		5A7E39BE2AB2CC8100143175 /* RealmCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCollectionViewController.swift; sourceTree = "<group>"; };
+		5A7E39C32AB2F01C00143175 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,7 @@
 				5A320FEB2AA56504003A40BD /* Realm in Frameworks */,
 				5A05DEF72AA95BD70050AD55 /* Zip in Frameworks */,
 				04BAEB2A2AA4C1D1005A3A69 /* SnapKit in Frameworks */,
+				5A7E39C22AB2EF7E00143175 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				04BAEB302AA550A7005A3A69 /* SearchViewController.swift */,
+				5A7E39C32AB2F01C00143175 /* UIImage+.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 			children = (
 				5A05DF3D2AAAA09A0050AD55 /* TodoTable.swift */,
 				5A05DF3F2AAAA37B0050AD55 /* ToDoViewController.swift */,
+				5A7E39BE2AB2CC8100143175 /* RealmCollectionViewController.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 				5A320FEA2AA56504003A40BD /* Realm */,
 				5A320FEC2AA56504003A40BD /* RealmSwift */,
 				5A05DEF62AA95BD70050AD55 /* Zip */,
+				5A7E39C12AB2EF7E00143175 /* Kingfisher */,
 			);
 			productName = PhotoGramRealm;
 			productReference = 04BAEAF52AA4BF3F005A3A69 /* PhotoGramRealm.app */;
@@ -299,6 +308,7 @@
 				04BAEB282AA4C1D1005A3A69 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5A320FE92AA56504003A40BD /* XCRemoteSwiftPackageReference "realm-swift" */,
 				5A05DEF52AA95BD70050AD55 /* XCRemoteSwiftPackageReference "Zip" */,
+				5A7E39C02AB2EF7E00143175 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 04BAEAF62AA4BF3F005A3A69 /* Products */;
 			projectDirPath = "";
@@ -327,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BAEB312AA550A7005A3A69 /* SearchViewController.swift in Sources */,
+				5A7E39C42AB2F01C00143175 /* UIImage+.swift in Sources */,
 				5A320FE82AA5584F003A40BD /* APIKey.swift in Sources */,
 				5A05DEF42AA954DA0050AD55 /* BackupViewController.swift in Sources */,
 				04BAEB1E2AA4C090005A3A69 /* BaseTableViewCell.swift in Sources */,
@@ -339,6 +350,7 @@
 				04BAEB272AA4C106005A3A69 /* Color.swift in Sources */,
 				04BAEB382AA55290005A3A69 /* SearchCollectionViewCell.swift in Sources */,
 				04BAEAF92AA4BF3F005A3A69 /* AppDelegate.swift in Sources */,
+				5A7E39BF2AB2CC8100143175 /* RealmCollectionViewController.swift in Sources */,
 				5A32100B2AA6F24A003A40BD /* DetailViewController.swift in Sources */,
 				04BAEB222AA4C0BB005A3A69 /* BaseViewController.swift in Sources */,
 				5A3210092AA6CB0D003A40BD /* FileManager+.swift in Sources */,
@@ -589,6 +601,14 @@
 				version = 10.42.1;
 			};
 		};
+		5A7E39C02AB2EF7E00143175 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -611,6 +631,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A320FE92AA56504003A40BD /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		5A7E39C12AB2EF7E00143175 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A7E39C02AB2EF7E00143175 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
