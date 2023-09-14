@@ -15,6 +15,8 @@
 		5A7E39A62AB1990A00143175 /* LottoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39A52AB1990A00143175 /* LottoService.swift */; };
 		5A7E39A82AB19A2F00143175 /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39A72AB19A2F00143175 /* Lotto.swift */; };
 		5A7E39AA2AB1AA4A00143175 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39A92AB1AA4A00143175 /* Int+.swift */; };
+		5A7E39BB2AB2972900143175 /* NewSimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39BA2AB2972800143175 /* NewSimpleTableViewController.swift */; };
+		5A7E39BD2AB2A02100143175 /* NewSimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39BC2AB2A02100143175 /* NewSimpleCollectionViewController.swift */; };
 		5AF37F2F2AAE994200368240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF37F2E2AAE994200368240 /* AppDelegate.swift */; };
 		5AF37F312AAE994200368240 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF37F302AAE994200368240 /* SceneDelegate.swift */; };
 		5AF37F332AAE994200368240 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF37F322AAE994200368240 /* ViewController.swift */; };
@@ -67,6 +69,8 @@
 		5A7E39A52AB1990A00143175 /* LottoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoService.swift; sourceTree = "<group>"; };
 		5A7E39A72AB19A2F00143175 /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
 		5A7E39A92AB1AA4A00143175 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		5A7E39BA2AB2972800143175 /* NewSimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleTableViewController.swift; sourceTree = "<group>"; };
+		5A7E39BC2AB2A02100143175 /* NewSimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleCollectionViewController.swift; sourceTree = "<group>"; };
 		5AF37F2B2AAE994200368240 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF37F2E2AAE994200368240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AF37F302AAE994200368240 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +154,15 @@
 			path = Lotto;
 			sourceTree = "<group>";
 		};
+		5A7E39B92AB296FF00143175 /* SimpleTableView */ = {
+			isa = PBXGroup;
+			children = (
+				5A7E39BA2AB2972800143175 /* NewSimpleTableViewController.swift */,
+				5A7E39BC2AB2A02100143175 /* NewSimpleCollectionViewController.swift */,
+			);
+			path = SimpleTableView;
+			sourceTree = "<group>";
+		};
 		5AF37F222AAE994200368240 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +186,7 @@
 		5AF37F2D2AAE994200368240 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
+				5A7E39B92AB296FF00143175 /* SimpleTableView */,
 				5A7E39A02AB198DD00143175 /* Lotto */,
 				5A7E39902AB139BF00143175 /* Calculate */,
 				5AF37F9A2AB096E700368240 /* Extension */,
@@ -397,6 +411,7 @@
 				5AF37F9C2AB096FD00368240 /* UIImageView+.swift in Sources */,
 				5A7E39A22AB198EB00143175 /* LottoViewController.swift in Sources */,
 				5AF37F802AAFEEAC00368240 /* LoginViewController.swift in Sources */,
+				5A7E39BB2AB2972900143175 /* NewSimpleTableViewController.swift in Sources */,
 				5A7E39A82AB19A2F00143175 /* Lotto.swift in Sources */,
 				5AF37F8E2AB02A6B00368240 /* APIService.swift in Sources */,
 				5A7E39A42AB198FC00143175 /* LottoViewModel.swift in Sources */,
@@ -408,6 +423,7 @@
 				5AF37F872AB0014E00368240 /* SampleViewModel.swift in Sources */,
 				5AF37F942AB02DA600368240 /* PhotoViewModel.swift in Sources */,
 				5A7E39942AB13A9800143175 /* CalculateViewModel.swift in Sources */,
+				5A7E39BD2AB2A02100143175 /* NewSimpleCollectionViewController.swift in Sources */,
 				5AF37F852AAFFDDE00368240 /* SampleViewController.swift in Sources */,
 				5AF37F902AB02A9F00368240 /* APIKey.swift in Sources */,
 				5A7E39A62AB1990A00143175 /* LottoService.swift in Sources */,

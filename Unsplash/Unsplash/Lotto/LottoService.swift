@@ -28,17 +28,14 @@ final class LottoService {
             }
             
             guard let response = response as? HTTPURLResponse, (200...500).contains(response.statusCode) else {
-                print("aa")
                 return
             }
             
             do {
                 let result = try JSONDecoder().decode(Lotto.self, from: data!)
-                print("aa")
                 completion(.success((result)))
                 
             } catch {
-                print("aa")
                 print(error)
             }
         }.resume()

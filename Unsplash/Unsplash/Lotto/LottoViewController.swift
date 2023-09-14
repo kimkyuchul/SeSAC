@@ -35,7 +35,6 @@ class LottoViewController: UIViewController {
     }
     
     @objc func lottoButtonTapped() {
-        print("aa")
         viewModel.lottobuttonTapp()
     }
     
