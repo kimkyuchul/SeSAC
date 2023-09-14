@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class SearchViewController: BaseViewController {
      
@@ -17,21 +18,21 @@ class SearchViewController: BaseViewController {
     }()
     
     lazy var collectionView = {
-        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
-        view.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
+        let view = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         view.delegate = self
         view.dataSource = self
-        view.collectionViewLayout = collectionViewLayout()
         return view
     }()
 
     var didSelectItemHandler: ((String) -> Void)?
     
     private var imageList: Photo = Photo(total: 0, total_pages: 0, results: [])
-     
+    private var appearance = UICollectionLayoutListConfiguration.Appearance.insetGrouped
+    var cellRegisteration: UICollectionView.CellRegistration<UICollectionViewListCell, PhotoResult>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         
+        
         APIService.shared.searchPhoto(query: "sky") { data in
             guard let data = data else { return }
             self.imageList = data
@@ -40,7 +41,30 @@ class SearchViewController: BaseViewController {
                 self.collectionView.reloadData()
             }
         }
+        
+        cellRegisteration = UICollectionView.CellRegistration(handler: { cell, indexPath, photoResult in
+            var content = cell.defaultContentConfiguration()
+            content.text = photoResult.user.username
+            content.secondaryText = photoResult.description
+            DispatchQueue.global().async {
+                let url = URL(string: photoResult.urls.thumb)!
+                let data = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    content.image = UIImage(data: data!)
+                    cell.contentConfiguration = content
+                }
+            }
+        })
     }
+    
+    private func createLayout() -> UICollectionViewLayout {
+        return UICollectionViewCompositionalLayout{ [unowned self] section, layoutEnvironment in
+            var config = UICollectionLayoutListConfiguration(appearance: self.appearance)
+            config.headerMode = .firstItemInSection
+            return NSCollectionLayoutSection.list(using: config, layoutEnvironment: layoutEnvironment)
+        }
+    }
+    
      
     override func configure() {
         view.addSubview(searchBar)
@@ -69,10 +93,10 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
+        let data = imageList.results![indexPath.item]
         
-        let data = imageList.results![indexPath.item].urls.thumb
-        cell.backgroundColor = .yellow        
+        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegisteration, for: indexPath, item: data)
+                
         return cell
     }
     
