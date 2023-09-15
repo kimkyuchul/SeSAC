@@ -7,12 +7,40 @@
 
 import UIKit
 
-struct User {
+struct User: Hashable {
     let name: String
     let age: Int
     
+    let unique = UUID().uuidString
+    
     var introduce: String {
         return "\(name), \(age)살"
+    }
+}
+
+class User1: Hashable {
+    
+    static func == (lhs: User1, rhs: User1) -> Bool {
+        lhs.unique == rhs.unique
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(unique)
+    }
+    
+    let name: String
+    let age: Int
+    
+    // 고유의 값을 설정하더라도 class로 선언 시 여러 상속
+    let unique = UUID().uuidString
+    
+    var introduce: String {
+        return "\(name), \(age)살"
+    }
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
     }
 }
 
