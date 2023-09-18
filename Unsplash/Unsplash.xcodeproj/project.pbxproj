@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A70B96F2AB7D37200506846 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B96E2AB7D37200506846 /* NumberViewController.swift */; };
+		5A70B9712AB7D9A400506846 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9702AB7D9A400506846 /* NumberViewModel.swift */; };
+		5A70B9732AB7E7CE00506846 /* NewSimpleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9722AB7E7CE00506846 /* NewSimpleViewModel.swift */; };
+		5A70B9762AB86CE700506846 /* RandimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9752AB86CE700506846 /* RandimViewController.swift */; };
+		5A70B9782AB86CF200506846 /* RandomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9772AB86CF200506846 /* RandomViewModel.swift */; };
+		5A70B97A2AB8701B00506846 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9792AB8701B00506846 /* Random.swift */; };
+		5A70B97C2AB871E200506846 /* RandomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B97B2AB871E200506846 /* RandomService.swift */; };
+		5A70B97E2AB875B700506846 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B97D2AB875B700506846 /* RandomCollectionViewCell.swift */; };
 		5A7E39922AB139D900143175 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39912AB139D900143175 /* CalculateViewController.swift */; };
 		5A7E39942AB13A9800143175 /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39932AB13A9800143175 /* CalculateViewModel.swift */; };
 		5A7E39962AB13DAF00143175 /* SequenceObservavle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E39952AB13DAF00143175 /* SequenceObservavle.swift */; };
@@ -61,6 +69,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A70B96E2AB7D37200506846 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		5A70B9702AB7D9A400506846 /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
+		5A70B9722AB7E7CE00506846 /* NewSimpleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleViewModel.swift; sourceTree = "<group>"; };
+		5A70B9752AB86CE700506846 /* RandimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandimViewController.swift; sourceTree = "<group>"; };
+		5A70B9772AB86CF200506846 /* RandomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewModel.swift; sourceTree = "<group>"; };
+		5A70B9792AB8701B00506846 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		5A70B97B2AB871E200506846 /* RandomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomService.swift; sourceTree = "<group>"; };
+		5A70B97D2AB875B700506846 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
 		5A7E39912AB139D900143175 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		5A7E39932AB13A9800143175 /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
 		5A7E39952AB13DAF00143175 /* SequenceObservavle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceObservavle.swift; sourceTree = "<group>"; };
@@ -133,6 +149,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A70B9742AB86CD500506846 /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				5A70B9752AB86CE700506846 /* RandimViewController.swift */,
+				5A70B9772AB86CF200506846 /* RandomViewModel.swift */,
+				5A70B9792AB8701B00506846 /* Random.swift */,
+				5A70B97B2AB871E200506846 /* RandomService.swift */,
+				5A70B97D2AB875B700506846 /* RandomCollectionViewCell.swift */,
+			);
+			path = Random;
+			sourceTree = "<group>";
+		};
 		5A7E39902AB139BF00143175 /* Calculate */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +187,7 @@
 			children = (
 				5A7E39BA2AB2972800143175 /* NewSimpleTableViewController.swift */,
 				5A7E39BC2AB2A02100143175 /* NewSimpleCollectionViewController.swift */,
+				5A70B9722AB7E7CE00506846 /* NewSimpleViewModel.swift */,
 			);
 			path = SimpleTableView;
 			sourceTree = "<group>";
@@ -186,6 +215,7 @@
 		5AF37F2D2AAE994200368240 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
+				5A70B9742AB86CD500506846 /* Random */,
 				5A7E39B92AB296FF00143175 /* SimpleTableView */,
 				5A7E39A02AB198DD00143175 /* Lotto */,
 				5A7E39902AB139BF00143175 /* Calculate */,
@@ -228,6 +258,8 @@
 			children = (
 				5AF37F7F2AAFEEAC00368240 /* LoginViewController.swift */,
 				5AF37F882AB00E4500368240 /* LoginViewModel.swift */,
+				5A70B96E2AB7D37200506846 /* NumberViewController.swift */,
+				5A70B9702AB7D9A400506846 /* NumberViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -404,18 +436,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A70B96F2AB7D37200506846 /* NumberViewController.swift in Sources */,
+				5A70B9732AB7E7CE00506846 /* NewSimpleViewModel.swift in Sources */,
 				5AF37F962AB094CF00368240 /* PhotoTableViewCell.swift in Sources */,
 				5AF37F332AAE994200368240 /* ViewController.swift in Sources */,
 				5AF37F2F2AAE994200368240 /* AppDelegate.swift in Sources */,
 				5AF37F6C2AAEBACB00368240 /* String+.swift in Sources */,
 				5AF37F9C2AB096FD00368240 /* UIImageView+.swift in Sources */,
 				5A7E39A22AB198EB00143175 /* LottoViewController.swift in Sources */,
+				5A70B97A2AB8701B00506846 /* Random.swift in Sources */,
 				5AF37F802AAFEEAC00368240 /* LoginViewController.swift in Sources */,
 				5A7E39BB2AB2972900143175 /* NewSimpleTableViewController.swift in Sources */,
 				5A7E39A82AB19A2F00143175 /* Lotto.swift in Sources */,
+				5A70B9762AB86CE700506846 /* RandimViewController.swift in Sources */,
+				5A70B97E2AB875B700506846 /* RandomCollectionViewCell.swift in Sources */,
 				5AF37F8E2AB02A6B00368240 /* APIService.swift in Sources */,
 				5A7E39A42AB198FC00143175 /* LottoViewModel.swift in Sources */,
 				5AF37F8C2AB02A5F00368240 /* Photo.swift in Sources */,
+				5A70B9782AB86CF200506846 /* RandomViewModel.swift in Sources */,
+				5A70B9712AB7D9A400506846 /* NumberViewModel.swift in Sources */,
+				5A70B97C2AB871E200506846 /* RandomService.swift in Sources */,
 				5A7E39AA2AB1AA4A00143175 /* Int+.swift in Sources */,
 				5AF37F822AAFF2FD00368240 /* Observable.swift in Sources */,
 				5A7E39922AB139D900143175 /* CalculateViewController.swift in Sources */,
