@@ -14,36 +14,44 @@ final class NewSimpleCollectionViewController: UIViewController {
         case second = 1
     }
     
-    var list = [User(name: "kyuchul", age: 23), User(name: "kyuchul", age: 23), User(name: "jack", age: 60)]
-    
-    var list2 = [User(name: "뷸쌍", age: 23), User(name: "감자", age: 63), User(name: "정말", age: 33)]
-    
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     
-//    var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
+    //    var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
     
     var dataSource: UICollectionViewDiffableDataSource<Section, User>!
     
+    var viewModel = NewSimpleViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+        
+        collectionView.delegate = self
         
         view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
-    
-        // UICollectionViewDiffableDataSource<Int, User>!와 타입이 동일해야 한다.
-        // numberofrowinsection을 대체로 쓴다고 생각하자.
-        var snapshot = NSDiffableDataSourceSnapshot<Section, User>()
-        // 섹션의 수
-        // 인덱스 기반이 아니기 때문에 다른 숫자를 넣어도 상관 없다.
-        snapshot.appendSections(Section.allCases)
-        snapshot.appendItems(list, toSection: Section.second)
-        snapshot.appendItems(list2, toSection: Section.first)
         
-        dataSource.apply(snapshot)
+        configureDataSource()
+        //        updateSnapshot()
+        //
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        //            self.list.insert(User(name: "뽀로로", age: 141), at: 2)
+        //            self.updateSnapshot()
         
+        viewModel.list.bind { _ in
+            self.updateSnapshot()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.viewModel.append()
+            self.updateSnapshot()
+        }
     }
     
     // collectionView를 lazy로 줘도댐
@@ -56,8 +64,21 @@ final class NewSimpleCollectionViewController: UIViewController {
         return layout
     }
     
+    private func updateSnapshot() {
+        // UICollectionViewDiffableDataSource<Int, User>!와 타입이 동일해야 한다.
+        // numberofrowinsection을 대체로 쓴다고 생각하자.
+        var snapshot = NSDiffableDataSourceSnapshot<Section, User>()
+        // 섹션의 수
+        // 인덱스 기반이 아니기 때문에 다른 숫자를 넣어도 상관 없다.
+        snapshot.appendSections(Section.allCases)
+        snapshot.appendItems(viewModel.list.value, toSection: Section.second)
+        snapshot.appendItems(viewModel.list2, toSection: Section.first)
+        
+        dataSource.apply(snapshot)
+    }
+    
     private func configureDataSource() {
-
+        
         // UICollectionView.CellRegistraion iOS 14, register 메서드 eotls 제네릭을 사용, 셀이 생성될 때마다 클로저가 호출
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, User>(handler: { cell, indexPath, itemIdentifier in
             // 셀 디자인 및 데이터 처리
@@ -95,7 +116,25 @@ final class NewSimpleCollectionViewController: UIViewController {
     }
 }
 
+extension NewSimpleCollectionViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.insertUser(name: searchBar.text!)
+    }
+}
 
+
+extension NewSimpleCollectionViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        viewModel.removeUser(idx: indexPath.item)
+        
+        guard let user = dataSource.itemIdentifier(for: indexPath) else {
+            return  
+        }
+        
+        dump(user)
+    }
+}
 
 
 //extension NewSimpleCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {

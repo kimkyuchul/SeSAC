@@ -16,7 +16,7 @@ final class APIService {
     func searchPhoto(query: String, completion: @escaping (Photo?) -> Void ) {
     
         guard let url = URL(string: "https://api.unsplash.com/search/photos?query=\(query)&client_id=\(APIKey.unsplash)") else { return }
-        
+
         let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
