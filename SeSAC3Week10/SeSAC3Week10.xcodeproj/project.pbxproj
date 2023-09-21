@@ -22,6 +22,10 @@
 		5A70B9C62AB93CD600506846 /* NetworkBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9C52AB93CD600506846 /* NetworkBasic.swift */; };
 		5A70B9C82AB9649600506846 /* SeSACAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9C72AB9649600506846 /* SeSACAPI.swift */; };
 		5A70B9CA2AB9743800506846 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9C92AB9743800506846 /* Network.swift */; };
+		5A70B9CC2ABA765C00506846 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9CB2ABA765C00506846 /* Router.swift */; };
+		5A70B9CE2ABA9A8700506846 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9CD2ABA9A8700506846 /* ViewModel.swift */; };
+		5A70B9D02ABBCB4E00506846 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9CF2ABBCB4E00506846 /* SearchViewController.swift */; };
+		5A70B9D22ABBE10400506846 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9D12ABBE10400506846 /* SearchCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		5A70B9C52AB93CD600506846 /* NetworkBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBasic.swift; sourceTree = "<group>"; };
 		5A70B9C72AB9649600506846 /* SeSACAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACAPI.swift; sourceTree = "<group>"; };
 		5A70B9C92AB9743800506846 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		5A70B9CB2ABA765C00506846 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5A70B9CD2ABA9A8700506846 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5A70B9CF2ABBCB4E00506846 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5A70B9D12ABBE10400506846 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +122,13 @@
 				5A70B9C42AB93CC600506846 /* Network */,
 				5A70B98D2AB9294700506846 /* SceneDelegate.swift */,
 				5A70B98F2AB9294700506846 /* ViewController.swift */,
+				5A70B9CD2ABA9A8700506846 /* ViewModel.swift */,
 				5A70B9912AB9294700506846 /* Main.storyboard */,
 				5A70B9942AB9294B00506846 /* Assets.xcassets */,
 				5A70B9962AB9294B00506846 /* LaunchScreen.storyboard */,
 				5A70B9992AB9294B00506846 /* Info.plist */,
+				5A70B9CF2ABBCB4E00506846 /* SearchViewController.swift */,
+				5A70B9D12ABBE10400506846 /* SearchCollectionViewCell.swift */,
 			);
 			path = SeSAC3Week10;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 				5A70B9C52AB93CD600506846 /* NetworkBasic.swift */,
 				5A70B9C72AB9649600506846 /* SeSACAPI.swift */,
 				5A70B98B2AB9294700506846 /* AppDelegate.swift */,
+				5A70B9CB2ABA765C00506846 /* Router.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -291,11 +303,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A70B9D22ABBE10400506846 /* SearchCollectionViewCell.swift in Sources */,
 				5A70B9902AB9294700506846 /* ViewController.swift in Sources */,
 				5A70B9C62AB93CD600506846 /* NetworkBasic.swift in Sources */,
 				5A70B9CA2AB9743800506846 /* Network.swift in Sources */,
+				5A70B9D02ABBCB4E00506846 /* SearchViewController.swift in Sources */,
+				5A70B9CC2ABA765C00506846 /* Router.swift in Sources */,
 				5A70B98C2AB9294700506846 /* AppDelegate.swift in Sources */,
 				5A70B9C82AB9649600506846 /* SeSACAPI.swift in Sources */,
+				5A70B9CE2ABA9A8700506846 /* ViewModel.swift in Sources */,
 				5A70B98E2AB9294700506846 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +497,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,6 +526,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

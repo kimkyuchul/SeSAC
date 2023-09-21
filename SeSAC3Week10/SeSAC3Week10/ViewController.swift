@@ -7,35 +7,73 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
+import SnapKit
 
 final class ViewController: UIViewController {
     
+    private lazy var scrollView = {
+        let view = UIScrollView()
+        view.minimumZoomScale = 1
+        view.maximumZoomScale = 4
+        view.backgroundColor = .green
+        view.delegate = self
+        view.showsVerticalScrollIndicator = false
+        view.showsHorizontalScrollIndicator = false
+        return view
+    }()
+    
+    private let imageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFill
+        imageView.isUserInteractionEnabled = true
+        return imageView
+    }()
+    
+    let viewModel = ViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        request(query: "ada")
-        
-        //        randomRequest()
-        
-//        detailPhoto(id:"u1RTD_7krSo")
-        
-//        NetworkBasic.shared.detailPhoto(id: "u1RTD_7krSo") { result in
-//            switch result {
-//            case .success(let data):
-//                print(data)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        
-        Network.shared.request(type: Photo.self, api: SeSACAPI.photo(id: "apple")) { result in
-            switch result {
-            case .success(let success):
-                dump(success)
-            case .failure(let failure):
-                dump(failure)
-            }
+        configureHierachy()
+        configureLayout()
+        viewModel.request { [weak self] url in
+            self?.imageView.kf.setImage(with: url)
         }
     }
+    
+    
+    private func configureGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapGesture))
+        tap.numberOfTapsRequired = 2
+        imageView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func doubleTapGesture() {
+        if scrollView.zoomScale == 1 {
+            scrollView.setZoomScale(2, animated: true)
+        } else {
+            scrollView.setZoomScale(1, animated: true)
+        }
+    }
+    
+    
+    func configureHierachy() {
+        
+        view.addSubview(scrollView)
+        scrollView.addSubview(imageView)
+    }
+    
+    func configureLayout() {
+        scrollView.snp.makeConstraints { make in
+            make.size.equalTo(200)
+            make.center.equalTo(view)
+        }
+        
+        imageView.snp.makeConstraints { make in
+            make.size.equalTo(scrollView)
+        }
+    }
+    
     
     func request(query: String) {
         let key = "m27nyFvp2GSD19hxCU1HHKTfJ5__tD3PBSMq8MBJIOY"
@@ -86,6 +124,12 @@ final class ViewController: UIViewController {
                     print(error)
                 }
             }
+        }
+}
+
+extension ViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
     }
 }
 

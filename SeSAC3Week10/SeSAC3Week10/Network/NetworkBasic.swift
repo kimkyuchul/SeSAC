@@ -53,7 +53,7 @@ final class NetworkBasic {
     }
     
     func detailPhoto(api: SeSACAPI, id: String, completion: @escaping (Result<PhotoResult, SeSACError>) -> Void) {
-        let key = "m27nyFvp2GSD19hxCU1HHKTfJ5__tD3PBSMq8MBJIOY"
+        let key = ""
         let url = "https://api.unsplash.com/photos/\(id)"
         let headers: HTTPHeaders = ["Authorization": "Client-ID \(key)"]
         

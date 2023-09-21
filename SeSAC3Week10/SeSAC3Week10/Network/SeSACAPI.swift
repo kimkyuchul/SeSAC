@@ -16,7 +16,7 @@ import Alamofire
 
 enum SeSACAPI {
     
-    static let key = "m27nyFvp2GSD19hxCU1HHKTfJ5__tD3PBSMq8MBJIOY"
+    static let key = ""
     
     case search(query: String)
     case random
