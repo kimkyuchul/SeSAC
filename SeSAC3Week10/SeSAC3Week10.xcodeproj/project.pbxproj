@@ -26,6 +26,7 @@
 		5A70B9CE2ABA9A8700506846 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9CD2ABA9A8700506846 /* ViewModel.swift */; };
 		5A70B9D02ABBCB4E00506846 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9CF2ABBCB4E00506846 /* SearchViewController.swift */; };
 		5A70B9D22ABBE10400506846 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70B9D12ABBE10400506846 /* SearchCollectionViewCell.swift */; };
+		5A9DA1E22AC27074006040D2 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9DA1E12AC27073006040D2 /* PinterestLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		5A70B9CD2ABA9A8700506846 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		5A70B9CF2ABBCB4E00506846 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5A70B9D12ABBE10400506846 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		5A9DA1E12AC27073006040D2 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				5A70B9992AB9294B00506846 /* Info.plist */,
 				5A70B9CF2ABBCB4E00506846 /* SearchViewController.swift */,
 				5A70B9D12ABBE10400506846 /* SearchCollectionViewCell.swift */,
+				5A9DA1E12AC27073006040D2 /* PinterestLayout.swift */,
 			);
 			path = SeSAC3Week10;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				5A70B9D02ABBCB4E00506846 /* SearchViewController.swift in Sources */,
 				5A70B9CC2ABA765C00506846 /* Router.swift in Sources */,
 				5A70B98C2AB9294700506846 /* AppDelegate.swift in Sources */,
+				5A9DA1E22AC27074006040D2 /* PinterestLayout.swift in Sources */,
 				5A70B9C82AB9649600506846 /* SeSACAPI.swift in Sources */,
 				5A70B9CE2ABA9A8700506846 /* ViewModel.swift in Sources */,
 				5A70B98E2AB9294700506846 /* SceneDelegate.swift in Sources */,
