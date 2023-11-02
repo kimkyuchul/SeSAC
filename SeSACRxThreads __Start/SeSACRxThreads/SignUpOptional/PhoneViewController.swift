@@ -24,7 +24,7 @@ class PhoneViewController: UIViewController {
     }
     
     @objc func nextButtonClicked() {
-        navigationController?.pushViewController(NicknameViewController(), animated: true)
+        navigationController?.pushViewController(NicknameViewController(viewModel: NicknameViewModel()), animated: true)
     }
 
     

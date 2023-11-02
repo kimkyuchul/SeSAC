@@ -68,10 +68,7 @@ class BirthdayViewController: UIViewController {
   
     let nextButton = PointButton(title: "가입하기")
     
-    let birtday: BehaviorSubject<Date> = BehaviorSubject(value: .now)
-    let year = BehaviorSubject(value: 0)
-    let month = BehaviorSubject(value: 0)
-    let day = BehaviorSubject(value: 0)
+    private let viewModel = BirthdayViewModel()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -88,20 +85,10 @@ class BirthdayViewController: UIViewController {
     
     func bind() {
         birthDayPicker.rx.date
-            .bind(to: birtday)
+            .bind(to: viewModel.birtday)
             .disposed(by: disposeBag)
-        
-        birtday
-            .subscribe(with: self) { owner, birth in
-                let component = Calendar.current.dateComponents([.year, .month, .day], from: birth)
-                owner.year.onNext(component.year!)
-                owner.month.onNext(component.month!)
-                owner.day.onNext(component.day!)
-            }
-            .disposed(by: disposeBag)
-        
-        
-        year
+    
+        viewModel.year
             .map { "\($0)년"}
             .observe(on: MainScheduler.instance) //Schedular
             .subscribe(with: self) { owner, year in
@@ -109,7 +96,7 @@ class BirthdayViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        month
+        viewModel.month
             .map { "\($0)월"}
             .observe(on: MainScheduler.instance) //Schedular
             .subscribe(with: self) { owner, year in
@@ -117,7 +104,7 @@ class BirthdayViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        day
+        viewModel.day
             .map { "\($0)일"}
             .bind(to: dayLabel.rx.text)
             .disposed(by: disposeBag)
