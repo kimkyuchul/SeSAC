@@ -15,35 +15,46 @@ class NicknameViewController: UIViewController {
     let nicknameTextField = SignTextField(placeholderText: "닉네임을 입력해주세요")
     let nextButton = PointButton(title: "다음")
     let text = PublishSubject<String>()
-    let bag = DisposeBag()
+    let disposeBag = DisposeBag()
+    private let viewModel: NicknameViewModel
+    
+    init(viewModel: NicknameViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Color.white
         configureLayout()
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
-        
         bind()
     }
     
     func bind() {
-        nicknameTextField.rx.text.orEmpty.distinctUntilChanged()
-            .bind(to: text)
-            .disposed(by: bag)
+        let input = NicknameViewModel.Input(nicknameText: nicknameTextField.rx.text.orEmpty.distinctUntilChanged())
+        let output = viewModel.tramsfrom(input: input)
         
-        text
-            .withUnretained(self)
-            .map { owner, text in
-                owner.validate(textCount: Int(text) ?? 0)
-            }
-            .bind(to: nextButton.rx.isHidden)
-            .disposed(by: bag)
+        let nextButtonEnable = output.nextButtonEnable
+            .asDriver(onErrorJustReturn: false)
+        
+        nextButtonEnable
+            .drive(nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        nextButtonEnable
+            .drive(nextButton.rx.backgroundColor)
+            .disposed(by: disposeBag)
+        
+        nextButtonEnable
+            .drive(nicknameTextField.rx.borderColor)
+            .disposed(by: disposeBag)
     }
-    
-    private func validate(textCount: Int) -> Bool {
-        return textCount >= 2 && textCount < 6
-    }
-    
+        
     @objc func nextButtonClicked() {
         navigationController?.pushViewController(BirthdayViewController(), animated: true)
     }
@@ -65,5 +76,20 @@ class NicknameViewController: UIViewController {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
-    
+}
+
+extension Reactive where Base: UITextField {
+    var borderColor: Binder<Bool> {
+        return Binder(self.base) { owner, bool in
+            owner.layer.borderColor = bool ? UIColor.black.cgColor : UIColor.red.cgColor
+        }
+    }
+}
+
+extension Reactive where Base: UIButton {
+    var backgroundColor: Binder<Bool> {
+        return Binder(self.base) { owner, bool in
+            owner.backgroundColor = bool ? UIColor.black : UIColor.red
+        }
+    }
 }
