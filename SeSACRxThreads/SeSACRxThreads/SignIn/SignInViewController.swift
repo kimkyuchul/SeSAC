@@ -37,9 +37,16 @@ class SignInViewController: UIViewController {
 //        aboutPublishSubject()
 //        aboutBehaviorSubject()
 //        aboutReplaySubject()
-        aboutAsyncSubject()
-        bind()
-        aboutCombineLatest()
+//        aboutAsyncSubject()
+//        bind()
+//        aboutCombineLatest()
+        
+        signInButton.rx.tap
+            .withUnretained(self)
+            .bind(onNext: { owner, _ in
+                owner.navigationController?.pushViewController(SearchViewController(), animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     func aboutCombineLatest() {

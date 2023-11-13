@@ -16,18 +16,18 @@ final class BirthdayViewModel {
     
     let birtday: BehaviorSubject<Date> = BehaviorSubject(value: .now)
     
-    let year = BehaviorSubject(value: 0)
-    let month = BehaviorSubject(value: 0)
-    let day = BehaviorSubject(value: 0)
+    let year = BehaviorRelay(value: 0)
+    let month = BehaviorRelay(value: 0)
+    let day = BehaviorRelay(value: 0)
     
     init() {
         
         birtday
             .subscribe(with: self) { owner, birth in
                 let component = Calendar.current.dateComponents([.year, .month, .day], from: birth)
-                owner.year.onNext(component.year!)
-                owner.month.onNext(component.month!)
-                owner.day.onNext(component.day!)
+                owner.year.accept(component.year!)
+                owner.month.accept(component.month!)
+                owner.day.accept(component.day!)
             }
             .disposed(by: disposeBag)
     }

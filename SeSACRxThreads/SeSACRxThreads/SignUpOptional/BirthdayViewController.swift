@@ -87,7 +87,7 @@ class BirthdayViewController: UIViewController {
         birthDayPicker.rx.date
             .bind(to: viewModel.birtday)
             .disposed(by: disposeBag)
-    
+        
         viewModel.year
             .map { "\($0)년"}
             .observe(on: MainScheduler.instance) //Schedular
