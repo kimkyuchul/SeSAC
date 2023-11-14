@@ -14,6 +14,43 @@ struct RenderView: View {
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.red, Color.gray, Color.blue]),
+                                startPoint: .bottomLeading,
+                                endPoint: .trailing)
+                        )
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(
+                            RadialGradient(
+                                gradient: Gradient(
+                                    colors:
+                                        [
+                                            .red,
+                                            .orange
+                                        ]
+                                ),
+                                center: .topLeading,
+                                startRadius: 10,
+                                endRadius: 70
+                            )
+                        )
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(
+                            AngularGradient(
+                                colors: [
+                                    .yellow,
+                                    .green
+                                ],
+                                center: .leading,
+                                angle: .degrees(200)
+                            )
+                        )
+                }
+                .frame(width: .infinity, height: 100) // 쓸수 있는 width 다 써라 -> infinity
+                
                 NavigationLink("push") {
                     MenuView()
                 }
