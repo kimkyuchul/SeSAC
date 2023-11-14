@@ -17,6 +17,7 @@
 		5A36F19C2B01B96B00039ADA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F1992B01B96200039ADA /* MenuView.swift */; };
 		5A36F19E2B01C89E00039ADA /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F19D2B01C89E00039ADA /* RenderView.swift */; };
 		5A36F1C32B03071300039ADA /* TamagochiVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F1C22B03071300039ADA /* TamagochiVIew.swift */; };
+		5A36F1C52B0337F000039ADA /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F1C42B0337F000039ADA /* MovieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		5A36F1992B01B96200039ADA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5A36F19D2B01C89E00039ADA /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
 		5A36F1C22B03071300039ADA /* TamagochiVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagochiVIew.swift; sourceTree = "<group>"; };
+		5A36F1C42B0337F000039ADA /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				5A36F1992B01B96200039ADA /* MenuView.swift */,
 				5A36F19D2B01C89E00039ADA /* RenderView.swift */,
 				5A36F1C22B03071300039ADA /* TamagochiVIew.swift */,
+				5A36F1C42B0337F000039ADA /* MovieView.swift */,
 				5A36F1732B01A90600039ADA /* Assets.xcassets */,
 				5A36F1752B01A90600039ADA /* Preview Content */,
 			);
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A36F1C32B03071300039ADA /* TamagochiVIew.swift in Sources */,
+				5A36F1C52B0337F000039ADA /* MovieView.swift in Sources */,
 				5A36F1722B01A90100039ADA /* ContentView.swift in Sources */,
 				5A36F19C2B01B96B00039ADA /* MenuView.swift in Sources */,
 				5A36F19E2B01C89E00039ADA /* RenderView.swift in Sources */,
