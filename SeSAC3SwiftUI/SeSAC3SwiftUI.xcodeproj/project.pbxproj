@@ -24,6 +24,8 @@
 		5A36F1CF2B0466E300039ADA /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F1CE2B0466E300039ADA /* AsyncImageView.swift */; };
 		5A36F1D12B046F5F00039ADA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F1D02B046F5E00039ADA /* HomeView.swift */; };
 		5A36F1D32B0471CA00039ADA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F1D22B0471CA00039ADA /* StartView.swift */; };
+		5A36F2502B05A83100039ADA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F24F2B05A83100039ADA /* SearchView.swift */; };
+		5A36F2522B05B45500039ADA /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2512B05B45500039ADA /* NavigationLazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		5A36F1CE2B0466E300039ADA /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		5A36F1D02B046F5E00039ADA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5A36F1D22B0471CA00039ADA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		5A36F24F2B05A83100039ADA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		5A36F2512B05B45500039ADA /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 				5A36F1CE2B0466E300039ADA /* AsyncImageView.swift */,
 				5A36F1D02B046F5E00039ADA /* HomeView.swift */,
 				5A36F1D22B0471CA00039ADA /* StartView.swift */,
+				5A36F24F2B05A83100039ADA /* SearchView.swift */,
+				5A36F2512B05B45500039ADA /* NavigationLazyView.swift */,
 				5A36F1732B01A90600039ADA /* Assets.xcassets */,
 				5A36F1752B01A90600039ADA /* Preview Content */,
 			);
@@ -295,7 +301,9 @@
 				5A36F1C72B044C4C00039ADA /* TransitionView.swift in Sources */,
 				5A36F1D12B046F5F00039ADA /* HomeView.swift in Sources */,
 				5A36F19C2B01B96B00039ADA /* MenuView.swift in Sources */,
+				5A36F2502B05A83100039ADA /* SearchView.swift in Sources */,
 				5A36F19E2B01C89E00039ADA /* RenderView.swift in Sources */,
+				5A36F2522B05B45500039ADA /* NavigationLazyView.swift in Sources */,
 				5A36F1C92B04508A00039ADA /* CategoryView.swift in Sources */,
 				5A36F1702B01A90100039ADA /* SeSAC3SwiftUIApp.swift in Sources */,
 				5A36F1CD2B045C2300039ADA /* PosterView.swift in Sources */,

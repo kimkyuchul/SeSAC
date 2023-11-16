@@ -20,6 +20,7 @@ struct AsyncImageView: View {
                     .cornerRadius(10)
             }
             else if phase.error != nil {
+//                ProgressView() // Indicates an error.
                 Image(systemName: "star")
             }
             else {
