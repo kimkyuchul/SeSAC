@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct RenderView: View {
+    // 시스템에서 정의된 값을 감지하고 뷰를 업데이트 할 수 있다.
+//    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var colorScheme
     
     @State var age = 10
+    
+    init(age: Int = 10) {
+        self.age = age
+        print("RenderView init")
+    }
     
     var body: some View {
         NavigationView {
@@ -59,9 +68,16 @@ struct RenderView: View {
                 Text("Jack: \(Int.random(in: 1...100))")
                 bran
                 kokoView()
-                Button("클릭") {
+                Button(colorScheme == .dark ? "다크모드 클릭": "라이트 모드 클릭") {
                     age = Int.random(in: 1...100)
+                    
+                    dismiss.callAsFunction()
+                    
+//                    presentationMode.wrappedValue.dismiss()
+                    
+                    
                 }
+                .background(colorScheme == .dark ? .teal : .cyan)
             }
             .navigationTitle("네비게이션 타이틀") // 콘텐츠 밖 영역에 설정
             .navigationBarItems(leading: Text("클릭"))
