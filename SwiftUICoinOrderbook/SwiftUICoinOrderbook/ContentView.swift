@@ -9,75 +9,106 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var banner = Banner()
-    @State var dummy = [
-        Money(amount: 21700, product: "컴포즈커피", category: .food),
-        Money(amount: 500000, product: "청년절망적금", category: .deposit),
-        Money(amount: 9000, product: "선식당", category: .food),
-        Money(amount: 27000, product: "클린코드", category: .study),
-        Money(amount: 150000, product: "스키장", category: .hobby),
-        Money(amount: 600000, product: "월세", category: .house),
-        Money(amount: 68400, product: "통신비", category: .house),
-        Money(amount: 7000, product: "교동짬뽕", category: .food),
-        Money(amount: 6500, product: "커피빈", category: .food),
-        Money(amount: 4700, product: "쉬즈베이글토스트문래점", category: .food),
-        Money(amount: 8800, product: "무인아이스크림할인매장", category: .food),
-        Money(amount: 100000, product: "주택청약", category: .house),
-        Money(amount: 13900, product: "스플렌더", category: .hobby),
-        Money(amount: 1500, product: "컴포즈커피", category: .food),
-        Money(amount: 7800, product: "컴포즈커피", category: .food),
-    ]
+    // ObservableObject의 Published가 신호가 보내면 ObservedObject가 받는다.
+    @ObservedObject var viewModel = ContentViewModel()
+    
+    @State var renderingTestNumber = 0
     
     var body: some View {
         NavigationStack {
             ScrollView {
+                Text("테스트: \(renderingTestNumber)")
+                NavigationLink("배너 테스트", value: renderingTestNumber)
                 VStack {
-                    bannerView()
-                    LazyVStack {
-                        ForEach(dummy, id: \.self) { data in
-                            listView(data: data)
+                    ScrollView(.horizontal) {
+                        LazyHStack {
+                            ForEach(1..<5) { data in
+                                bannerView()
+                                    .frame(width: 400)
+                                    .onTapGesture {
+                                        viewModel.fetchBanner()
+                                    }
+                                //                        .containerRelativeFrame(.horizontal)
+                            }
                         }
+                        // 스크롤 하고자 하는 대상에 대한 레이아웃 설정
+//                        .scrollTargetLayout()
                     }
+//                    .scrollTargetBehavior(.viewAligned)
+//                    .safeAreaPadding([.horizontal], 40)
+                    .scrollIndicators(.visible)
+                    ListView()
                 }
             }
+            .scrollIndicators(.hidden)
             .refreshable {
                 // Pull to refresh
-                banner = Banner()
-                dummy.shuffle()
+                viewModel.fetchBanner()
+                renderingTestNumber = Int.random(in: 1...100)
+//                money = dummy.shuffle()
             }
+//            .onAppear {
+//                viewModel.fetchAllMarket()
+//            }
             .navigationTitle("My Wallet")
+            .navigationDestination(for: Int.self) { _ in
+                BannerTestView(testNumber: $renderingTestNumber)
+            }
+
         }
     }
     
     func bannerView() -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 25)
-                .fill(Color.green)
+            Rectangle()
+                .fill(viewModel.banner.color)
+                .overlay {
+                    Circle()
+                        .fill(.white.opacity(0.3))
+                        .offset(x: -90, y: -0)
+                        .scaleEffect(1.3, anchor: .center)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 25))
                 .frame(maxWidth: .infinity)
                 .frame(height: 200)
             VStack(alignment: .leading) {
                 Spacer()
                 Text("나의 소비내역")
-                Text(banner.totalFormat)
+                    .font(.title3)
+                    .bold()
+                Text(viewModel.banner.totalFormat)
+                    .font(.title)
+                    .bold()
             }
+            // ios 17 ++
+//            .visualEffect { content, geometryProxy in
+////                content.offset(x: geometryProxy.size.width / 2, y: geometryProxy.size.height / 2)
+//                content.offset(x: scrollOffset(geometryProxy))
+//            }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding()
     }
     
-    func listView(data: Money) -> some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("\(data.category.rawValue)")
-                Text("\(data.product)")
-            }
-            Spacer()
-            Text("\(data.amountFormat)\nKRW-BTC")
-        }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 8)
-    }
+    
+//    func scrollOffset(_ proxy: GeometryProxy) -> CGFloat {
+//        let result = proxy.bounds(of: .scrollView)?.minX ?? 0
+//        return result
+//    }
+    
+//    func listView(data: Market) -> some View {
+//        HStack {
+//            VStack(alignment: .leading) {
+//                Text(data.korean)
+//                Text(data.english)
+//            }
+//            Spacer()
+//            Text(data.market)
+//        }
+//        .padding(.horizontal, 20)
+//        .padding(.vertical, 8)
+//    }
 }
 
 struct ContentView_Previews: PreviewProvider {

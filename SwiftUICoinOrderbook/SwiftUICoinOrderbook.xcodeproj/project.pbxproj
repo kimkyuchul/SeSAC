@@ -16,6 +16,12 @@
 		5A36F2C72B0B000F00039ADA /* SwiftUICoinOrderbookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2C62B0B000F00039ADA /* SwiftUICoinOrderbookUITestsLaunchTests.swift */; };
 		5A36F2D52B0B090D00039ADA /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2D32B0B090C00039ADA /* Banner.swift */; };
 		5A36F2D62B0B090D00039ADA /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2D42B0B090C00039ADA /* Money.swift */; };
+		5A36F2DA2B0C4A2900039ADA /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2D92B0C4A2900039ADA /* OverlayView.swift */; };
+		5A36F2DC2B0C4E6D00039ADA /* UpbitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2DB2B0C4E6D00039ADA /* UpbitAPI.swift */; };
+		5A36F2DF2B0C595D00039ADA /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2DE2B0C595D00039ADA /* ContentViewModel.swift */; };
+		5A36F2E12B0C733B00039ADA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E02B0C733B00039ADA /* ListView.swift */; };
+		5A36F2E32B0C735500039ADA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E22B0C735500039ADA /* ListViewModel.swift */; };
+		5A36F2E52B0C80B600039ADA /* BannerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E42B0C80B600039ADA /* BannerTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,12 @@
 		5A36F2C62B0B000F00039ADA /* SwiftUICoinOrderbookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICoinOrderbookUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5A36F2D32B0B090C00039ADA /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		5A36F2D42B0B090C00039ADA /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		5A36F2D92B0C4A2900039ADA /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		5A36F2DB2B0C4E6D00039ADA /* UpbitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpbitAPI.swift; sourceTree = "<group>"; };
+		5A36F2DE2B0C595D00039ADA /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		5A36F2E02B0C733B00039ADA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		5A36F2E22B0C735500039ADA /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		5A36F2E42B0C80B600039ADA /* BannerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +110,16 @@
 		5A36F2A82B0B000900039ADA /* SwiftUICoinOrderbook */ = {
 			isa = PBXGroup;
 			children = (
+				5A36F2DD2B0C4E7C00039ADA /* Network */,
 				5A36F2D32B0B090C00039ADA /* Banner.swift */,
 				5A36F2D42B0B090C00039ADA /* Money.swift */,
 				5A36F2A92B0B000900039ADA /* SwiftUICoinOrderbookApp.swift */,
+				5A36F2D92B0C4A2900039ADA /* OverlayView.swift */,
 				5A36F2AB2B0B000900039ADA /* ContentView.swift */,
+				5A36F2DE2B0C595D00039ADA /* ContentViewModel.swift */,
+				5A36F2E02B0C733B00039ADA /* ListView.swift */,
+				5A36F2E22B0C735500039ADA /* ListViewModel.swift */,
+				5A36F2E42B0C80B600039ADA /* BannerTestView.swift */,
 				5A36F2AD2B0B000E00039ADA /* Assets.xcassets */,
 				5A36F2AF2B0B000E00039ADA /* Preview Content */,
 			);
@@ -131,6 +149,14 @@
 				5A36F2C62B0B000F00039ADA /* SwiftUICoinOrderbookUITestsLaunchTests.swift */,
 			);
 			path = SwiftUICoinOrderbookUITests;
+			sourceTree = "<group>";
+		};
+		5A36F2DD2B0C4E7C00039ADA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5A36F2DB2B0C4E6D00039ADA /* UpbitAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +289,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A36F2E12B0C733B00039ADA /* ListView.swift in Sources */,
 				5A36F2AC2B0B000900039ADA /* ContentView.swift in Sources */,
+				5A36F2DC2B0C4E6D00039ADA /* UpbitAPI.swift in Sources */,
 				5A36F2AA2B0B000900039ADA /* SwiftUICoinOrderbookApp.swift in Sources */,
+				5A36F2DF2B0C595D00039ADA /* ContentViewModel.swift in Sources */,
+				5A36F2E32B0C735500039ADA /* ListViewModel.swift in Sources */,
 				5A36F2D62B0B090D00039ADA /* Money.swift in Sources */,
 				5A36F2D52B0B090D00039ADA /* Banner.swift in Sources */,
+				5A36F2E52B0C80B600039ADA /* BannerTestView.swift in Sources */,
+				5A36F2DA2B0C4A2900039ADA /* OverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
