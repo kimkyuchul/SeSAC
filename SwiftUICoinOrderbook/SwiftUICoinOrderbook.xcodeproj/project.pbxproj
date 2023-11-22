@@ -22,6 +22,7 @@
 		5A36F2E12B0C733B00039ADA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E02B0C733B00039ADA /* ListView.swift */; };
 		5A36F2E32B0C735500039ADA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E22B0C735500039ADA /* ListViewModel.swift */; };
 		5A36F2E52B0C80B600039ADA /* BannerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E42B0C80B600039ADA /* BannerTestView.swift */; };
+		5A36F2E92B0D85FF00039ADA /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E82B0D85FF00039ADA /* WalletView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		5A36F2E02B0C733B00039ADA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		5A36F2E22B0C735500039ADA /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		5A36F2E42B0C80B600039ADA /* BannerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTestView.swift; sourceTree = "<group>"; };
+		5A36F2E82B0D85FF00039ADA /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				5A36F2E42B0C80B600039ADA /* BannerTestView.swift */,
 				5A36F2AD2B0B000E00039ADA /* Assets.xcassets */,
 				5A36F2AF2B0B000E00039ADA /* Preview Content */,
+				5A36F2E82B0D85FF00039ADA /* WalletView.swift */,
 			);
 			path = SwiftUICoinOrderbook;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			files = (
 				5A36F2E12B0C733B00039ADA /* ListView.swift in Sources */,
 				5A36F2AC2B0B000900039ADA /* ContentView.swift in Sources */,
+				5A36F2E92B0D85FF00039ADA /* WalletView.swift in Sources */,
 				5A36F2DC2B0C4E6D00039ADA /* UpbitAPI.swift in Sources */,
 				5A36F2AA2B0B000900039ADA /* SwiftUICoinOrderbookApp.swift in Sources */,
 				5A36F2DF2B0C595D00039ADA /* ContentViewModel.swift in Sources */,
