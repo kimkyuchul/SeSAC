@@ -23,6 +23,8 @@
 		5A36F2E32B0C735500039ADA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E22B0C735500039ADA /* ListViewModel.swift */; };
 		5A36F2E52B0C80B600039ADA /* BannerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E42B0C80B600039ADA /* BannerTestView.swift */; };
 		5A36F2E92B0D85FF00039ADA /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E82B0D85FF00039ADA /* WalletView.swift */; };
+		5A36F2EB2B0D992600039ADA /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2EA2B0D992500039ADA /* WalletDetailView.swift */; };
+		5A36F2EE2B0DA54900039ADA /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2ED2B0DA54900039ADA /* WalletModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		5A36F2E22B0C735500039ADA /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		5A36F2E42B0C80B600039ADA /* BannerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTestView.swift; sourceTree = "<group>"; };
 		5A36F2E82B0D85FF00039ADA /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		5A36F2EA2B0D992500039ADA /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
+		5A36F2ED2B0DA54900039ADA /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		5A36F2A82B0B000900039ADA /* SwiftUICoinOrderbook */ = {
 			isa = PBXGroup;
 			children = (
+				5A36F2EC2B0D992B00039ADA /* WalletAnimation */,
 				5A36F2DD2B0C4E7C00039ADA /* Network */,
 				5A36F2D32B0B090C00039ADA /* Banner.swift */,
 				5A36F2D42B0B090C00039ADA /* Money.swift */,
@@ -124,7 +129,6 @@
 				5A36F2E42B0C80B600039ADA /* BannerTestView.swift */,
 				5A36F2AD2B0B000E00039ADA /* Assets.xcassets */,
 				5A36F2AF2B0B000E00039ADA /* Preview Content */,
-				5A36F2E82B0D85FF00039ADA /* WalletView.swift */,
 			);
 			path = SwiftUICoinOrderbook;
 			sourceTree = "<group>";
@@ -160,6 +164,16 @@
 				5A36F2DB2B0C4E6D00039ADA /* UpbitAPI.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5A36F2EC2B0D992B00039ADA /* WalletAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				5A36F2E82B0D85FF00039ADA /* WalletView.swift */,
+				5A36F2EA2B0D992500039ADA /* WalletDetailView.swift */,
+				5A36F2ED2B0DA54900039ADA /* WalletModel.swift */,
+			);
+			path = WalletAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +314,8 @@
 				5A36F2DF2B0C595D00039ADA /* ContentViewModel.swift in Sources */,
 				5A36F2E32B0C735500039ADA /* ListViewModel.swift in Sources */,
 				5A36F2D62B0B090D00039ADA /* Money.swift in Sources */,
+				5A36F2EE2B0DA54900039ADA /* WalletModel.swift in Sources */,
+				5A36F2EB2B0D992600039ADA /* WalletDetailView.swift in Sources */,
 				5A36F2D52B0B090D00039ADA /* Banner.swift in Sources */,
 				5A36F2E52B0C80B600039ADA /* BannerTestView.swift in Sources */,
 				5A36F2DA2B0C4A2900039ADA /* OverlayView.swift in Sources */,
