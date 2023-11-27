@@ -25,6 +25,9 @@
 		5A36F2E92B0D85FF00039ADA /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2E82B0D85FF00039ADA /* WalletView.swift */; };
 		5A36F2EB2B0D992600039ADA /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2EA2B0D992500039ADA /* WalletDetailView.swift */; };
 		5A36F2EE2B0DA54900039ADA /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F2ED2B0DA54900039ADA /* WalletModel.swift */; };
+		5AFB964E2B141DED002776B6 /* SeSACView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB964D2B141DED002776B6 /* SeSACView.swift */; };
+		5AFB96502B141E87002776B6 /* MyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB964F2B141E87002776B6 /* MyWebView.swift */; };
+		5AFB96522B1421E4002776B6 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB96512B1421E4002776B6 /* MyTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		5A36F2E82B0D85FF00039ADA /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		5A36F2EA2B0D992500039ADA /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
 		5A36F2ED2B0DA54900039ADA /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
+		5AFB964D2B141DED002776B6 /* SeSACView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACView.swift; sourceTree = "<group>"; };
+		5AFB964F2B141E87002776B6 /* MyWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWebView.swift; sourceTree = "<group>"; };
+		5AFB96512B1421E4002776B6 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 		5A36F2A82B0B000900039ADA /* SwiftUICoinOrderbook */ = {
 			isa = PBXGroup;
 			children = (
+				5AFB964A2B141D7C002776B6 /* WithUIKit */,
 				5A36F2EC2B0D992B00039ADA /* WalletAnimation */,
 				5A36F2DD2B0C4E7C00039ADA /* Network */,
 				5A36F2D32B0B090C00039ADA /* Banner.swift */,
@@ -174,6 +181,16 @@
 				5A36F2ED2B0DA54900039ADA /* WalletModel.swift */,
 			);
 			path = WalletAnimation;
+			sourceTree = "<group>";
+		};
+		5AFB964A2B141D7C002776B6 /* WithUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				5AFB964D2B141DED002776B6 /* SeSACView.swift */,
+				5AFB964F2B141E87002776B6 /* MyWebView.swift */,
+				5AFB96512B1421E4002776B6 /* MyTextField.swift */,
+			);
+			path = WithUIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,8 +330,11 @@
 				5A36F2AA2B0B000900039ADA /* SwiftUICoinOrderbookApp.swift in Sources */,
 				5A36F2DF2B0C595D00039ADA /* ContentViewModel.swift in Sources */,
 				5A36F2E32B0C735500039ADA /* ListViewModel.swift in Sources */,
+				5AFB96502B141E87002776B6 /* MyWebView.swift in Sources */,
 				5A36F2D62B0B090D00039ADA /* Money.swift in Sources */,
+				5AFB964E2B141DED002776B6 /* SeSACView.swift in Sources */,
 				5A36F2EE2B0DA54900039ADA /* WalletModel.swift in Sources */,
+				5AFB96522B1421E4002776B6 /* MyTextField.swift in Sources */,
 				5A36F2EB2B0D992600039ADA /* WalletDetailView.swift in Sources */,
 				5A36F2D52B0B090D00039ADA /* Banner.swift in Sources */,
 				5A36F2E52B0C80B600039ADA /* BannerTestView.swift in Sources */,
