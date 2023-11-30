@@ -13,9 +13,16 @@ final class ListViewModel: ObservableObject {
                              Market(market: "a", korean: "a", english: "a"),
                              Market(market: "a", korean: "a", english: "a")] // Hashable하기 때문에 1개밖에 안나온다.
     
+    let marketData: Market
+
+    init(marketData: Market) {
+        self.marketData = marketData
+    }
+    
     func fetchAllMarket() {
         
-        let url = URL(string: "https://api.upbit.com/v1/market/all")!
+        let url = URL(string: "https://api.upbit.com/v1/market/\(marketData.market)")!
+//        let url = URL(string: "https://api.upbit.com/v1/market")!
         
         URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let data = data else {

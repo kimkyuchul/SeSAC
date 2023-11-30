@@ -11,7 +11,7 @@ struct ListView: View {
     
     // @ObservedObject -> 데이터 초기화
     // @StateObject -> 데이터 유지
-    @StateObject var viewModel = ListViewModel()
+    @StateObject var viewModel = ListViewModel(marketData: Market(market: "이더리움", korean: "비트코인", english: "BitCoin"))
     
     var body: some View {
         LazyVStack {
@@ -19,23 +19,28 @@ struct ListView: View {
                 viewModel.fetchAllMarket()
             }
             ForEach(viewModel.market, id: \.self) { item in // \.self 이기 때문에 Hashable하여 같은 데이터 시 한개 밖에 안나온다.
-                HStack {
-                    VStack(alignment: .center) {
-                        Text(item.korean)
-                            .fontWeight(.bold)
-                        Text(item.english)
-                            .font(.caption)
-                            .foregroundColor(.gray)
+                NavigationLink(value: item) {
+                    HStack {
+                        VStack(alignment: .center) {
+                            Text(item.korean)
+                                .fontWeight(.bold)
+                            Text(item.english)
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
+                        Spacer()
+                        Text(item.market)
                     }
-                    Spacer()
-                    Text(item.market)
+                    .padding()
                 }
-                .padding()
             }
         }
         .onAppear {
             print("testonAppear") // onAppear마다 네트워크 통신이 게속된다.
 //            viewModel.fetchAllMarket()
+        }
+        .navigationDestination(for: Market.self) { market in
+            HorizontalView()
         }
     }
 }
