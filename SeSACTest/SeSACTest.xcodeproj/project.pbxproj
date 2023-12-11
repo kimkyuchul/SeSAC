@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A5CB23A2B269B0700623773 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5CB2392B269B0700623773 /* Login.storyboard */; };
+		5A5CB23C2B269B7700623773 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB23B2B269B7700623773 /* LoginViewController.swift */; };
+		5A5CB2402B26A8BC00623773 /* LoginTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB23F2B26A8BC00623773 /* LoginTestCase.swift */; };
+		5A5CB2422B26AE6C00623773 /* LoginUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB2412B26AE6C00623773 /* LoginUpdateViewController.swift */; };
+		5A5CB2442B26AF8500623773 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB2432B26AF8500623773 /* Validator.swift */; };
 		5AC10DD82B22A5F9001D0AAA /* SeSACTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10DD72B22A5F9001D0AAA /* SeSACTestApp.swift */; };
 		5AC10DDA2B22A5F9001D0AAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10DD92B22A5F9001D0AAA /* ContentView.swift */; };
 		5AC10DDC2B22A5FC001D0AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC10DDB2B22A5FC001D0AAA /* Assets.xcassets */; };
@@ -34,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A5CB2392B269B0700623773 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5A5CB23B2B269B7700623773 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5A5CB23F2B26A8BC00623773 /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
+		5A5CB2412B26AE6C00623773 /* LoginUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateViewController.swift; sourceTree = "<group>"; };
+		5A5CB2432B26AF8500623773 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		5AC10DD42B22A5F9001D0AAA /* SeSACTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC10DD72B22A5F9001D0AAA /* SeSACTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTestApp.swift; sourceTree = "<group>"; };
 		5AC10DD92B22A5F9001D0AAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +108,10 @@
 				5AC10DD92B22A5F9001D0AAA /* ContentView.swift */,
 				5AC10DDB2B22A5FC001D0AAA /* Assets.xcassets */,
 				5AC10DDD2B22A5FC001D0AAA /* Preview Content */,
+				5A5CB2392B269B0700623773 /* Login.storyboard */,
+				5A5CB23B2B269B7700623773 /* LoginViewController.swift */,
+				5A5CB2412B26AE6C00623773 /* LoginUpdateViewController.swift */,
+				5A5CB2432B26AF8500623773 /* Validator.swift */,
 			);
 			path = SeSACTest;
 			sourceTree = "<group>";
@@ -114,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				5AC10DE82B22A5FC001D0AAA /* SeSACTestTests.swift */,
+				5A5CB23F2B26A8BC00623773 /* LoginTestCase.swift */,
 			);
 			path = SeSACTestTests;
 			sourceTree = "<group>";
@@ -233,6 +248,7 @@
 			files = (
 				5AC10DDF2B22A5FC001D0AAA /* Preview Assets.xcassets in Resources */,
 				5AC10DDC2B22A5FC001D0AAA /* Assets.xcassets in Resources */,
+				5A5CB23A2B269B0700623773 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5CB23C2B269B7700623773 /* LoginViewController.swift in Sources */,
+				5A5CB2422B26AE6C00623773 /* LoginUpdateViewController.swift in Sources */,
+				5A5CB2442B26AF8500623773 /* Validator.swift in Sources */,
 				5AC10DDA2B22A5F9001D0AAA /* ContentView.swift in Sources */,
 				5AC10DD82B22A5F9001D0AAA /* SeSACTestApp.swift in Sources */,
 			);
@@ -267,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC10DE92B22A5FC001D0AAA /* SeSACTestTests.swift in Sources */,
+				5A5CB2402B26A8BC00623773 /* LoginTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
