@@ -12,6 +12,11 @@
 		5A5CB2402B26A8BC00623773 /* LoginTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB23F2B26A8BC00623773 /* LoginTestCase.swift */; };
 		5A5CB2422B26AE6C00623773 /* LoginUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB2412B26AE6C00623773 /* LoginUpdateViewController.swift */; };
 		5A5CB2442B26AF8500623773 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB2432B26AF8500623773 /* Validator.swift */; };
+		5A5CB2472B27EBBE00623773 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB2462B27EBBE00623773 /* DI.swift */; };
+		5A5CB2492B293DE000623773 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB2482B293DE000623773 /* NetworkManager.swift */; };
+		5A5CB24C2B293E2200623773 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5CB24B2B293E2200623773 /* Alamofire */; };
+		5A5CB24E2B2941A300623773 /* NetworkTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB24D2B2941A300623773 /* NetworkTestCase.swift */; };
+		5A5CB2502B294DBD00623773 /* NetworkMockTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB24F2B294DBD00623773 /* NetworkMockTestCase.swift */; };
 		5AC10DD82B22A5F9001D0AAA /* SeSACTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10DD72B22A5F9001D0AAA /* SeSACTestApp.swift */; };
 		5AC10DDA2B22A5F9001D0AAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10DD92B22A5F9001D0AAA /* ContentView.swift */; };
 		5AC10DDC2B22A5FC001D0AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC10DDB2B22A5FC001D0AAA /* Assets.xcassets */; };
@@ -44,6 +49,10 @@
 		5A5CB23F2B26A8BC00623773 /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
 		5A5CB2412B26AE6C00623773 /* LoginUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateViewController.swift; sourceTree = "<group>"; };
 		5A5CB2432B26AF8500623773 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		5A5CB2462B27EBBE00623773 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		5A5CB2482B293DE000623773 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5A5CB24D2B2941A300623773 /* NetworkTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestCase.swift; sourceTree = "<group>"; };
+		5A5CB24F2B294DBD00623773 /* NetworkMockTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMockTestCase.swift; sourceTree = "<group>"; };
 		5AC10DD42B22A5F9001D0AAA /* SeSACTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC10DD72B22A5F9001D0AAA /* SeSACTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTestApp.swift; sourceTree = "<group>"; };
 		5AC10DD92B22A5F9001D0AAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5CB24C2B293E2200623773 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A5CB2452B27EBA600623773 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				5A5CB2462B27EBBE00623773 /* DI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		5AC10DCB2B22A5F9001D0AAA = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +122,7 @@
 		5AC10DD62B22A5F9001D0AAA /* SeSACTest */ = {
 			isa = PBXGroup;
 			children = (
+				5A5CB2452B27EBA600623773 /* DI */,
 				5AC10DD72B22A5F9001D0AAA /* SeSACTestApp.swift */,
 				5AC10DD92B22A5F9001D0AAA /* ContentView.swift */,
 				5AC10DDB2B22A5FC001D0AAA /* Assets.xcassets */,
@@ -112,6 +131,7 @@
 				5A5CB23B2B269B7700623773 /* LoginViewController.swift */,
 				5A5CB2412B26AE6C00623773 /* LoginUpdateViewController.swift */,
 				5A5CB2432B26AF8500623773 /* Validator.swift */,
+				5A5CB2482B293DE000623773 /* NetworkManager.swift */,
 			);
 			path = SeSACTest;
 			sourceTree = "<group>";
@@ -129,6 +149,8 @@
 			children = (
 				5AC10DE82B22A5FC001D0AAA /* SeSACTestTests.swift */,
 				5A5CB23F2B26A8BC00623773 /* LoginTestCase.swift */,
+				5A5CB24D2B2941A300623773 /* NetworkTestCase.swift */,
+				5A5CB24F2B294DBD00623773 /* NetworkMockTestCase.swift */,
 			);
 			path = SeSACTestTests;
 			sourceTree = "<group>";
@@ -158,6 +180,9 @@
 			dependencies = (
 			);
 			name = SeSACTest;
+			packageProductDependencies = (
+				5A5CB24B2B293E2200623773 /* Alamofire */,
+			);
 			productName = SeSACTest;
 			productReference = 5AC10DD42B22A5F9001D0AAA /* SeSACTest.app */;
 			productType = "com.apple.product-type.application";
@@ -230,6 +255,9 @@
 				Base,
 			);
 			mainGroup = 5AC10DCB2B22A5F9001D0AAA;
+			packageReferences = (
+				5A5CB24A2B293E2100623773 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 5AC10DD52B22A5F9001D0AAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,6 +303,8 @@
 			files = (
 				5A5CB23C2B269B7700623773 /* LoginViewController.swift in Sources */,
 				5A5CB2422B26AE6C00623773 /* LoginUpdateViewController.swift in Sources */,
+				5A5CB2472B27EBBE00623773 /* DI.swift in Sources */,
+				5A5CB2492B293DE000623773 /* NetworkManager.swift in Sources */,
 				5A5CB2442B26AF8500623773 /* Validator.swift in Sources */,
 				5AC10DDA2B22A5F9001D0AAA /* ContentView.swift in Sources */,
 				5AC10DD82B22A5F9001D0AAA /* SeSACTestApp.swift in Sources */,
@@ -285,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5CB2502B294DBD00623773 /* NetworkMockTestCase.swift in Sources */,
 				5AC10DE92B22A5FC001D0AAA /* SeSACTestTests.swift in Sources */,
+				5A5CB24E2B2941A300623773 /* NetworkTestCase.swift in Sources */,
 				5A5CB2402B26A8BC00623773 /* LoginTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +635,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A5CB24A2B293E2100623773 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A5CB24B2B293E2200623773 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A5CB24A2B293E2100623773 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5AC10DCC2B22A5F9001D0AAA /* Project object */;
 }

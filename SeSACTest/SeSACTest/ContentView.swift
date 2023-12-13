@@ -38,6 +38,11 @@ struct ContentView: View {
         .sheet(isPresented: $showPage, content: {
             NextView()
         })
+//        .onAppear {
+//            NetworkManager.shared.fetchLotto { response in
+//                print(response)
+//            }
+//        }
     }
 }
 
