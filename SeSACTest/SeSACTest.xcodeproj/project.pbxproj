@@ -17,6 +17,7 @@
 		5A5CB24C2B293E2200623773 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5CB24B2B293E2200623773 /* Alamofire */; };
 		5A5CB24E2B2941A300623773 /* NetworkTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB24D2B2941A300623773 /* NetworkTestCase.swift */; };
 		5A5CB2502B294DBD00623773 /* NetworkMockTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB24F2B294DBD00623773 /* NetworkMockTestCase.swift */; };
+		5A7EB1F32B2BE32000030F7D /* InAppPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7EB1F22B2BE32000030F7D /* InAppPurchaseViewController.swift */; };
 		5AC10DD82B22A5F9001D0AAA /* SeSACTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10DD72B22A5F9001D0AAA /* SeSACTestApp.swift */; };
 		5AC10DDA2B22A5F9001D0AAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10DD92B22A5F9001D0AAA /* ContentView.swift */; };
 		5AC10DDC2B22A5FC001D0AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC10DDB2B22A5FC001D0AAA /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		5A5CB2482B293DE000623773 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5A5CB24D2B2941A300623773 /* NetworkTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestCase.swift; sourceTree = "<group>"; };
 		5A5CB24F2B294DBD00623773 /* NetworkMockTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMockTestCase.swift; sourceTree = "<group>"; };
+		5A7EB1F22B2BE32000030F7D /* InAppPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewController.swift; sourceTree = "<group>"; };
 		5AC10DD42B22A5F9001D0AAA /* SeSACTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC10DD72B22A5F9001D0AAA /* SeSACTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTestApp.swift; sourceTree = "<group>"; };
 		5AC10DD92B22A5F9001D0AAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				5A5CB2412B26AE6C00623773 /* LoginUpdateViewController.swift */,
 				5A5CB2432B26AF8500623773 /* Validator.swift */,
 				5A5CB2482B293DE000623773 /* NetworkManager.swift */,
+				5A7EB1F22B2BE32000030F7D /* InAppPurchaseViewController.swift */,
 			);
 			path = SeSACTest;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			files = (
 				5A5CB23C2B269B7700623773 /* LoginViewController.swift in Sources */,
 				5A5CB2422B26AE6C00623773 /* LoginUpdateViewController.swift in Sources */,
+				5A7EB1F32B2BE32000030F7D /* InAppPurchaseViewController.swift in Sources */,
 				5A5CB2472B27EBBE00623773 /* DI.swift in Sources */,
 				5A5CB2492B293DE000623773 /* NetworkManager.swift in Sources */,
 				5A5CB2442B26AF8500623773 /* Validator.swift in Sources */,
@@ -482,7 +486,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.SeSACTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.StoreKitTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -511,7 +515,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.SeSACTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.StoreKitTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
